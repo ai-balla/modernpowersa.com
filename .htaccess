@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------
+# Modern Power Marine Services — live site config
+# Keep private / agent material off the public web.
+# (These files are delivered by FTP but must not be downloadable.)
+# ---------------------------------------------------------------
+
+<Files "AGENT.md">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
+
+RedirectMatch 404 ^/_private(/|$)
+RedirectMatch 404 ^/_archive(/|$)
+RedirectMatch 404 ^/website\.zip$
