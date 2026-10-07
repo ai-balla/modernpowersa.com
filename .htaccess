@@ -17,3 +17,6 @@
 RedirectMatch 404 ^/_private(/|$)
 RedirectMatch 404 ^/_archive(/|$)
 RedirectMatch 404 ^/website\.zip$
+RedirectMatch 404 ^/\.git(/|$)
+RedirectMatch 404 ^/\.gitattributes$
+RedirectMatch 404 ^/\.gitignore$
