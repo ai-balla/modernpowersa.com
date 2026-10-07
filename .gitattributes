@@ -1,0 +1,5 @@
+# Git LFS — large media that exceeds GitHub's 100 MB per-file limit.
+# Videos are still part of the website; Git LFS stores their content out-of-band.
+*.mp4  filter=lfs diff=lfs merge=lfs -text
+*.mov  filter=lfs diff=lfs merge=lfs -text
+*.webm filter=lfs diff=lfs merge=lfs -text
