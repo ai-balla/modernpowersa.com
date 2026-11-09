@@ -7,7 +7,14 @@
     "skip": "Skip to main content",
     "menu": "Menu",
     "close": "Close",
-    "nav": {"home": "Home", "company": "Company", "services": "Services", "projects": "Projects", "quality": "Quality", "contact": "Contact"},
+    "nav": {
+      "home": "Home",
+      "company": "Company",
+      "services": "Services",
+      "projects": "Projects",
+      "quality": "Quality",
+      "contact": "Contact"
+    },
     "cta_quote": "Request a quotation",
     "breadcrumb": "Breadcrumb",
     "footer_tagline": "Marine maintenance, repair and supply. Jeddah, Kingdom of Saudi Arabia.",
@@ -25,7 +32,6 @@
       "cta_services": "View services",
       "facts_title": "Company facts",
       "fact_2000": "Established in Jeddah as a ship spare-parts and maintenance establishment",
-      "fact_2012": "Expanded into Modern Power Marine Services Co.",
       "fact_hq_k": "Jeddah",
       "fact_hq": "Head office, Captain Barrak Tower, Al Baghdadiyah Al Gharbiyah",
       "services_k": "Services",
@@ -38,13 +44,16 @@
       "clients_h": "Organizations we have worked for",
       "clients_p": "As listed in the project references of our 2023 company profile.",
       "band_h": "Have a vessel, facility or supply requirement?",
-      "band_p": "Send us the specification or a short description. We will reply with questions or a quotation."
+      "band_p": "Send us the specification or a short description. We will reply with questions or a quotation.",
+      "fact_agencies": "Manufacturers represented in Saudi Arabia, including an exclusive agency for marine fenders and port equipment",
+      "fact_cov_k": "Coverage",
+      "agencies_h": "Manufacturers we represent"
     },
     "company": {
       "title": "Company and history | Modern Power Marine Services Co.",
       "description": "History, vision, mission and management of Modern Power Marine Services Co. (MPMS), a marine services company based in Jeddah since 2000.",
       "h1": "Company",
-      "lede": "A Saudi marine services company based in Jeddah, serving government and private-sector clients across the Kingdom.",
+      "lede": "A Saudi marine services company based in Jeddah, serving government and private-sector clients on the Red Sea and Arabian Gulf coasts.",
       "history_h": "History",
       "history_2000": "MPMS began in Jeddah as an establishment supplying ship spare parts and providing ship maintenance and operation services.",
       "history_2012": "The business expanded into Modern Power Marine Services Co., adding marine works, systems supply and skilled technical manpower to its maintenance and spare-parts activities.",
@@ -54,8 +63,9 @@
       "objective": "Objective",
       "leadership_h": "Management",
       "agencies_h": "Agencies",
-      "agencies_p": "Manufacturers MPMS represents in the Kingdom.",
-      "office_h": "Head office"
+      "agencies_p": "Manufacturers MPMS represents as agent in Saudi Arabia.",
+      "office_h": "Head office",
+      "exclusive": "Exclusive agent"
     },
     "services": {
       "title": "Services | Modern Power Marine Services Co.",
@@ -76,7 +86,8 @@
       "next_h": "Request a quotation",
       "next_p": "Send the specification, drawings or a description of the work, with the vessel or site location. If you are preparing a tender, include the reference number and closing date.",
       "next_btn": "Request a quotation for this service",
-      "other_h": "Other services"
+      "other_h": "Other services",
+      "photo_alt": "MPMS work: {title}"
     },
     "projects": {
       "title": "Project references | Modern Power Marine Services Co.",
@@ -93,9 +104,9 @@
     },
     "quality": {
       "title": "Quality and certification | Modern Power Marine Services Co.",
-      "description": "Management-system certification and classification of Modern Power Marine Services Co., with certificate scope and validity.",
+      "description": "ISO 9001, 14001, 45001, 27001, 22301 and 31000 certificates and contractor classification of Modern Power Marine Services Co.",
       "h1": "Quality and certification",
-      "lede": "This page lists certificates and classifications that have been checked for publication, with their scope and validity.",
+      "lede": "Management-system certificates and classification held by MPMS, with their scope.",
       "col_standard": "Standard",
       "col_scope": "Scope",
       "col_issuer": "Issued by",
@@ -158,14 +169,34 @@
       "h1": "Privacy notice",
       "updated": "Last updated",
       "body": [
-        ["What we collect", "When you use the contact form we receive the details you enter: your name, organization, email address, phone number, location details and your message. The web server also records standard technical logs, such as IP address and time of request, for security and operation."],
-        ["Why we use it", "We use your details only to respond to your request, prepare quotations and follow up on the enquiry you started. We do not sell your information or use it for unrelated marketing."],
-        ["How it is handled", "Form submissions are sent by email to the MPMS office mailbox. Access is limited to staff who handle enquiries. We keep enquiries for as long as needed to respond and to meet our business and legal record-keeping obligations."],
-        ["Cookies", "This website does not use advertising or analytics cookies. Your language choice may be stored in your browser so the site opens in the same language next time."],
-        ["Your rights", "You can ask to see, correct or delete the personal information you sent us, in line with the Personal Data Protection Law of the Kingdom of Saudi Arabia. Contact us using the details on the contact page."]
+        [
+          "What we collect",
+          "When you use the contact form we receive the details you enter: your name, organization, email address, phone number, location details and your message. The web server also records standard technical logs, such as IP address and time of request, for security and operation."
+        ],
+        [
+          "Why we use it",
+          "We use your details only to respond to your request, prepare quotations and follow up on the enquiry you started. We do not sell your information or use it for unrelated marketing."
+        ],
+        [
+          "How it is handled",
+          "Form submissions are sent by email to the MPMS office mailbox. Access is limited to staff who handle enquiries. We keep enquiries for as long as needed to respond and to meet our business and legal record-keeping obligations."
+        ],
+        [
+          "Cookies",
+          "This website does not use advertising or analytics cookies. Your language choice may be stored in your browser so the site opens in the same language next time."
+        ],
+        [
+          "Your rights",
+          "You can ask to see, correct or delete the personal information you sent us, in line with the Personal Data Protection Law of the Kingdom of Saudi Arabia. Contact us using the details on the contact page."
+        ]
       ]
     },
-    "notfound": {"title": "Page not found | Modern Power Marine Services Co.", "h1": "Page not found", "p": "The page you requested does not exist or has moved.", "home": "Go to the home page"}
+    "notfound": {
+      "title": "Page not found | Modern Power Marine Services Co.",
+      "h1": "Page not found",
+      "p": "The page you requested does not exist or has moved.",
+      "home": "Go to the home page"
+    }
   },
   "ar": {
     "lang_name": "العربية",
@@ -174,7 +205,14 @@
     "skip": "انتقل إلى المحتوى الرئيسي",
     "menu": "القائمة",
     "close": "إغلاق",
-    "nav": {"home": "الرئيسية", "company": "الشركة", "services": "الخدمات", "projects": "المشاريع", "quality": "الجودة", "contact": "تواصل معنا"},
+    "nav": {
+      "home": "الرئيسية",
+      "company": "الشركة",
+      "services": "الخدمات",
+      "projects": "المشاريع",
+      "quality": "الجودة",
+      "contact": "تواصل معنا"
+    },
     "cta_quote": "طلب عرض سعر",
     "breadcrumb": "مسار التنقل",
     "footer_tagline": "صيانة وإصلاح وتوريد بحري. جدة، المملكة العربية السعودية.",
@@ -192,7 +230,6 @@
       "cta_services": "استعرض الخدمات",
       "facts_title": "حقائق عن الشركة",
       "fact_2000": "التأسيس في جدة مؤسسةً لتوريد قطع غيار السفن وصيانتها",
-      "fact_2012": "التوسّع إلى شركة الطاقة الحديثة للخدمات البحرية",
       "fact_hq_k": "جدة",
       "fact_hq": "المقر الرئيسي، برج النقيب براك، حي البغدادية الغربية",
       "services_k": "الخدمات",
@@ -205,13 +242,16 @@
       "clients_h": "جهات عملنا معها",
       "clients_p": "وفق مراجع المشاريع الواردة في الملف التعريفي للشركة (2023).",
       "band_h": "لديكم وسيطة بحرية أو مرفق أو احتياج توريد؟",
-      "band_p": "أرسلوا المواصفات أو وصفًا مختصرًا، وسنعود إليكم باستفسارات أو بعرض سعر."
+      "band_p": "أرسلوا المواصفات أو وصفًا مختصرًا، وسنعود إليكم باستفسارات أو بعرض سعر.",
+      "fact_agencies": "شركات مصنّعة نمثّلها في المملكة، منها وكالة حصرية للمصدّات البحرية ومعدات الموانئ",
+      "fact_cov_k": "نطاق العمل",
+      "agencies_h": "الشركات التي نمثّلها"
     },
     "company": {
       "title": "الشركة ونبذة تاريخية | شركة الطاقة الحديثة للخدمات البحرية",
       "description": "نبذة عن شركة الطاقة الحديثة للخدمات البحرية ورؤيتها ورسالتها وإدارتها، شركة خدمات بحرية مقرها جدة منذ عام 2000.",
       "h1": "الشركة",
-      "lede": "شركة سعودية للخدمات البحرية مقرها جدة، تخدم عملاء القطاعين الحكومي والخاص في مختلف مناطق المملكة.",
+      "lede": "شركة سعودية للخدمات البحرية مقرها جدة، تخدم عملاء القطاعين الحكومي والخاص على ساحلي البحر الأحمر والخليج العربي.",
       "history_h": "نبذة تاريخية",
       "history_2000": "بدأ نشاط الطاقة الحديثة في جدة مؤسسةً متخصصة في توريد قطع غيار السفن وصيانتها وتشغيلها.",
       "history_2012": "توسّع النشاط ليصبح شركة الطاقة الحديثة للخدمات البحرية، فأُضيفت الأعمال البحرية وتوريد الأنظمة وتوفير العمالة الفنية الماهرة إلى أنشطة الصيانة وتوريد قطع الغيار.",
@@ -221,8 +261,9 @@
       "objective": "الهدف",
       "leadership_h": "الإدارة",
       "agencies_h": "الوكالات",
-      "agencies_p": "الشركات المصنّعة التي تمثّلها الشركة في المملكة.",
-      "office_h": "المقر الرئيسي"
+      "agencies_p": "الشركات المصنّعة التي تمثّلها الشركة وكيلًا في المملكة.",
+      "office_h": "المقر الرئيسي",
+      "exclusive": "وكيل حصري"
     },
     "services": {
       "title": "الخدمات | شركة الطاقة الحديثة للخدمات البحرية",
@@ -243,7 +284,8 @@
       "next_h": "طلب عرض سعر",
       "next_p": "أرسلوا المواصفات أو المخططات أو وصفًا للعمل، مع موقع الوسيطة أو الموقع. وإذا كنتم تُعدّون منافسة، فأضيفوا رقمها وتاريخ إقفالها.",
       "next_btn": "اطلب عرض سعر لهذه الخدمة",
-      "other_h": "خدمات أخرى"
+      "other_h": "خدمات أخرى",
+      "photo_alt": "من أعمال الشركة: {title}"
     },
     "projects": {
       "title": "مراجع المشاريع | شركة الطاقة الحديثة للخدمات البحرية",
@@ -260,9 +302,9 @@
     },
     "quality": {
       "title": "الجودة والشهادات | شركة الطاقة الحديثة للخدمات البحرية",
-      "description": "شهادات أنظمة الإدارة وتصنيف شركة الطاقة الحديثة للخدمات البحرية، مع نطاق كل شهادة ومدة صلاحيتها.",
+      "description": "شهادات ISO 9001 و14001 و45001 و27001 و22301 و31000 وتصنيف المقاولين لشركة الطاقة الحديثة للخدمات البحرية.",
       "h1": "الجودة والشهادات",
-      "lede": "تعرض هذه الصفحة الشهادات والتصنيفات التي جرى التحقق منها للنشر، مع نطاقها ومدة صلاحيتها.",
+      "lede": "شهادات أنظمة الإدارة والتصنيف الحاصلة عليها الشركة، مع نطاق كل منها.",
       "col_standard": "المعيار",
       "col_scope": "النطاق",
       "col_issuer": "جهة الإصدار",
@@ -325,13 +367,33 @@
       "h1": "إشعار الخصوصية",
       "updated": "آخر تحديث",
       "body": [
-        ["البيانات التي نجمعها", "عند استخدام نموذج التواصل نتسلّم البيانات التي تدخلها: الاسم، والجهة، والبريد الإلكتروني، ورقم الهاتف، وبيانات الموقع، ونص رسالتك. كما يسجّل خادم الموقع سجلات تقنية معتادة، مثل عنوان IP ووقت الطلب، لأغراض الأمن والتشغيل."],
-        ["سبب استخدامها", "نستخدم بياناتك فقط للرد على طلبك وإعداد عروض الأسعار ومتابعة الاستفسار الذي بدأته. ولا نبيع بياناتك ولا نستخدمها في تسويق لا صلة له بطلبك."],
-        ["طريقة التعامل معها", "تُرسل طلبات النموذج بالبريد الإلكتروني إلى صندوق بريد مكتب الشركة، ويقتصر الاطلاع عليها على الموظفين المختصين بمعالجة الاستفسارات. ونحتفظ بالطلبات للمدة اللازمة للرد عليها والوفاء بمتطلبات حفظ السجلات النظامية والتجارية."],
-        ["ملفات تعريف الارتباط", "لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية أو تحليلية. وقد يُحفظ اختيارك للغة في متصفحك ليُفتح الموقع باللغة نفسها في زيارتك التالية."],
-        ["حقوقك", "يحق لك طلب الاطلاع على بياناتك الشخصية التي أرسلتها إلينا أو تصحيحها أو حذفها، وفقًا لنظام حماية البيانات الشخصية في المملكة العربية السعودية. تواصل معنا عبر البيانات الواردة في صفحة التواصل."]
+        [
+          "البيانات التي نجمعها",
+          "عند استخدام نموذج التواصل نتسلّم البيانات التي تدخلها: الاسم، والجهة، والبريد الإلكتروني، ورقم الهاتف، وبيانات الموقع، ونص رسالتك. كما يسجّل خادم الموقع سجلات تقنية معتادة، مثل عنوان IP ووقت الطلب، لأغراض الأمن والتشغيل."
+        ],
+        [
+          "سبب استخدامها",
+          "نستخدم بياناتك فقط للرد على طلبك وإعداد عروض الأسعار ومتابعة الاستفسار الذي بدأته. ولا نبيع بياناتك ولا نستخدمها في تسويق لا صلة له بطلبك."
+        ],
+        [
+          "طريقة التعامل معها",
+          "تُرسل طلبات النموذج بالبريد الإلكتروني إلى صندوق بريد مكتب الشركة، ويقتصر الاطلاع عليها على الموظفين المختصين بمعالجة الاستفسارات. ونحتفظ بالطلبات للمدة اللازمة للرد عليها والوفاء بمتطلبات حفظ السجلات النظامية والتجارية."
+        ],
+        [
+          "ملفات تعريف الارتباط",
+          "لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية أو تحليلية. وقد يُحفظ اختيارك للغة في متصفحك ليُفتح الموقع باللغة نفسها في زيارتك التالية."
+        ],
+        [
+          "حقوقك",
+          "يحق لك طلب الاطلاع على بياناتك الشخصية التي أرسلتها إلينا أو تصحيحها أو حذفها، وفقًا لنظام حماية البيانات الشخصية في المملكة العربية السعودية. تواصل معنا عبر البيانات الواردة في صفحة التواصل."
+        ]
       ]
     },
-    "notfound": {"title": "الصفحة غير موجودة | شركة الطاقة الحديثة للخدمات البحرية", "h1": "الصفحة غير موجودة", "p": "الصفحة المطلوبة غير موجودة أو نُقلت إلى عنوان آخر.", "home": "الانتقال إلى الصفحة الرئيسية"}
+    "notfound": {
+      "title": "الصفحة غير موجودة | شركة الطاقة الحديثة للخدمات البحرية",
+      "h1": "الصفحة غير موجودة",
+      "p": "الصفحة المطلوبة غير موجودة أو نُقلت إلى عنوان آخر.",
+      "home": "الانتقال إلى الصفحة الرئيسية"
+    }
   }
 }

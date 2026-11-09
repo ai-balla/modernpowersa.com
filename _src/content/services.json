@@ -7,7 +7,7 @@
       "order": 1,
       "icon": "vessel",
       "delivery": "direct",
-      "source": "Company profile 2023 (Vessel Services); ISO 22301/27001 scope 2023; project list",
+      "source": "Company profile 2023 (Vessel Services); ISO 22301/27001 scope 2023; project list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Vessel Maintenance and Repair",
@@ -19,7 +19,8 @@
           "Electrical repairs to shipboard systems and panels",
           "Hull repairs above and below the waterline",
           "Support during docking periods, including lifting arrangements",
-          "Maintenance of shipboard air conditioning and refrigeration"
+          "Maintenance of shipboard air conditioning and refrigeration",
+          "Drydocking of ships, tugs and boats"
         ],
         "deliverables": [
           "Inspection findings and a proposed scope of work",
@@ -37,14 +38,20 @@
           "الإصلاحات الكهربائية للمنظومات واللوحات على متن السفن",
           "إصلاح البدن فوق خط الماء وتحته",
           "المساندة خلال فترات التحويض، بما في ذلك ترتيبات الرفع",
-          "صيانة أنظمة التكييف والتبريد على متن السفن"
+          "صيانة أنظمة التكييف والتبريد على متن السفن",
+          "تحويض السفن وقاطرات السحب والزوارق"
         ],
         "deliverables": [
           "نتائج الفحص ونطاق عمل مقترح",
           "عرض سعر مفصّل وجدول زمني للنطاق المتفق عليه",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": [
+        "drydock-1",
+        "slipway-1",
+        "electrical-1"
+      ]
     },
     {
       "slug": "hull-steel-coatings",
@@ -52,7 +59,7 @@
       "order": 2,
       "icon": "weld",
       "delivery": "direct",
-      "source": "Company profile 2023 (services, organisation chart trades, work-sample pages); earlier profile services list",
+      "source": "Company profile 2023 (services, organisation chart trades, work-sample pages); earlier profile services list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Hull, Steelwork and Coatings",
@@ -62,7 +69,8 @@
           "Steel plate renewal and structural repairs",
           "Welding and fabrication of marine steelwork",
           "Abrasive blasting and surface preparation",
-          "Application of marine coating systems to hulls, decks and structures"
+          "Application of marine coating systems to hulls, decks and structures",
+          "Hull repairs in steel, aluminium and fibreglass"
         ],
         "deliverables": [
           "Survey of the affected areas and a proposed repair method",
@@ -78,14 +86,19 @@
           "تجديد الألواح الحديدية والإصلاحات الإنشائية",
           "لحام وتصنيع الأعمال الحديدية البحرية",
           "السفع الرملي وتجهيز الأسطح",
-          "تطبيق أنظمة الطلاء البحري على الأبدان والأسطح والمنشآت"
+          "تطبيق أنظمة الطلاء البحري على الأبدان والأسطح والمنشآت",
+          "إصلاح الأبدان الحديدية والألمنيوم والألياف الزجاجية"
         ],
         "deliverables": [
           "معاينة المناطق المتضررة وطريقة إصلاح مقترحة",
           "عرض سعر مفصّل حسب المنطقة والكمية",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": [
+        "hull-1",
+        "blasting-1"
+      ]
     },
     {
       "slug": "engines-generators-propulsion",
@@ -93,7 +106,7 @@
       "order": 3,
       "icon": "engine",
       "delivery": "direct",
-      "source": "Company profile 2023 (Vessel Services: marine engines and generators; Supplies: spare parts); ISO scope 2023; project list",
+      "source": "Company profile 2023 (Vessel Services: marine engines and generators; Supplies: spare parts); ISO scope 2023; project list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Engines, Generators and Propulsion",
@@ -103,7 +116,10 @@
           "Inspection and repair of marine and industrial generators",
           "Maintenance of main and auxiliary diesel engines",
           "Gearbox and transmission repairs",
-          "Supply of engine and generator spare parts"
+          "Supply of engine and generator spare parts",
+          "Engine and generator overhauls from 10 kW to 3,000 kW",
+          "Diesel injector repair",
+          "SCHOTTEL propulsion systems, as authorised agent"
         ],
         "deliverables": [
           "Inspection findings and a list of required parts",
@@ -119,14 +135,22 @@
           "فحص وإصلاح المولدات البحرية والصناعية",
           "صيانة محركات الديزل الرئيسية والمساعدة",
           "إصلاح صناديق التروس ونواقل الحركة",
-          "توريد قطع غيار المحركات والمولدات"
+          "توريد قطع غيار المحركات والمولدات",
+          "عَمرة المحركات والمولدات من 10 كيلوواط حتى 3,000 كيلوواط",
+          "إصلاح بخاخات حقن الديزل",
+          "أنظمة الدفع من SCHOTTEL بصفتنا الوكيل المعتمد"
         ],
         "deliverables": [
           "نتائج الفحص وقائمة بقطع الغيار المطلوبة",
           "عرض سعر مفصّل للعمالة وقطع الغيار",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": [
+        "engine-2",
+        "engine-3",
+        "engine-1"
+      ]
     },
     {
       "slug": "berths-fenders-marine-facilities",
@@ -134,7 +158,7 @@
       "order": 4,
       "icon": "berth",
       "delivery": "direct-and-partners",
-      "source": "Company profile 2023 (Marine Works); ISO scope 2023 (fenders, port and marine facilities); project list",
+      "source": "Company profile 2023 (Marine Works); ISO scope 2023 (fenders, port and marine facilities); project list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Berths, Fenders and Marine Facilities",
@@ -146,7 +170,8 @@
           "Manufacture, supply and installation of marine fenders",
           "Supply, installation and maintenance of marine navigation marks",
           "Replacement and maintenance of fuel unloading arms at marine berths",
-          "Marine survey and underwater works"
+          "Marine survey and underwater works",
+          "Rubber and Azobé hardwood fenders, dock airbags, marine hoses and mooring equipment from the manufacturers we represent"
         ],
         "deliverables": [
           "Site inspection and a proposed scope of work",
@@ -164,14 +189,21 @@
           "تصنيع وتوريد وتركيب المصدّات البحرية",
           "توريد وتركيب وصيانة العلامات الملاحية البحرية",
           "استبدال وصيانة أذرع تفريغ الوقود في الأرصفة البحرية",
-          "أعمال المسح البحري والأعمال تحت الماء"
+          "أعمال المسح البحري والأعمال تحت الماء",
+          "المصدّات المطاطية ومصدّات خشب الأزوبي، والوسائد الهوائية للأرصفة، والخراطيم البحرية، ومعدات الإرساء من الشركات المصنّعة التي نمثّلها"
         ],
         "deliverables": [
           "معاينة الموقع ونطاق عمل مقترح",
           "عرض سعر مفصّل، يشمل مواصفات المعدات عند التوريد",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": [
+        "fenders-1",
+        "fenders-2",
+        "berth-1",
+        "survey-1"
+      ]
     },
     {
       "slug": "firefighting-systems",
@@ -179,7 +211,7 @@
       "order": 5,
       "icon": "fire",
       "delivery": "direct-and-partners",
-      "source": "Company profile 2023 (Firefighting Systems for Ships and Safety); ISO scope 2023 (supply and maintenance of fire fighting systems)",
+      "source": "Company profile 2023 (Firefighting Systems for Ships and Safety); ISO scope 2023 (supply and maintenance of fire fighting systems); brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Marine Firefighting and Safety Systems",
@@ -188,7 +220,8 @@
         "scope": [
           "Supply and installation of firefighting systems for vessels and marine facilities",
           "Maintenance of installed firefighting systems",
-          "Supply of marine safety equipment for boats and ships"
+          "Supply of marine safety equipment for boats and ships",
+          "HI-FOG high-pressure water-mist systems, as authorised agent"
         ],
         "deliverables": [
           "Review of the vessel or facility requirement",
@@ -203,14 +236,18 @@
         "scope": [
           "توريد وتركيب أنظمة مكافحة الحرائق للوسائط والمرافق البحرية",
           "صيانة أنظمة مكافحة الحرائق القائمة",
-          "توريد معدات السلامة البحرية للزوارق والسفن"
+          "توريد معدات السلامة البحرية للزوارق والسفن",
+          "أنظمة HI-FOG للرذاذ المائي عالي الضغط بصفتنا الوكيل المعتمد"
         ],
         "deliverables": [
           "دراسة متطلبات الوسيطة أو المرفق",
           "عرض سعر مفصّل مع مواصفات الأنظمة والمعدات",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": [
+        "safety-1"
+      ]
     },
     {
       "slug": "water-desalination-systems",
@@ -218,7 +255,7 @@
       "order": 6,
       "icon": "water",
       "delivery": "direct-and-partners",
-      "source": "Company profile 2023 (Water Desalination Systems); ISO scope 2023 (water technology equipment)",
+      "source": "Company profile 2023 (Water Desalination Systems); ISO scope 2023 (water technology equipment); brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Water Desalination Systems",
@@ -249,7 +286,8 @@
           "عرض سعر مفصّل مع مواصفات الوحدات",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": []
     },
     {
       "slug": "air-conditioning-ventilation",
@@ -257,7 +295,7 @@
       "order": 7,
       "icon": "hvac",
       "delivery": "direct",
-      "source": "Company profile 2023 (Air Conditioning and Ventilation Systems); project list",
+      "source": "Company profile 2023 (Air Conditioning and Ventilation Systems); project list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Air Conditioning and Ventilation",
@@ -290,7 +328,8 @@
           "عرض سعر مفصّل مع مواصفات المعدات",
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
-      }
+      },
+      "images": []
     },
     {
       "slug": "equipment-spare-parts",
@@ -298,7 +337,7 @@
       "order": 8,
       "icon": "crane",
       "delivery": "supply",
-      "source": "Company profile 2023 (Supplies); ISO scope 2023; project list",
+      "source": "Company profile 2023 (Supplies); ISO scope 2023; project list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Equipment and Spare Parts Supply",
@@ -310,7 +349,9 @@
           "Fuel unloading arms for marine berths",
           "Generators, and engine and generator spare parts",
           "Navigation equipment and marine safety equipment",
-          "Boats and marine craft through boat-builder partners"
+          "Boats and marine craft through boat-builder partners",
+          "Crane and equipment rental",
+          "Navigation radar supply and installation"
         ],
         "deliverables": [
           "Technical and commercial offer against the purchaser's specification",
@@ -328,14 +369,17 @@
           "أذرع تفريغ الوقود في الأرصفة البحرية",
           "المولدات الكهربائية وقطع غيار المحركات والمولدات",
           "الأجهزة الملاحية ومعدات السلامة البحرية",
-          "بناء القوارب والزوارق البحرية عبر شركاء متخصصين"
+          "بناء القوارب والزوارق البحرية عبر شركاء متخصصين",
+          "تأجير الرافعات والمعدات",
+          "توريد وتركيب الرادارات الملاحية"
         ],
         "deliverables": [
           "عرض فني ومالي وفق مواصفات الجهة المشترية",
           "التسليم في الموقع وفق الشروط المتفق عليها",
           "التركيب والتشغيل عند تضمينهما في نطاق العمل"
         ]
-      }
+      },
+      "images": []
     },
     {
       "slug": "technical-manpower",
@@ -343,7 +387,7 @@
       "order": 9,
       "icon": "crew",
       "delivery": "direct",
-      "source": "Company profile 2023 (Skilled Manpower Supply); project list",
+      "source": "Company profile 2023 (Skilled Manpower Supply); project list; brief profile 2026",
       "reviewed": "2026-11-09",
       "en": {
         "title": "Skilled Technical Manpower",
@@ -376,7 +420,8 @@
           "الأسعار وشروط التعبئة",
           "مباشرة العمل للمدة المتفق عليها"
         ]
-      }
+      },
+      "images": []
     }
   ]
 }

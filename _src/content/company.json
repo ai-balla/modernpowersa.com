@@ -31,16 +31,70 @@
       "country": "المملكة العربية السعودية"
     },
     "maps_query": "Captain Barrak Tower, Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah, Jeddah",
-    "schema": {"streetAddress": "Captain Barrak Tower, 4th Floor, Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah", "addressLocality": "Jeddah", "postalCode": "22231", "addressCountry": "SA"}
+    "schema": {
+      "streetAddress": "Captain Barrak Tower, 4th Floor, Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah",
+      "addressLocality": "Jeddah",
+      "postalCode": "22231",
+      "addressCountry": "SA"
+    }
   },
   "phones": [
-    {"label_en": "Main office", "label_ar": "المكتب الرئيسي", "display": "+966 12 603 8043", "tel": "+966126038043", "status": "published", "source": "Old website, new website, company profile (consistent)"},
-    {"label_en": "Fax", "label_ar": "فاكس", "display": "+966 12 603 8044", "tel": "", "status": "draft", "source": "Old website 2026 and earlier profile; confirm still in use"}
+    {
+      "label_en": "Main office",
+      "label_ar": "المكتب الرئيسي",
+      "display": "+966 12 603 8042",
+      "tel": "+966126038042",
+      "status": "published",
+      "source": "Brief profile 2026; staff email signatures; profile 2023"
+    },
+    {
+      "label_en": "Office",
+      "label_ar": "المكتب",
+      "display": "+966 12 603 8049",
+      "tel": "+966126038049",
+      "status": "published",
+      "source": "Brief profile 2026"
+    },
+    {
+      "label_en": "Office (previous website)",
+      "label_ar": "المكتب",
+      "display": "+966 12 603 8043",
+      "tel": "+966126038043",
+      "status": "draft",
+      "source": "Old and previous new site; not in brief profile 2026 — confirm"
+    },
+    {
+      "label_en": "Fax",
+      "label_ar": "فاكس",
+      "display": "+966 12 603 8044",
+      "tel": "",
+      "status": "published",
+      "source": "Brief profile 2026 (8044 / 8048)"
+    }
   ],
   "emails": [
-    {"label_en": "General enquiries", "label_ar": "الاستفسارات العامة", "address": "info@modernpowermarine.com", "status": "published", "source": "Old site, new site, profile (profile has a typo 'modernpowerarine')", "note": "Confirm which mailbox should be public after the domain move"},
-    {"label_en": "Sales and quotations", "label_ar": "المبيعات وعروض الأسعار", "address": "sales@modernpowermarine.com", "status": "published", "source": "Old site, new site, profile 2023"},
-    {"label_en": "Contracts", "label_ar": "العقود", "address": "contracts@modernpowermarine.com", "status": "draft", "source": "Profile 2023 only"}
+    {
+      "label_en": "General enquiries",
+      "label_ar": "الاستفسارات العامة",
+      "address": "info@modernpowermarine.com",
+      "status": "published",
+      "source": "Old site, new site, profile (profile has a typo 'modernpowerarine')",
+      "note": "Confirm which mailbox should be public after the domain move"
+    },
+    {
+      "label_en": "Sales and quotations",
+      "label_ar": "المبيعات وعروض الأسعار",
+      "address": "sales@modernpowermarine.com",
+      "status": "published",
+      "source": "Old site, new site, profile 2023"
+    },
+    {
+      "label_en": "Contracts",
+      "label_ar": "العقود",
+      "address": "contracts@modernpowermarine.com",
+      "status": "published",
+      "source": "Brief profile 2026; profile 2023"
+    }
   ],
   "hours": {
     "status": "draft",
@@ -48,10 +102,36 @@
     "en": "Sunday to Thursday, 8:00 am to 5:00 pm",
     "ar": "الأحد إلى الخميس، من 8:00 صباحًا إلى 5:00 مساءً"
   },
-  "whatsapp": {"status": "draft", "number": "", "source": "No confirmed number"},
+  "whatsapp": {
+    "status": "draft",
+    "number": "",
+    "source": "No confirmed number"
+  },
   "leadership": [
-    {"status": "published", "source": "Old site home + bio page, new site, profile org chart", "en": {"name": "Eng. Mohamed Jazzar", "role": "Chairman and Founder"}, "ar": {"name": "المهندس محمد جزار", "role": "رئيس مجلس الإدارة والمؤسس"}},
-    {"status": "published", "source": "Old site home + bio page, new site", "en": {"name": "Abdulaziz Jazzar", "role": "General Manager"}, "ar": {"name": "عبدالعزيز جزار", "role": "المدير العام"}}
+    {
+      "status": "published",
+      "source": "Old site home + bio page, new site, profile org chart",
+      "en": {
+        "name": "Eng. Mohamed Jazzar",
+        "role": "Chairman and Founder"
+      },
+      "ar": {
+        "name": "المهندس محمد جزار",
+        "role": "رئيس مجلس الإدارة والمؤسس"
+      }
+    },
+    {
+      "status": "published",
+      "source": "Old site home + bio page, new site",
+      "en": {
+        "name": "Abdulaziz Jazzar",
+        "role": "General Manager"
+      },
+      "ar": {
+        "name": "عبدالعزيز جزار",
+        "role": "المدير العام"
+      }
+    }
   ],
   "statements": {
     "status": "published",
@@ -68,5 +148,46 @@
       "en": "To provide marine services and maintenance for local and international vessels to high quality standards, while building the name and reputation of a Saudi company in the national and international maritime community.",
       "ar": "تقديم الخدمات البحرية وصيانة السفن المحلية والدولية بمعايير جودة عالية، مع بناء اسم وسمعة كيان سعودي في المجال البحري والمجتمع البحري الدولي."
     }
-  }
+  },
+  "registration": {
+    "status": "published",
+    "source": "CR certificate 2026; VAT certificate; Chamber certificate 2026",
+    "cr": "4030129967",
+    "unified": "7001720791",
+    "vat": "300593364900003",
+    "en": {
+      "cr": "Commercial Registration",
+      "unified": "Unified No.",
+      "vat": "VAT No."
+    },
+    "ar": {
+      "cr": "السجل التجاري",
+      "unified": "الرقم الموحد",
+      "vat": "الرقم الضريبي"
+    }
+  },
+  "coverage": {
+    "status": "published",
+    "source": "Brief profile 2026",
+    "en": "Red Sea and Arabian Gulf coasts",
+    "ar": "ساحلا البحر الأحمر والخليج العربي"
+  },
+  "social": [
+    {
+      "id": "linkedin",
+      "status": "published",
+      "url": "https://www.linkedin.com/company/modern-power-marine-services",
+      "label_en": "LinkedIn",
+      "label_ar": "لينكدإن",
+      "source": "Old website footer"
+    },
+    {
+      "id": "facebook",
+      "status": "draft",
+      "url": "https://www.facebook.com/pages/category/Non-Governmental-Organization--NGO-/Modern-Power-Marine-Services-Co-2057824877828823/",
+      "label_en": "Facebook",
+      "label_ar": "فيسبوك",
+      "source": "Old website footer; page category shows NGO — confirm it is maintained"
+    }
+  ]
 }

@@ -1,34 +1,212 @@
 {
   "_about": "Organizations with their relationship to MPMS. relationship: client-historical | client-current | agency | supplier | partner. Logos are NOT shown unless 'logo' is set and status is published (needs permission).",
   "items": [
-    {"id": "rsnf", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list",
-     "en": {"name": "Royal Saudi Naval Forces"}, "ar": {"name": "القوات البحرية الملكية السعودية"}},
-    {"id": "swcc", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list (purchase order numbers given)",
-     "en": {"name": "Saline Water Conversion Corporation (SWCC)"}, "ar": {"name": "المؤسسة العامة لتحلية المياه المالحة"}},
-    {"id": "naval-group", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list ('DCNS (French)')",
-     "en": {"name": "Naval Group (formerly DCNS)"}, "ar": {"name": "مجموعة نافال (DCNS سابقًا)"}},
-    {"id": "aramco", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list",
-     "en": {"name": "Saudi Aramco"}, "ar": {"name": "أرامكو السعودية"}},
-    {"id": "maaden", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list; projects.xlsx",
-     "en": {"name": "Ma'aden Bauxite and Alumina Company"}, "ar": {"name": "شركة معادن للبوكسايت والألومينا"}},
-    {"id": "khomasia", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list; projects.xlsx",
-     "en": {"name": "Al Khomasia Shipping and Maintenance Co. (Al Bakri Group)"}, "ar": {"name": "شركة الخماسية للملاحة والصيانة (مجموعة شركات البكري)"}},
-    {"id": "samref", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list",
-     "en": {"name": "Saudi Aramco Mobil Refinery Company (SAMREF)"}, "ar": {"name": "شركة مصفاة أرامكو السعودية موبيل المحدودة (سامرف)"}},
-    {"id": "masdar-bahri", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list; projects.xlsx",
-     "en": {"name": "Al Masdar Al Bahri Est."}, "ar": {"name": "مؤسسة المصدر البحري"}},
-    {"id": "kaust", "relationship": "client-historical", "status": "published", "source": "Profile 2023 project list",
-     "en": {"name": "King Abdullah University of Science and Technology (KAUST)"}, "ar": {"name": "جامعة الملك عبدالله للعلوم والتقنية (كاوست)"}},
-    {"id": "swa", "relationship": "client-current", "status": "draft", "source": "Current contract; publication permission needed",
-     "en": {"name": "Saudi Water Authority"}, "ar": {"name": "الهيئة السعودية للمياه"}},
-
-    {"id": "schottel", "relationship": "agency", "status": "draft", "source": "Profile 2023 agencies page. Historical; confirm the agreement is current.",
-     "en": {"name": "SCHOTTEL", "description": "Propulsion and manoeuvring systems (Germany)"}, "ar": {"name": "SCHOTTEL", "description": "أنظمة الدفع والمناورة (ألمانيا)"}},
-    {"id": "taihong", "relationship": "agency", "status": "draft", "source": "Profile 2023 agencies page. Historical; confirm.",
-     "en": {"name": "Yantai TaiHong Rubber Co., Ltd.", "description": "Marine fenders (China)"}, "ar": {"name": "Yantai TaiHong Rubber Co., Ltd.", "description": "المصدّات البحرية (الصين)"}},
-    {"id": "hi-fog", "relationship": "agency", "status": "draft", "source": "Profile 2023 agencies page. Historical; confirm.",
-     "en": {"name": "HI-FOG (Marioff)", "description": "Water-mist firefighting systems for ships and buildings (Finland)"}, "ar": {"name": "HI-FOG (Marioff)", "description": "أنظمة مكافحة الحرائق بالرذاذ المائي للسفن والمباني (فنلندا)"}},
-    {"id": "abc", "relationship": "agency", "status": "withdrawn", "source": "Profile 2023 lists ABC as an agency. Withdrawn by management decision; do not publish.",
-     "en": {"name": "Anglo Belgian Corporation (ABC)"}, "ar": {"name": "Anglo Belgian Corporation (ABC)"}}
+    {
+      "id": "rsnf",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list",
+      "en": {
+        "name": "Royal Saudi Naval Forces"
+      },
+      "ar": {
+        "name": "القوات البحرية الملكية السعودية"
+      }
+    },
+    {
+      "id": "swcc",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list (purchase order numbers given)",
+      "en": {
+        "name": "Saline Water Conversion Corporation (SWCC)"
+      },
+      "ar": {
+        "name": "المؤسسة العامة لتحلية المياه المالحة"
+      }
+    },
+    {
+      "id": "naval-group",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list ('DCNS (French)')",
+      "en": {
+        "name": "Naval Group (formerly DCNS)"
+      },
+      "ar": {
+        "name": "مجموعة نافال (DCNS سابقًا)"
+      }
+    },
+    {
+      "id": "aramco",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list",
+      "en": {
+        "name": "Saudi Aramco"
+      },
+      "ar": {
+        "name": "أرامكو السعودية"
+      }
+    },
+    {
+      "id": "maaden",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list; projects.xlsx",
+      "en": {
+        "name": "Ma'aden Bauxite and Alumina Company"
+      },
+      "ar": {
+        "name": "شركة معادن للبوكسايت والألومينا"
+      }
+    },
+    {
+      "id": "khomasia",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list; projects.xlsx",
+      "en": {
+        "name": "Al Khomasia Shipping and Maintenance Co. (Al Bakri Group)"
+      },
+      "ar": {
+        "name": "شركة الخماسية للملاحة والصيانة (مجموعة شركات البكري)"
+      }
+    },
+    {
+      "id": "samref",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list",
+      "en": {
+        "name": "Saudi Aramco Mobil Refinery Company (SAMREF)"
+      },
+      "ar": {
+        "name": "شركة مصفاة أرامكو السعودية موبيل المحدودة (سامرف)"
+      }
+    },
+    {
+      "id": "masdar-bahri",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list; projects.xlsx",
+      "en": {
+        "name": "Al Masdar Al Bahri Est."
+      },
+      "ar": {
+        "name": "مؤسسة المصدر البحري"
+      }
+    },
+    {
+      "id": "kaust",
+      "relationship": "client-historical",
+      "status": "published",
+      "source": "Profile 2023 project list",
+      "en": {
+        "name": "King Abdullah University of Science and Technology (KAUST)"
+      },
+      "ar": {
+        "name": "جامعة الملك عبدالله للعلوم والتقنية (كاوست)"
+      }
+    },
+    {
+      "id": "swa",
+      "relationship": "client-current",
+      "status": "draft",
+      "source": "Current contract; publication permission needed",
+      "en": {
+        "name": "Saudi Water Authority"
+      },
+      "ar": {
+        "name": "الهيئة السعودية للمياه"
+      }
+    },
+    {
+      "id": "abc",
+      "relationship": "agency",
+      "status": "withdrawn",
+      "source": "No longer an agency (owner, 9 Nov 2026). Do not publish.",
+      "en": {
+        "name": "Anglo Belgian Corporation (ABC)"
+      },
+      "ar": {
+        "name": "Anglo Belgian Corporation (ABC)"
+      }
+    },
+    {
+      "id": "hongruntong",
+      "relationship": "agency",
+      "status": "published",
+      "exclusive": true,
+      "source": "mpms files/Sole Agency Certificate - HM (3).pdf (No. 0921-MPMS-HONGRUNTONG, 21 Sep 2026, 1 year)",
+      "en": {
+        "name": "Hongruntong Marine Co., Ltd.",
+        "description": "Exclusive agent in Saudi Arabia for marine and port equipment: dock rubber fenders and airbags, marine oil and dredge hoses, mooring equipment (China)"
+      },
+      "ar": {
+        "name": "Hongruntong Marine Co., Ltd.",
+        "description": "الوكيل الحصري في المملكة لمعدات الموانئ والمعدات البحرية: المصدّات المطاطية للأرصفة والوسائد الهوائية، وخراطيم الزيت والتجريف البحرية، ومعدات الإرساء (الصين)"
+      }
+    },
+    {
+      "id": "taihong",
+      "relationship": "agency",
+      "status": "published",
+      "source": "Internal agency list (M. Mohamed, 27 Sep 2026); profile 2023",
+      "en": {
+        "name": "Yantai TaiHong Rubber Co., Ltd.",
+        "description": "Marine fenders (China)"
+      },
+      "ar": {
+        "name": "Yantai TaiHong Rubber Co., Ltd.",
+        "description": "المصدّات البحرية (الصين)"
+      },
+      "exclusive": false
+    },
+    {
+      "id": "sunhelm",
+      "relationship": "agency",
+      "status": "published",
+      "source": "Internal agency list (M. Mohamed, 27 Sep 2026)",
+      "en": {
+        "name": "Sunhelm",
+        "description": "Marine fenders"
+      },
+      "ar": {
+        "name": "Sunhelm",
+        "description": "المصدّات البحرية"
+      },
+      "exclusive": false
+    },
+    {
+      "id": "schottel",
+      "relationship": "agency",
+      "status": "published",
+      "source": "Internal agency list (27 Sep 2026); brief profile 2026; profile 2023",
+      "en": {
+        "name": "SCHOTTEL GmbH",
+        "description": "Propellers and marine propulsion systems (Germany)"
+      },
+      "ar": {
+        "name": "SCHOTTEL GmbH",
+        "description": "الرفاصات وأنظمة الدفع البحري (ألمانيا)"
+      },
+      "exclusive": false
+    },
+    {
+      "id": "hi-fog",
+      "relationship": "agency",
+      "status": "published",
+      "source": "Internal agency list (27 Sep 2026); brief profile 2026; profile 2023",
+      "en": {
+        "name": "HI-FOG",
+        "description": "High-pressure water-mist firefighting systems for ships and buildings (Finland)"
+      },
+      "ar": {
+        "name": "HI-FOG",
+        "description": "أنظمة مكافحة الحرائق بالرذاذ المائي عالي الضغط للسفن والمباني (فنلندا)"
+      },
+      "exclusive": false
+    }
   ]
 }

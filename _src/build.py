@@ -60,7 +60,9 @@ services_all = load("services.json")["items"]
 projects_doc = load("projects.json")
 projects_all = projects_doc["items"]
 orgs_all = load("organizations.json")["items"]
-certs_all = load("certifications.json")["items"]
+_certs_doc = load("certifications.json")
+certs_all = _certs_doc["items"]
+CERT_DISPLAY = {"show_dates": True, "show_numbers": True, "hide_expired": True, **_certs_doc.get("display", {})}
 downloads_all = load("downloads.json")["items"]
 T = load("pages.json")
 SITE = company["site_url"].rstrip("/")
@@ -133,10 +135,10 @@ for c in certs_all:
     if not visible(c):
         continue
     if c["status"] == "published":
-        if not c.get("expiry"):
+        if CERT_DISPLAY["hide_expired"] and not c.get("expiry"):
             fail(f"certification {c['id']}: published certificates need an expiry date")
             continue
-        if dt.date.fromisoformat(c["expiry"]) < TODAY:
+        if CERT_DISPLAY["hide_expired"] and dt.date.fromisoformat(c["expiry"]) < TODAY:
             print(f"NOTE: certification {c['id']} expired on {c['expiry']} and is hidden. Update or unpublish it.")
             continue
     certs.append(c)
@@ -267,6 +269,8 @@ def head(lang, path, title, desc, extra_ld=None, noindex=False):
         "telephone": [p["tel"] for p in company["phones"] if p["status"] == "published" and p["tel"]],
         "email": [m["address"] for m in company["emails"] if m["status"] == "published"],
         "foundingDate": "2000", "foundingLocation": "Jeddah, Saudi Arabia",
+        "vatID": company.get("registration", {}).get("vat", ""),
+        "sameAs": [s["url"] for s in company.get("social", []) if s["status"] == "published"],
     }] if path == "" else []
     if extra_ld:
         ld.append(extra_ld)
@@ -337,6 +341,14 @@ def header(lang, path):
 </header>"""
 
 
+def registration(lang):
+    r = company.get("registration")
+    if not r or not visible(r):
+        return ""
+    L = r[lang]
+    return (f'<p class="reg">{e(L["cr"])} {ltr(r["cr"])} · {e(L["unified"])} {ltr(r["unified"])} · {e(L["vat"])} {ltr(r["vat"])}</p>')
+
+
 def footer(lang):
     t = T[lang]
     links = "".join(f'<li><a href="{url(lang, p)}">{e(t["nav"][k])}</a></li>' for p, k in NAV)
@@ -348,12 +360,13 @@ def footer(lang):
       <img src="/assets/img/logo-white.png" width="200" height="73" alt="">
       <p class="foot-name">{e(company['name'][lang])}</p>
       <p>{e(t['footer_tagline'])}</p>
+      {social_links(lang)}
     </div>
     <div><h2 class="foot-h">{e(t['footer_pages'])}</h2><ul class="foot-list">{links}</ul></div>
     <div><h2 class="foot-h">{e(t['footer_contact'])}</h2><ul class="foot-list">{contact}</ul>
       <address class="foot-addr">{address_html(lang)}</address></div>
   </div>
-  <div class="wrap foot-legal"><p>© {TODAY.year} {e(company['name'][lang])}. {e(t['rights'])}</p></div>
+  <div class="wrap foot-legal"><p>© {TODAY.year} {e(company['name'][lang])}. {e(t['rights'])}</p>{registration(lang)}</div>
 </footer>
 <script src="/assets/js/site.js?v={ASSET_VERSION}" defer></script>
 </body>
@@ -425,6 +438,46 @@ def project_rows(lang, items, show_service=True):
     return "".join(rows)
 
 
+def agency_list(lang, cls="agencies"):
+    if not agencies:
+        return ""
+    t = T[lang]
+    lis = "".join(
+        f'<li class="agency"><p class="agency-name" lang="en" dir="ltr">{e(a[lang]["name"])}</p>'
+        + (f'<p class="badge">{e(t["company"]["exclusive"])}</p>' if a.get("exclusive") else "")
+        + f'<p>{e(a[lang].get("description", ""))}{draft_mark(a, lang)}</p></li>'
+        for a in sorted(agencies, key=lambda a: not a.get("exclusive")))
+    return f'<ul class="{cls}">{lis}</ul>'
+
+
+def social_links(lang):
+    out = []
+    for s in company.get("social", []):
+        if visible(s):
+            label = s["label_" + lang]
+            out.append(f'<li><a class="social" href="{e(s["url"])}" rel="noopener me" target="_blank" aria-label="{e(label)}">'
+                       f'{SOCIAL_ICONS.get(s["id"], "")}<span>{e(label)}</span></a>{draft_mark(s, lang)}</li>')
+    return f'<ul class="socials">{"".join(out)}</ul>' if out else ""
+
+
+SOCIAL_ICONS = {
+    "linkedin": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>',
+    "facebook": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>',
+    "x": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg>',
+    "instagram": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 2c-2.7 0-3 0-4.1.1C4.4 2.2 2.2 4.4 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.5 2.3 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.5-.1 5.7-2.3 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.5-2.3-5.7-5.8-5.8C15 2 14.7 2 12 2z"/></svg>',
+    "youtube": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.5 12a31 31 0 00.5 4.8 3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1 31 31 0 00.5-4.8 31 31 0 00-.5-4.8zM9.8 15.1V8.9l5.4 3.1z"/></svg>',
+}
+
+
+def gallery(lang, s):
+    if not s.get("images"):
+        return ""
+    alt = T[lang]["services"]["photo_alt"].format(title=s[lang]["title"])
+    figs = "".join(f'<figure><img src="/assets/img/work/{e(i)}.jpg" alt="{e(alt)}" width="960" height="720" loading="lazy" decoding="async"></figure>'
+                   for i in s["images"])
+    return f'<div class="gallery g{min(len(s["images"]), 4)}">{figs}</div>'
+
+
 def build_home(lang):
     t = T[lang]
     h = t["home"]
@@ -447,7 +500,8 @@ def build_home(lang):
 
 <section class="facts" aria-label="{e(h['facts_title'])}"><div class="wrap"><dl class="facts-grid">
   <div><dt>{ltr('2000')}</dt><dd>{e(h['fact_2000'])}</dd></div>
-  <div><dt>{ltr('2012')}</dt><dd>{e(h['fact_2012'])}</dd></div>
+  <div><dt>{ltr(str(len(agencies)))}</dt><dd>{e(h['fact_agencies'])}</dd></div>
+  <div><dt>{e(h['fact_cov_k'])}</dt><dd>{e(company['coverage'][lang])}</dd></div>
   <div><dt>{e(h['fact_hq_k'])}</dt><dd>{e(h['fact_hq'])}</dd></div>
 </dl></div></section>
 
@@ -468,6 +522,10 @@ def build_home(lang):
   <div class="sec-head"><h2>{e(h['clients_h'])}</h2><p>{e(h['clients_p'])}</p></div>
   <ul class="clients">{client_list}</ul>
 </div></section>
+<section class="section alt"><div class="wrap">
+  <div class="sec-head"><p class="kicker">{e(t['company']['agencies_h'])}</p><h2>{e(h['agencies_h'])}</h2><p>{e(t['company']['agencies_p'])}</p></div>
+  {agency_list(lang)}
+</div></section>
 {cta_band(lang)}
 </main>
 {footer(lang)}"""
@@ -484,9 +542,7 @@ def build_company(lang):
     ag = ""
     if agencies:
         ag = (f'<section class="section alt"><div class="wrap"><div class="sec-head"><h2>{e(c["agencies_h"])}</h2><p>{e(c["agencies_p"])}</p></div>'
-              '<ul class="cards3">' + "".join(
-                  f'<li class="card"><h3 lang="en" dir="ltr">{e(a[lang]["name"])}</h3>{draft_mark(a, lang)}<p>{e(a[lang].get("description", ""))}</p></li>'
-                  for a in agencies) + "</ul></div></section>")
+              f'{agency_list(lang)}</div></section>')
     body = f"""{head(lang, 'company/', c['title'], c['description'], ld)}
 {header(lang, 'company/')}
 <main id="main">
@@ -553,7 +609,7 @@ def build_services(lang):
 <main id="main">
 <section class="page-hero"><div class="wrap">{cr}<p class="kicker">{s['order']:02d} · {e(t['nav']['services'])}</p>
   <h1>{e(d['title'])}{draft_mark(s, lang)}</h1><p class="lede">{e(d['intro'])}</p></div></section>
-<section class="section"><div class="wrap detail">
+<section class="section"><div class="wrap">{gallery(lang, s)}</div><div class="wrap detail">
   <div class="detail-main">
     <h2>{e(s_['scope_h'])}</h2>
     <ul class="ticks">{''.join(f'<li>{e(x)}</li>' for x in d['scope'])}</ul>
@@ -616,15 +672,20 @@ def build_quality(lang):
             if c["standard"]:
                 return f'<tr><th scope="row">{ltr(c["standard"])}{draft_mark(c, lang)}<span class="sub">{e(c[lang]["name"])}</span></th>'
             return f'<tr><th scope="row">{e(c[lang]["name"])}{draft_mark(c, lang)}</th>'
-        rows = "".join(
-            first_cell(c) +
-            f'<td>{e(c[lang]["scope"])}</td><td>{ltr(c["issuer"]) if c["issuer"] else ""}</td>'
-            f'<td>{ltr(c["number"]) if c["number"] else ""}</td><td>{fmt_date(c["expiry"], lang)}'
-            + (f' <a href="{e(c["file"])}">{e(q["view"])}</a>' if c.get("file") and c["status"] == "published" else "")
-            + "</td></tr>" for c in certs)
-        table = (f'<div class="table-wrap"><table class="ledger"><caption class="sr-only">{e(q["h1"])}</caption><thead><tr>'
-                 f'<th scope="col">{e(q["col_standard"])}</th><th scope="col">{e(q["col_scope"])}</th><th scope="col">{e(q["col_issuer"])}</th>'
-                 f'<th scope="col">{e(q["col_number"])}</th><th scope="col">{e(q["col_valid"])}</th></tr></thead><tbody>{rows}</tbody></table></div>')
+        sn, sd = CERT_DISPLAY["show_numbers"], CERT_DISPLAY["show_dates"]
+
+        def other_cells(c):
+            cells = f'<td>{e(c[lang]["scope"])}</td><td>{ltr(c["issuer"]) if c["issuer"] else ""}</td>'
+            if sn:
+                cells += f'<td>{ltr(c["number"]) if c["number"] else ""}</td>'
+            if sd:
+                cells += f'<td>{fmt_date(c["expiry"], lang)}</td>'
+            return cells + "</tr>"
+        rows = "".join(first_cell(c) + other_cells(c) for c in certs)
+        head_cells = (f'<th scope="col">{e(q["col_standard"])}</th><th scope="col">{e(q["col_scope"])}</th><th scope="col">{e(q["col_issuer"])}</th>'
+                      + (f'<th scope="col">{e(q["col_number"])}</th>' if sn else "") + (f'<th scope="col">{e(q["col_valid"])}</th>' if sd else ""))
+        table = (f'<div class="table-wrap"><table class="ledger certs"><caption class="sr-only">{e(q["h1"])}</caption><thead><tr>'
+                 f'{head_cells}</tr></thead><tbody>{rows}</tbody></table></div>')
     body = f"""{head(lang, 'quality/', q['title'], q['description'], ld)}
 {header(lang, 'quality/')}
 <main id="main">
@@ -662,7 +723,9 @@ def build_contact(lang):
     t = T[lang]
     c = t["contact"]
     cr, ld = crumbs(lang, [(t["nav"]["home"], ""), (t["nav"]["contact"], None)])
-    phone_list = "".join(f"<li>{x}</li>" for x in phones(lang))
+    phone_list = "".join(f"<li>{x}</li>" for x in phones(lang)) + "".join(
+        f'<li><span class="sub">{e(p["label_" + lang])}</span><span dir="ltr">{e(p["display"])}</span></li>'
+        for p in company["phones"] if visible(p) and not p.get("tel"))
     mail_list = "".join(f'<li><span class="sub">{e(m["label_" + lang])}</span>{x}</li>' for m, x in emails(lang))
     hours = ""
     if visible(company["hours"]):
@@ -684,6 +747,7 @@ def build_contact(lang):
         <a class="arrow" href="{e(maps_url())}" rel="noopener" target="_blank">{e(c['map'])}</a></dd></div>
       {hours}
     </dl>
+    {social_links(lang)}
   </div>
   <div class="contact-form" id="request">
     <h2>{e(c['form_h'])}</h2>

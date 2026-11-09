@@ -1,36 +1,178 @@
 {
-  "_about": "Certificates and classification. A record is shown only if status is 'published' AND the expiry date is in the future on the day of the build (the build checks this). Set 'expiry' to the date on the CURRENT certificate or surveillance letter.",
+  "_about": "Certificates and classification. Owner decision (9 Nov 2026): list all ISO certificates without validity dates. display.show_dates/show_numbers control the public table; hide_expired=false keeps records visible after their expiry date. Dates stay here for internal tracking.",
   "items": [
-    {"id": "iso-9001", "status": "draft", "standard": "ISO 9001:2015", "issuer": "OSS Middle East Certification", "number": "MSE 0161025A",
-     "initial": "2025-10-04", "expiry": "2026-10-03", "cycle_end": "2028-10-03",
-     "note": "Certificate copy shows expiry 03 Oct 2026, renewable after surveillance audit. Publish once the post-surveillance certificate is on file and update 'expiry'.",
-     "file": "", "source": "images/certificates/ISO.  9001.jpg",
-     "en": {"name": "Quality management system", "scope": "Providing marine services, trade, marine maintenance and marine consultancy"},
-     "ar": {"name": "نظام إدارة الجودة", "scope": "تقديم الخدمات البحرية والتجارة والصيانة البحرية والاستشارات البحرية"}},
-    {"id": "iso-14001", "status": "draft", "standard": "ISO 14001:2015", "issuer": "OSS Middle East Certification", "number": "MSE 0161025B",
-     "initial": "2025-10-04", "expiry": "2026-10-03", "cycle_end": "2028-10-03",
-     "note": "As ISO 9001.", "file": "", "source": "images/certificates/ISO.  14001.jpg",
-     "en": {"name": "Environmental management system", "scope": "Providing marine services, trade, marine maintenance and marine consultancy"},
-     "ar": {"name": "نظام الإدارة البيئية", "scope": "تقديم الخدمات البحرية والتجارة والصيانة البحرية والاستشارات البحرية"}},
-    {"id": "iso-45001", "status": "draft", "standard": "ISO 45001:2018", "issuer": "OSS Middle East Certification", "number": "MSE 0161025C",
-     "initial": "2025-10-04", "expiry": "2026-10-03", "cycle_end": "2028-10-03",
-     "note": "As ISO 9001.", "file": "", "source": "images/certificates/ISO.  45001.jpg",
-     "en": {"name": "Occupational health and safety management system", "scope": "Providing marine services, trade, marine maintenance and marine consultancy"},
-     "ar": {"name": "نظام إدارة الصحة والسلامة المهنية", "scope": "تقديم الخدمات البحرية والتجارة والصيانة البحرية والاستشارات البحرية"}},
-    {"id": "iso-27001", "status": "expired", "standard": "ISO/IEC 27001:2022", "issuer": "SIS Certifications", "number": "SIS230923I041",
-     "initial": "2023-09-02", "expiry": "2024-09-01", "cycle_end": "2026-08-02",
-     "note": "Expired 01 Sep 2024 unless a continuation letter exists. Was shown on the old new-site home page.", "file": "", "source": "images/certificates/Certificate ISO 27001-1.jpg",
-     "en": {"name": "Information security management system", "scope": ""}, "ar": {"name": "نظام إدارة أمن المعلومات", "scope": ""}},
-    {"id": "iso-22301", "status": "expired", "standard": "ISO 22301:2019", "issuer": "SIS Certifications", "number": "SIS230923B042",
-     "initial": "2023-09-02", "expiry": "2024-09-01", "cycle_end": "2026-08-02",
-     "note": "Expired 01 Sep 2024 unless a continuation letter exists.", "file": "", "source": "images/certificates/Certificate ISO 22301-1.jpg",
-     "en": {"name": "Business continuity management system", "scope": ""}, "ar": {"name": "نظام إدارة استمرارية الأعمال", "scope": ""}},
-    {"id": "iso-50001", "status": "unsupported", "standard": "ISO 50001", "issuer": "", "number": "", "initial": "", "expiry": "", "cycle_end": "",
-     "note": "Claimed on the previous About and Certifications pages; no certificate found. Removed.", "file": "", "source": "",
-     "en": {"name": "Energy management system", "scope": ""}, "ar": {"name": "نظام إدارة الطاقة", "scope": ""}},
-    {"id": "contractor-classification", "status": "draft", "standard": "", "issuer": "", "number": "", "initial": "", "expiry": "", "cycle_end": "",
-     "note": "Profile 2023 states Grade 2 classification for marine works. Classification certificate reported as under renewal (Oct 2026). Add number and expiry from the renewed certificate.", "file": "", "source": "Company profile 2023",
-     "en": {"name": "Contractor classification, marine works (Grade 2)", "scope": "Marine works"},
-     "ar": {"name": "تصنيف المقاولين في الأعمال البحرية (الدرجة الثانية)", "scope": "الأعمال البحرية"}}
-  ]
+    {
+      "id": "iso-9001",
+      "status": "published",
+      "standard": "ISO 9001:2015",
+      "issuer": "OSS Middle East Certification",
+      "number": "MSE 0161025A",
+      "initial": "2025-10-04",
+      "expiry": "2026-10-03",
+      "cycle_end": "2028-10-03",
+      "note": "Published without dates by owner decision (9 Nov 2026).",
+      "file": "",
+      "source": "images/certificates/ISO.  9001.jpg",
+      "en": {
+        "name": "Quality management system",
+        "scope": "Providing marine services, trade, marine maintenance and marine consultancy"
+      },
+      "ar": {
+        "name": "نظام إدارة الجودة",
+        "scope": "تقديم الخدمات البحرية والتجارة والصيانة البحرية والاستشارات البحرية"
+      }
+    },
+    {
+      "id": "iso-14001",
+      "status": "published",
+      "standard": "ISO 14001:2015",
+      "issuer": "OSS Middle East Certification",
+      "number": "MSE 0161025B",
+      "initial": "2025-10-04",
+      "expiry": "2026-10-03",
+      "cycle_end": "2028-10-03",
+      "note": "Published without dates by owner decision (9 Nov 2026).",
+      "file": "",
+      "source": "images/certificates/ISO.  14001.jpg",
+      "en": {
+        "name": "Environmental management system",
+        "scope": "Providing marine services, trade, marine maintenance and marine consultancy"
+      },
+      "ar": {
+        "name": "نظام الإدارة البيئية",
+        "scope": "تقديم الخدمات البحرية والتجارة والصيانة البحرية والاستشارات البحرية"
+      }
+    },
+    {
+      "id": "iso-45001",
+      "status": "published",
+      "standard": "ISO 45001:2018",
+      "issuer": "OSS Middle East Certification",
+      "number": "MSE 0161025C",
+      "initial": "2025-10-04",
+      "expiry": "2026-10-03",
+      "cycle_end": "2028-10-03",
+      "note": "Published without dates by owner decision (9 Nov 2026).",
+      "file": "",
+      "source": "images/certificates/ISO.  45001.jpg",
+      "en": {
+        "name": "Occupational health and safety management system",
+        "scope": "Providing marine services, trade, marine maintenance and marine consultancy"
+      },
+      "ar": {
+        "name": "نظام إدارة الصحة والسلامة المهنية",
+        "scope": "تقديم الخدمات البحرية والتجارة والصيانة البحرية والاستشارات البحرية"
+      }
+    },
+    {
+      "id": "iso-27001",
+      "status": "published",
+      "standard": "ISO/IEC 27001:2022",
+      "issuer": "SIS Certifications",
+      "number": "SIS230923I041",
+      "initial": "2023-09-02",
+      "expiry": "2024-09-01",
+      "cycle_end": "2026-08-02",
+      "note": "Published without dates by owner decision (9 Nov 2026).",
+      "file": "",
+      "source": "images/certificates/Certificate ISO 27001-1.jpg",
+      "en": {
+        "name": "Information security management system",
+        "scope": "Shipbuilding and testing services including military vessels; repair and routine maintenance of ships and facilities; overhaul and testing of diesel generators and main engines; supply and installation of marine fenders; repair and maintenance of port and marine facilities, water technology equipment, valves and electrical equipment; supply and maintenance of firefighting systems"
+      },
+      "ar": {
+        "name": "نظام إدارة أمن المعلومات",
+        "scope": "خدمات بناء السفن واختبارها بما فيها السفن العسكرية؛ الإصلاح والصيانة الدورية للسفن والمرافق؛ عَمرة واختبار مولدات الديزل والمحركات الرئيسية؛ توريد وتركيب المصدّات البحرية؛ إصلاح وصيانة الموانئ والمرافق البحرية ومعدات تقنيات المياه والصمامات والمعدات الكهربائية؛ توريد وصيانة أنظمة مكافحة الحرائق"
+      }
+    },
+    {
+      "id": "iso-22301",
+      "status": "published",
+      "standard": "ISO 22301:2019",
+      "issuer": "SIS Certifications",
+      "number": "SIS230923B042",
+      "initial": "2023-09-02",
+      "expiry": "2024-09-01",
+      "cycle_end": "2026-08-02",
+      "note": "Published without dates by owner decision (9 Nov 2026).",
+      "file": "",
+      "source": "images/certificates/Certificate ISO 22301-1.jpg",
+      "en": {
+        "name": "Business continuity management system",
+        "scope": "Shipbuilding and testing services including military vessels; repair and routine maintenance of ships and facilities; overhaul and testing of diesel generators and main engines; supply and installation of marine fenders; repair and maintenance of port and marine facilities, water technology equipment, valves and electrical equipment; supply and maintenance of firefighting systems"
+      },
+      "ar": {
+        "name": "نظام إدارة استمرارية الأعمال",
+        "scope": "خدمات بناء السفن واختبارها بما فيها السفن العسكرية؛ الإصلاح والصيانة الدورية للسفن والمرافق؛ عَمرة واختبار مولدات الديزل والمحركات الرئيسية؛ توريد وتركيب المصدّات البحرية؛ إصلاح وصيانة الموانئ والمرافق البحرية ومعدات تقنيات المياه والصمامات والمعدات الكهربائية؛ توريد وصيانة أنظمة مكافحة الحرائق"
+      }
+    },
+    {
+      "id": "iso-31000",
+      "status": "published",
+      "standard": "ISO 31000:2018",
+      "issuer": "MQM Middle East (Modern Quality Makers)",
+      "number": "MQM.ERM.2608002",
+      "initial": "2026-08-16",
+      "expiry": "2027-08-15",
+      "cycle_end": "2029-08-13",
+      "note": "Certificate of compliance with ISO 31000 (a guidelines standard). Source: mpms files/ISO 31000.pdf",
+      "file": "",
+      "source": "mpms files/ISO 31000.pdf",
+      "en": {
+        "name": "Risk management — certificate of compliance",
+        "scope": "Routine repair and maintenance of ships; repair, maintenance and overhaul of military ships; construction of port berths and marine facilities; wholesale of transport equipment"
+      },
+      "ar": {
+        "name": "إدارة المخاطر — شهادة مطابقة",
+        "scope": "الإصلاح والصيانة الروتينية للسفن؛ أعمال الإصلاح والصيانة والعَمرة للسفن العسكرية؛ إنشاء أرصفة الموانئ والمرافق البحرية؛ البيع بالجملة لمعدات النقل"
+      }
+    },
+    {
+      "id": "contractor-classification",
+      "status": "published",
+      "standard": "",
+      "issuer": "",
+      "number": "2024005038",
+      "initial": "2024-05-15",
+      "expiry": "2026-05-15",
+      "cycle_end": "",
+      "note": "MOMRAH city service providers classification (Balady). Grade 2, field: construction. Certificate dated 15-05-2024, valid to 15-05-2026; renewal in progress. Shown without dates by owner decision.",
+      "file": "",
+      "source": "mpms files/classification certificate-1.pdf",
+      "en": {
+        "name": "City Service Providers Classification — Grade 2 (Construction)",
+        "scope": "Ministry of Municipal and Rural Affairs and Housing. Activities include routine ship repair and maintenance; repair, maintenance and overhaul of military ships and boats; construction, repair and maintenance of port berths and marine facilities; air-conditioning, firefighting piping and electrical works"
+      },
+      "ar": {
+        "name": "تصنيف مقدمي خدمات المدن — الدرجة الثانية (التشييد والبناء)",
+        "scope": "وزارة الشؤون البلدية والقروية والإسكان. تشمل الأنشطة الإصلاح والصيانة الروتينية للسفن، وأعمال الإصلاح والصيانة والعَمرة للسفن والزوارق العسكرية، وإنشاء أرصفة الموانئ والمرافق البحرية وإصلاحها وصيانتها، وأنظمة التكييف وتمديدات أنابيب الحريق والأعمال الكهربائية"
+      }
+    },
+    {
+      "id": "iso-50001",
+      "status": "unsupported",
+      "standard": "ISO 50001",
+      "issuer": "",
+      "number": "",
+      "initial": "",
+      "expiry": "",
+      "cycle_end": "",
+      "note": "Claimed on the previous About and Certifications pages; no certificate found. Removed.",
+      "file": "",
+      "source": "",
+      "en": {
+        "name": "Energy management system",
+        "scope": ""
+      },
+      "ar": {
+        "name": "نظام إدارة الطاقة",
+        "scope": ""
+      }
+    }
+  ],
+  "display": {
+    "show_dates": false,
+    "show_numbers": false,
+    "hide_expired": false
+  }
 }
