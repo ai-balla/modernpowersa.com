@@ -37,10 +37,17 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 }
 
 /* ---------- configuration (outside web root) ---------- */
-$configPath = getenv('MPMS_FORM_CONFIG') ?: dirname(__DIR__, 2) . '/_mpms_private/form-config.php';
-$config = is_readable($configPath) ? (include $configPath) : null;
+$home = dirname(__DIR__, 2);
+$candidates = array_filter([
+    getenv('MPMS_FORM_CONFIG') ?: null,
+    $home . '/_mpms_private/form-config.php',
+    $home . '/_mpms_private/_private/form-config.php',   // location used by the FTP private-bundle upload
+]);
+$configPath = '';
+foreach ($candidates as $c) { if (is_readable($c)) { $configPath = $c; break; } }
+$config = $configPath !== '' ? (include $configPath) : null;
 if (!is_array($config) || empty($config['to'])) {
-    error_log('MPMS form: configuration missing at ' . $configPath);
+    error_log('MPMS form: configuration missing (' . implode(', ', $candidates) . ')');
     respond(false, $lang, $wantsJson, [], 503);
 }
 
