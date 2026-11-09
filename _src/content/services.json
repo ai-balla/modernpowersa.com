@@ -1,0 +1,382 @@
+{
+  "_about": "Service records. 'delivery' is one of: direct | direct-and-partners | supply. Every published record needs complete en and ar text or the build stops.",
+  "items": [
+    {
+      "slug": "vessel-maintenance-repair",
+      "status": "published",
+      "order": 1,
+      "icon": "vessel",
+      "delivery": "direct",
+      "source": "Company profile 2023 (Vessel Services); ISO 22301/27001 scope 2023; project list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Vessel Maintenance and Repair",
+        "short": "Planned and corrective maintenance for ships, boats and tugs, covering mechanical, electrical and hull work, including docking periods.",
+        "intro": "MPMS carries out maintenance and repair on vessels of different types and sizes, from planned maintenance to repairs found during inspection or docking. Work is scoped against the owner's specification and the condition found on board.",
+        "scope": [
+          "Inspection of vessel systems and hull, with a defect report and a proposed scope of work",
+          "Mechanical repairs to main and auxiliary machinery",
+          "Electrical repairs to shipboard systems and panels",
+          "Hull repairs above and below the waterline",
+          "Support during docking periods, including lifting arrangements",
+          "Maintenance of shipboard air conditioning and refrigeration"
+        ],
+        "deliverables": [
+          "Inspection findings and a proposed scope of work",
+          "Itemised quotation and programme for the agreed scope",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "صيانة وإصلاح الوسائط البحرية",
+        "short": "صيانة مخططة وتصحيحية للسفن والزوارق وقاطرات السحب، تشمل الأعمال الميكانيكية والكهربائية وأعمال البدن، ومنها فترات التحويض.",
+        "intro": "تنفّذ الشركة أعمال الصيانة والإصلاح للوسائط البحرية بمختلف أنواعها وأحجامها، بدءًا من الصيانة المخططة وحتى الإصلاحات التي يكشفها الفحص أو التحويض. ويُحدَّد نطاق العمل وفق مواصفات المالك والحالة الفعلية على متن الوسيطة.",
+        "scope": [
+          "فحص منظومات الوسيطة وبدنها، وتقديم تقرير بالأعطال ونطاق عمل مقترح",
+          "الإصلاحات الميكانيكية للآلات الرئيسية والمساعدة",
+          "الإصلاحات الكهربائية للمنظومات واللوحات على متن السفن",
+          "إصلاح البدن فوق خط الماء وتحته",
+          "المساندة خلال فترات التحويض، بما في ذلك ترتيبات الرفع",
+          "صيانة أنظمة التكييف والتبريد على متن السفن"
+        ],
+        "deliverables": [
+          "نتائج الفحص ونطاق عمل مقترح",
+          "عرض سعر مفصّل وجدول زمني للنطاق المتفق عليه",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "hull-steel-coatings",
+      "status": "published",
+      "order": 2,
+      "icon": "weld",
+      "delivery": "direct",
+      "source": "Company profile 2023 (services, organisation chart trades, work-sample pages); earlier profile services list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Hull, Steelwork and Coatings",
+        "short": "Steel renewal, welding, fabrication, surface preparation and painting for hulls and marine structures.",
+        "intro": "Hull and steel work is carried out by MPMS welders, fabricators, painters and blasters under site supervision. It is usually part of a docking or repair package, or a stand-alone repair to a vessel or marine structure.",
+        "scope": [
+          "Steel plate renewal and structural repairs",
+          "Welding and fabrication of marine steelwork",
+          "Abrasive blasting and surface preparation",
+          "Application of marine coating systems to hulls, decks and structures"
+        ],
+        "deliverables": [
+          "Survey of the affected areas and a proposed repair method",
+          "Itemised quotation by area and quantity",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "أعمال البدن والحديد والطلاء",
+        "short": "تجديد الألواح الحديدية واللحام والتصنيع وتجهيز الأسطح والطلاء لأبدان السفن والمنشآت البحرية.",
+        "intro": "ينفّذ أعمالَ البدن والحديد لحّامو الشركة ومصنّعوها وفنيو الطلاء والسفع الرملي تحت إشراف ميداني. وتكون هذه الأعمال عادةً جزءًا من حزمة تحويض أو إصلاح، أو إصلاحًا مستقلًا لوسيطة أو منشأة بحرية.",
+        "scope": [
+          "تجديد الألواح الحديدية والإصلاحات الإنشائية",
+          "لحام وتصنيع الأعمال الحديدية البحرية",
+          "السفع الرملي وتجهيز الأسطح",
+          "تطبيق أنظمة الطلاء البحري على الأبدان والأسطح والمنشآت"
+        ],
+        "deliverables": [
+          "معاينة المناطق المتضررة وطريقة إصلاح مقترحة",
+          "عرض سعر مفصّل حسب المنطقة والكمية",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "engines-generators-propulsion",
+      "status": "published",
+      "order": 3,
+      "icon": "engine",
+      "delivery": "direct",
+      "source": "Company profile 2023 (Vessel Services: marine engines and generators; Supplies: spare parts); ISO scope 2023; project list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Engines, Generators and Propulsion",
+        "short": "Inspection, repair and maintenance of marine diesel engines, generators, gearboxes and transmissions.",
+        "intro": "MPMS maintains and repairs marine engines and generators of different sizes, on board vessels and at industrial sites, and supplies the related spare parts.",
+        "scope": [
+          "Inspection and repair of marine and industrial generators",
+          "Maintenance of main and auxiliary diesel engines",
+          "Gearbox and transmission repairs",
+          "Supply of engine and generator spare parts"
+        ],
+        "deliverables": [
+          "Inspection findings and a list of required parts",
+          "Itemised quotation for labour and parts",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "المحركات والمولدات ومنظومات الدفع",
+        "short": "فحص وإصلاح وصيانة محركات الديزل البحرية والمولدات وصناديق التروس ونواقل الحركة.",
+        "intro": "تتولى الشركة صيانة وإصلاح المحركات والمولدات البحرية بمختلف أحجامها، على متن الوسائط البحرية وفي المواقع الصناعية، إلى جانب توريد قطع الغيار المرتبطة بها.",
+        "scope": [
+          "فحص وإصلاح المولدات البحرية والصناعية",
+          "صيانة محركات الديزل الرئيسية والمساعدة",
+          "إصلاح صناديق التروس ونواقل الحركة",
+          "توريد قطع غيار المحركات والمولدات"
+        ],
+        "deliverables": [
+          "نتائج الفحص وقائمة بقطع الغيار المطلوبة",
+          "عرض سعر مفصّل للعمالة وقطع الغيار",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "berths-fenders-marine-facilities",
+      "status": "published",
+      "order": 4,
+      "icon": "berth",
+      "delivery": "direct-and-partners",
+      "source": "Company profile 2023 (Marine Works); ISO scope 2023 (fenders, port and marine facilities); project list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Berths, Fenders and Marine Facilities",
+        "short": "Maintenance and equipment for fixed and floating berths, marine fenders, navigation marks and berth equipment.",
+        "intro": "MPMS maintains marine facilities and their equipment, and supplies and installs fenders and navigation marks. Fenders and specialist equipment are sourced from manufacturers and installed by MPMS teams.",
+        "scope": [
+          "Maintenance of marine facilities and berth equipment",
+          "Construction and maintenance of fixed and floating berths",
+          "Manufacture, supply and installation of marine fenders",
+          "Supply, installation and maintenance of marine navigation marks",
+          "Replacement and maintenance of fuel unloading arms at marine berths",
+          "Marine survey and underwater works"
+        ],
+        "deliverables": [
+          "Site inspection and a proposed scope of work",
+          "Itemised quotation, including equipment specifications where supply is involved",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "الأرصفة والمصدّات والمرافق البحرية",
+        "short": "صيانة وتجهيز الأرصفة البحرية الثابتة والعائمة، والمصدّات البحرية، والعلامات الملاحية، ومعدات الأرصفة.",
+        "intro": "تتولى الشركة صيانة المرافق البحرية ومعداتها، وتوريد وتركيب المصدّات والعلامات الملاحية. ويجري توريد المصدّات والمعدات المتخصصة من الشركات المصنّعة، وتركيبها بواسطة فرق الشركة.",
+        "scope": [
+          "صيانة المرافق البحرية ومعدات الأرصفة",
+          "إنشاء وصيانة الأرصفة البحرية الثابتة والعائمة",
+          "تصنيع وتوريد وتركيب المصدّات البحرية",
+          "توريد وتركيب وصيانة العلامات الملاحية البحرية",
+          "استبدال وصيانة أذرع تفريغ الوقود في الأرصفة البحرية",
+          "أعمال المسح البحري والأعمال تحت الماء"
+        ],
+        "deliverables": [
+          "معاينة الموقع ونطاق عمل مقترح",
+          "عرض سعر مفصّل، يشمل مواصفات المعدات عند التوريد",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "firefighting-systems",
+      "status": "published",
+      "order": 5,
+      "icon": "fire",
+      "delivery": "direct-and-partners",
+      "source": "Company profile 2023 (Firefighting Systems for Ships and Safety); ISO scope 2023 (supply and maintenance of fire fighting systems)",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Marine Firefighting and Safety Systems",
+        "short": "Supply, installation and maintenance of firefighting systems and safety equipment for vessels and marine facilities.",
+        "intro": "MPMS supplies and installs firefighting systems for vessels and marine facilities, working with system manufacturers, and supplies marine safety equipment for boats and ships.",
+        "scope": [
+          "Supply and installation of firefighting systems for vessels and marine facilities",
+          "Maintenance of installed firefighting systems",
+          "Supply of marine safety equipment for boats and ships"
+        ],
+        "deliverables": [
+          "Review of the vessel or facility requirement",
+          "Itemised quotation with system and equipment specifications",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "أنظمة مكافحة الحرائق والسلامة البحرية",
+        "short": "توريد وتركيب وصيانة أنظمة مكافحة الحرائق ومعدات السلامة للوسائط والمرافق البحرية.",
+        "intro": "توفّر الشركة أنظمة مكافحة الحرائق للوسائط والمرافق البحرية وتركّبها بالتعاون مع الشركات المصنّعة لتلك الأنظمة، كما تورّد معدات السلامة البحرية للزوارق والسفن.",
+        "scope": [
+          "توريد وتركيب أنظمة مكافحة الحرائق للوسائط والمرافق البحرية",
+          "صيانة أنظمة مكافحة الحرائق القائمة",
+          "توريد معدات السلامة البحرية للزوارق والسفن"
+        ],
+        "deliverables": [
+          "دراسة متطلبات الوسيطة أو المرفق",
+          "عرض سعر مفصّل مع مواصفات الأنظمة والمعدات",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "water-desalination-systems",
+      "status": "published",
+      "order": 6,
+      "icon": "water",
+      "delivery": "direct-and-partners",
+      "source": "Company profile 2023 (Water Desalination Systems); ISO scope 2023 (water technology equipment)",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Water Desalination Systems",
+        "short": "Supply, installation and maintenance of seawater desalination systems for vessels and marine facilities.",
+        "intro": "MPMS supplies, installs and maintains seawater desalination systems on vessels and at marine facilities.",
+        "scope": [
+          "Supply of seawater desalination units",
+          "Installation on board vessels and at marine facilities",
+          "Maintenance and repair of desalination systems"
+        ],
+        "deliverables": [
+          "Review of the water demand and installation constraints",
+          "Itemised quotation with unit specifications",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "أنظمة تحلية المياه",
+        "short": "توريد وتركيب وصيانة أنظمة تحلية مياه البحر للوسائط والمرافق البحرية.",
+        "intro": "تتولى الشركة توريد أنظمة تحلية مياه البحر وتركيبها وصيانتها على متن الوسائط البحرية وفي المرافق البحرية.",
+        "scope": [
+          "توريد وحدات تحلية مياه البحر",
+          "التركيب على متن الوسائط البحرية وفي المرافق البحرية",
+          "صيانة وإصلاح أنظمة التحلية"
+        ],
+        "deliverables": [
+          "دراسة الاحتياج من المياه وقيود التركيب",
+          "عرض سعر مفصّل مع مواصفات الوحدات",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "air-conditioning-ventilation",
+      "status": "published",
+      "order": 7,
+      "icon": "hvac",
+      "delivery": "direct",
+      "source": "Company profile 2023 (Air Conditioning and Ventilation Systems); project list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Air Conditioning and Ventilation",
+        "short": "Supply, installation and maintenance of shipboard and facility air conditioning, ventilation and ductwork.",
+        "intro": "MPMS supplies, installs and maintains air conditioning and ventilation systems on vessels and in shore facilities, including ductwork cleaning and control-panel maintenance.",
+        "scope": [
+          "Ship air-conditioning units",
+          "Ducted, chiller and packaged air-conditioning systems",
+          "Supply, installation and cleaning of ventilation ducts",
+          "Preventive and corrective maintenance of air-conditioning control panels"
+        ],
+        "deliverables": [
+          "Site or on-board survey and a proposed scope of work",
+          "Itemised quotation with equipment specifications",
+          "Completion and handover on the acceptance basis set in the contract"
+        ]
+      },
+      "ar": {
+        "title": "التكييف والتهوية",
+        "short": "توريد وتركيب وصيانة أنظمة التكييف والتهوية ومجاري الهواء على متن السفن وفي المرافق.",
+        "intro": "توفّر الشركة أنظمة التكييف والتهوية وتركّبها وتصونها على متن الوسائط البحرية وفي المرافق البرية، بما في ذلك تنظيف مجاري الهواء وصيانة لوحات التحكم.",
+        "scope": [
+          "وحدات تكييف السفن",
+          "أنظمة تكييف الدكت والتشيلرات والوحدات المجمّعة (الباكج)",
+          "توريد وتركيب وتنظيف مجاري التهوية",
+          "الصيانة الوقائية والتصحيحية للوحات التحكم في التكييف"
+        ],
+        "deliverables": [
+          "معاينة الموقع أو الوسيطة ونطاق عمل مقترح",
+          "عرض سعر مفصّل مع مواصفات المعدات",
+          "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
+        ]
+      }
+    },
+    {
+      "slug": "equipment-spare-parts",
+      "status": "published",
+      "order": 8,
+      "icon": "crane",
+      "delivery": "supply",
+      "source": "Company profile 2023 (Supplies); ISO scope 2023; project list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Equipment and Spare Parts Supply",
+        "short": "Sourcing of marine and industrial equipment and spare parts through manufacturers and suppliers.",
+        "intro": "MPMS sources marine and industrial equipment and spare parts through its network of manufacturers and suppliers, and can install and commission supplied equipment where the scope requires it.",
+        "scope": [
+          "Marine cranes, including barge-mounted cranes, and industrial cranes",
+          "Diesel and electric forklifts and warehouse handling equipment",
+          "Fuel unloading arms for marine berths",
+          "Generators, and engine and generator spare parts",
+          "Navigation equipment and marine safety equipment",
+          "Boats and marine craft through boat-builder partners"
+        ],
+        "deliverables": [
+          "Technical and commercial offer against the purchaser's specification",
+          "Delivery to site under the agreed terms",
+          "Installation and commissioning where included in the scope"
+        ]
+      },
+      "ar": {
+        "title": "توريد المعدات وقطع الغيار",
+        "short": "توريد المعدات البحرية والصناعية وقطع الغيار عبر الشركات المصنّعة والموردين.",
+        "intro": "تورّد الشركة المعدات البحرية والصناعية وقطع الغيار من خلال شبكتها من الشركات المصنّعة والموردين، ويمكنها تركيب المعدات الموردة وتشغيلها عندما يتطلب نطاق العمل ذلك.",
+        "scope": [
+          "الرافعات البحرية، ومنها الرافعات على البارجات، والرافعات الصناعية",
+          "الرافعات الشوكية (ديزل وكهربائية) ومعدات المناولة في المستودعات",
+          "أذرع تفريغ الوقود في الأرصفة البحرية",
+          "المولدات الكهربائية وقطع غيار المحركات والمولدات",
+          "الأجهزة الملاحية ومعدات السلامة البحرية",
+          "بناء القوارب والزوارق البحرية عبر شركاء متخصصين"
+        ],
+        "deliverables": [
+          "عرض فني ومالي وفق مواصفات الجهة المشترية",
+          "التسليم في الموقع وفق الشروط المتفق عليها",
+          "التركيب والتشغيل عند تضمينهما في نطاق العمل"
+        ]
+      }
+    },
+    {
+      "slug": "technical-manpower",
+      "status": "published",
+      "order": 9,
+      "icon": "crew",
+      "delivery": "direct",
+      "source": "Company profile 2023 (Skilled Manpower Supply); project list",
+      "reviewed": "2026-11-09",
+      "en": {
+        "title": "Skilled Technical Manpower",
+        "short": "Engineers, technicians and tradespeople provided under contract to support maintenance work.",
+        "intro": "Under its contractual manpower programme, MPMS provides skilled personnel to support clients' maintenance operations.",
+        "scope": [
+          "Engineers and technicians in mechanical and electrical disciplines",
+          "Welders and fabricators",
+          "Divers",
+          "General workers"
+        ],
+        "deliverables": [
+          "Proposed staffing with roles and quantities",
+          "Rates and mobilisation terms",
+          "Deployment for the agreed duration"
+        ]
+      },
+      "ar": {
+        "title": "توفير العمالة الفنية الماهرة",
+        "short": "مهندسون وفنيون وحرفيون بموجب عقود لمساندة أعمال الصيانة.",
+        "intro": "ضمن برنامجها التعاقدي لتوفير العمالة، تقدّم الشركة كوادر ماهرة لمساندة عمليات الصيانة لدى عملائها.",
+        "scope": [
+          "مهندسون وفنيون في التخصصات الميكانيكية والكهربائية",
+          "لحّامون ومصنّعون",
+          "غواصون",
+          "عمالة عامة"
+        ],
+        "deliverables": [
+          "مقترح بالكوادر وأعدادها وتخصصاتها",
+          "الأسعار وشروط التعبئة",
+          "مباشرة العمل للمدة المتفق عليها"
+        ]
+      }
+    }
+  ]
+}

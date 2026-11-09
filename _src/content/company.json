@@ -1,0 +1,72 @@
+{
+  "_about": "Company identity and contact details. Only fields with status 'published' appear on public pages. See _docs/CONTENT-GUIDE.md.",
+  "reviewed": "2026-11-09",
+  "site_url": "https://modernpowersa.com",
+  "name": {
+    "en": "Modern Power Marine Services Co.",
+    "ar": "شركة الطاقة الحديثة للخدمات البحرية",
+    "short": "MPMS",
+    "status": "published",
+    "source": "ISO certificates (OSS Middle East, Oct 2025); company profile 2023; owner instruction on Arabic name"
+  },
+  "founded": {
+    "status": "published",
+    "source": "Company profile 2023, Overview section",
+    "en": "Established in Jeddah in 2000 as an establishment supplying ship spare parts and providing ship maintenance and operation services; expanded in 2012 into Modern Power Marine Services Co.",
+    "ar": "تأسس اسم الطاقة الحديثة في جدة عام 2000 مؤسسةً متخصصة في توريد قطع غيار السفن وصيانتها وتشغيلها، ثم توسّع النشاط عام 2012 ليصبح شركة الطاقة الحديثة للخدمات البحرية."
+  },
+  "address": {
+    "status": "published",
+    "source": "ISO certificates Oct 2025 (registered address); company profile 2023",
+    "en": {
+      "line1": "Captain Barrak Tower, 4th Floor, Unit 403",
+      "line2": "Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah",
+      "city": "Jeddah 22231",
+      "country": "Kingdom of Saudi Arabia"
+    },
+    "ar": {
+      "line1": "برج النقيب براك، الدور الرابع، وحدة 403",
+      "line2": "شارع أحمد بن الرقي، حي البغدادية الغربية",
+      "city": "جدة 22231",
+      "country": "المملكة العربية السعودية"
+    },
+    "maps_query": "Captain Barrak Tower, Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah, Jeddah",
+    "schema": {"streetAddress": "Captain Barrak Tower, 4th Floor, Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah", "addressLocality": "Jeddah", "postalCode": "22231", "addressCountry": "SA"}
+  },
+  "phones": [
+    {"label_en": "Main office", "label_ar": "المكتب الرئيسي", "display": "+966 12 603 8043", "tel": "+966126038043", "status": "published", "source": "Old website, new website, company profile (consistent)"},
+    {"label_en": "Fax", "label_ar": "فاكس", "display": "+966 12 603 8044", "tel": "", "status": "draft", "source": "Old website 2026 and earlier profile; confirm still in use"}
+  ],
+  "emails": [
+    {"label_en": "General enquiries", "label_ar": "الاستفسارات العامة", "address": "info@modernpowermarine.com", "status": "published", "source": "Old site, new site, profile (profile has a typo 'modernpowerarine')", "note": "Confirm which mailbox should be public after the domain move"},
+    {"label_en": "Sales and quotations", "label_ar": "المبيعات وعروض الأسعار", "address": "sales@modernpowermarine.com", "status": "published", "source": "Old site, new site, profile 2023"},
+    {"label_en": "Contracts", "label_ar": "العقود", "address": "contracts@modernpowermarine.com", "status": "draft", "source": "Profile 2023 only"}
+  ],
+  "hours": {
+    "status": "draft",
+    "source": "CONFLICT: new site says Sunday-Thursday 8:00-17:00, old site says Saturday-Thursday",
+    "en": "Sunday to Thursday, 8:00 am to 5:00 pm",
+    "ar": "الأحد إلى الخميس، من 8:00 صباحًا إلى 5:00 مساءً"
+  },
+  "whatsapp": {"status": "draft", "number": "", "source": "No confirmed number"},
+  "leadership": [
+    {"status": "published", "source": "Old site home + bio page, new site, profile org chart", "en": {"name": "Eng. Mohamed Jazzar", "role": "Chairman and Founder"}, "ar": {"name": "المهندس محمد جزار", "role": "رئيس مجلس الإدارة والمؤسس"}},
+    {"status": "published", "source": "Old site home + bio page, new site", "en": {"name": "Abdulaziz Jazzar", "role": "General Manager"}, "ar": {"name": "عبدالعزيز جزار", "role": "المدير العام"}}
+  ],
+  "statements": {
+    "status": "published",
+    "source": "Company profile 2023 (bilingual Vision / Mission / Objectives pages)",
+    "vision": {
+      "en": "To be the leading Saudi company in managing, operating, docking and maintaining vessels on the Kingdom's eastern and western coasts, and to increase investment in our region in line with our values and the Kingdom's Vision 2030.",
+      "ar": "أن نكون الشركة الرائدة في مجال إدارة وتشغيل وتحويض وصيانة السفن البحرية السعودية في الساحلين الشرقي والغربي، وزيادة الاستثمارات في منطقتنا، بما يتلاءم مع قيمنا وتماشيًا مع رؤية المملكة 2030."
+    },
+    "mission": {
+      "en": "To be an integral part of the Saudi business community, particularly in the maritime sector.",
+      "ar": "نعمل لنكون عضوًا فاعلًا وجزءًا لا يتجزأ من مجتمع الأعمال السعودي، وخصوصًا في مجال الأعمال البحرية."
+    },
+    "objective": {
+      "en": "To provide marine services and maintenance for local and international vessels to high quality standards, while building the name and reputation of a Saudi company in the national and international maritime community.",
+      "ar": "تقديم الخدمات البحرية وصيانة السفن المحلية والدولية بمعايير جودة عالية، مع بناء اسم وسمعة كيان سعودي في المجال البحري والمجتمع البحري الدولي."
+    }
+  }
+}

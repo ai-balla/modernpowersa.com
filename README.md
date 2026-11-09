@@ -1,38 +1,17 @@
 # modernpowersa.com
 
-Website for **Modern Power Marine Services Co. (MPMS)** — static HTML/CSS/JS.
+Bilingual (Arabic / English) website of **Modern Power Marine Services Co.** — شركة الطاقة الحديثة للخدمات البحرية.
 
-## For AI agents / maintainers — read this first
+- Static HTML generated from structured content by `_src/build.py` (Python 3, standard library only).
+- Arabic at `/ar/`, English at `/en/`, language chooser at `/`.
+- Request form handled by `forms/send.php`; its settings live outside the web root.
 
-Agent instructions, the current handoff, and the activity log are kept in **`AGENT.md`**,
-which ships **via FTP** in the private bundle `~/_mpms_private` (outside the web root) and
-is **intentionally not stored in Git**.
+| Task | Read |
+|---|---|
+| Update text, services, projects, certificates | `_docs/CONTENT-GUIDE.md` |
+| Deploy, roll back, move the old domain | `_docs/DEPLOYMENT.md` |
+| Agreed Arabic/English terms | `_docs/GLOSSARY.md` |
 
-➡️ **A `git clone` alone is not enough.** To work on this project:
+**Production:** Hostinger deploys the `main` branch automatically. Do development on another branch and merge by pull request.
 
-1. Download the FTP **web root** (`/public_html`) — the website.
-2. Download the FTP **private bundle** (`~/_mpms_private`) — gives `AGENT.md` + `_private/`;
-   copy them into the project root.
-3. Attach the Git history (see `AGENT.md` §6, "Bootstrapping on a new PC").
-4. Read `AGENT.md` fully, then follow its rules and update its Handoff + Activity Log.
-
-Credentials live in `_private/site-info.md` (FTP-only, outside the web root — never committed
-and never publicly reachable).
-
-## Channels
-
-| Channel | Location | Contains |
-|---|---|---|
-| **Git** | `ai-balla/modernpowersa.com` | the public website only |
-| **Web root** | FTP `/public_html` | the public website only |
-| **Private bundle** | FTP `~/_mpms_private` (outside web root) | `AGENT.md` + `_private/` (credentials) |
-
-`_archive/` and `website.zip` are local-only and are deployed nowhere.
-
-## Deploy
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\_private\ftp-upload.ps1
-```
-
-The script does both phases: website → web root, private bundle → `~/_mpms_private`.
+Maintainers who use the private agent handbook (`AGENT.md`, delivered separately, never in Git) should read it as well.

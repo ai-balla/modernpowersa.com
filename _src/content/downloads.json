@@ -1,0 +1,9 @@
+{
+  "_about": "Public downloads. Put the file under /downloads/ and set status 'published'. Never publish financial, bank or personal documents.",
+  "items": [
+    {"id": "company-profile-2023", "status": "draft", "file": "", "size": "",
+     "note": "The 2023 profile lists ABC as an agency, has an email typo (modernpowerarine.com) and an inconsistent phone number. Publish a corrected edition only.",
+     "en": {"title": "Company profile", "description": "Bilingual company profile"},
+     "ar": {"title": "الملف التعريفي للشركة", "description": "ملف تعريفي ثنائي اللغة"}}
+  ]
+}

@@ -1,16 +1,17 @@
 # ============================================================
-#  Git tracks ONLY the public website.
-#  Everything secret / private / historical is delivered by FTP.
-#  See AGENT.md for the full channel rules.
+#  Git tracks ONLY the public website and its source content.
+#  Secrets / private / historical material stays out of Git.
 # ============================================================
 
-# --- FTP-only material (never commit) ---
+# --- FTP-only / local-only material (never commit) ---
 _private/
 _archive/
+_media-review/
+_preview/
 AGENT.md
 website.zip
 
-# --- Credentials / secrets / auth (FTP-only) ---
+# --- Credentials / secrets / auth ---
 .env
 .env.*
 *.env
@@ -32,8 +33,9 @@ auth.json
 .ftppass
 .htpasswd
 deploy.config.json
+form-config.php
 
-# --- OS / editor cruft ---
+# --- OS / editor / tooling cruft ---
 .DS_Store
 .DS_Store?
 Thumbs.db
@@ -41,3 +43,4 @@ desktop.ini
 *.tmp
 *.log
 *.swp
+__pycache__/

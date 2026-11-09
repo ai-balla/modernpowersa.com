@@ -1,22 +1,58 @@
 # ---------------------------------------------------------------
-# Modern Power Marine Services — live site config
-# Keep private / agent material off the public web.
-# (These files are delivered by FTP but must not be downloadable.)
+# Modern Power Marine Services — modernpowersa.com (Hostinger / LiteSpeed)
 # ---------------------------------------------------------------
+Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
 
-<Files "AGENT.md">
-  <IfModule mod_authz_core.c>
-    Require all denied
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order allow,deny
-    Deny from all
-  </IfModule>
+# --- Never serve private, source or repository material ---
+<FilesMatch "^(AGENT\.md|README\.md|\.git.*|.*\.(json|py|md|log|bak|sql|zip|xlsx|ps1))$">
+  Require all denied
+</FilesMatch>
+<Files "sitemap.xml">
+  Require all granted
 </Files>
-
-RedirectMatch 404 ^/_private(/|$)
-RedirectMatch 404 ^/_archive(/|$)
+RedirectMatch 404 ^/_(private|archive|src|docs|preview|media-review)(/|$)
 RedirectMatch 404 ^/website\.zip$
 RedirectMatch 404 ^/\.git(/|$)
-RedirectMatch 404 ^/\.gitattributes$
-RedirectMatch 404 ^/\.gitignore$
+RedirectMatch 404 ^/forms/config\.sample\.php$
+
+# --- Removed files: tell crawlers they are gone for good ---
+RedirectMatch 410 ^/(resources|videos|images|css|js)/
+
+# --- Old page URLs (previous version of this site, English only) -> new English pages ---
+RedirectMatch 301 ^/about/?$          /en/company/
+RedirectMatch 301 ^/services/?$       /en/services/
+RedirectMatch 301 ^/projects/?$       /en/projects/
+RedirectMatch 301 ^/certifications/?$ /en/quality/
+RedirectMatch 301 ^/contact/?$        /en/contact/
+RedirectMatch 410 ^/contact/send\.php$
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'"
+</IfModule>
+
+# --- Caching: versioned assets long, HTML short ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType text/html "access plus 10 minutes"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/xml
+</IfModule>
+
+# --- HTTPS (enable after confirming the SSL certificate is active in hPanel) ---
+# RewriteEngine On
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
