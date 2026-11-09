@@ -612,8 +612,12 @@ def build_quality(lang):
     cr, ld = crumbs(lang, [(t["nav"]["home"], ""), (t["nav"]["quality"], None)])
     table = ""
     if certs:
+        def first_cell(c):
+            if c["standard"]:
+                return f'<tr><th scope="row">{ltr(c["standard"])}{draft_mark(c, lang)}<span class="sub">{e(c[lang]["name"])}</span></th>'
+            return f'<tr><th scope="row">{e(c[lang]["name"])}{draft_mark(c, lang)}</th>'
         rows = "".join(
-            f'<tr><th scope="row">{ltr(c["standard"])}{draft_mark(c, lang)}<span class="sub">{e(c[lang]["name"])}</span></th>'
+            first_cell(c) +
             f'<td>{e(c[lang]["scope"])}</td><td>{ltr(c["issuer"]) if c["issuer"] else ""}</td>'
             f'<td>{ltr(c["number"]) if c["number"] else ""}</td><td>{fmt_date(c["expiry"], lang)}'
             + (f' <a href="{e(c["file"])}">{e(q["view"])}</a>' if c.get("file") and c["status"] == "published" else "")

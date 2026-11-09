@@ -148,6 +148,7 @@ address{font-style:normal}
 :lang(ar) .ledger thead th{text-transform:none;letter-spacing:0;font-size:.9rem}
 .ledger tbody th{font-weight:600;color:var(--navy);width:30%}
 .ledger tbody tr:last-child>*{border-bottom:0}
+.ledger td [dir=ltr]{white-space:nowrap}
 .ledger .ref{display:inline-block;font-size:.82rem;color:var(--steel);white-space:nowrap}
 .ledger .sub{display:block;font-weight:400;color:var(--steel);font-size:.9rem}
 .tags ul{list-style:none;display:flex;flex-wrap:wrap;gap:.35rem}

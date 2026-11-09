@@ -28,7 +28,7 @@
     {"id": "iso-50001", "status": "unsupported", "standard": "ISO 50001", "issuer": "", "number": "", "initial": "", "expiry": "", "cycle_end": "",
      "note": "Claimed on the previous About and Certifications pages; no certificate found. Removed.", "file": "", "source": "",
      "en": {"name": "Energy management system", "scope": ""}, "ar": {"name": "نظام إدارة الطاقة", "scope": ""}},
-    {"id": "contractor-classification", "status": "draft", "standard": "Contractor classification — marine works, Grade 2", "issuer": "Contractor Classification Agency", "number": "", "initial": "", "expiry": "", "cycle_end": "",
+    {"id": "contractor-classification", "status": "draft", "standard": "", "issuer": "", "number": "", "initial": "", "expiry": "", "cycle_end": "",
      "note": "Profile 2023 states Grade 2 classification for marine works. Classification certificate reported as under renewal (Oct 2026). Add number and expiry from the renewed certificate.", "file": "", "source": "Company profile 2023",
      "en": {"name": "Contractor classification, marine works (Grade 2)", "scope": "Marine works"},
      "ar": {"name": "تصنيف المقاولين في الأعمال البحرية (الدرجة الثانية)", "scope": "الأعمال البحرية"}}
