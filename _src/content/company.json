@@ -74,26 +74,35 @@
   ],
   "emails": [
     {
+      "label_en": "General enquiries and quotations",
+      "label_ar": "الاستفسارات وطلبات عروض الأسعار",
+      "address": "info@modernpowersa.com",
+      "status": "published",
+      "source": "Owner instruction, 9 Nov 2026"
+    },
+    {
       "label_en": "General enquiries",
       "label_ar": "الاستفسارات العامة",
       "address": "info@modernpowermarine.com",
-      "status": "published",
+      "status": "draft",
       "source": "Old site, new site, profile (profile has a typo 'modernpowerarine')",
-      "note": "Confirm which mailbox should be public after the domain move"
+      "note": "Replaced on the website by info@modernpowersa.com (owner, 9 Nov 2026)"
     },
     {
       "label_en": "Sales and quotations",
       "label_ar": "المبيعات وعروض الأسعار",
       "address": "sales@modernpowermarine.com",
-      "status": "published",
-      "source": "Old site, new site, profile 2023"
+      "status": "draft",
+      "source": "Old site, new site, profile 2023",
+      "note": "Replaced on the website by info@modernpowersa.com (owner, 9 Nov 2026)"
     },
     {
       "label_en": "Contracts",
       "label_ar": "العقود",
       "address": "contracts@modernpowermarine.com",
-      "status": "published",
-      "source": "Brief profile 2026; profile 2023"
+      "status": "draft",
+      "source": "Brief profile 2026; profile 2023",
+      "note": "Replaced on the website by info@modernpowersa.com (owner, 9 Nov 2026)"
     }
   ],
   "hours": {
