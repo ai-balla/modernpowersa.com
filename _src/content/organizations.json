@@ -11,7 +11,8 @@
       },
       "ar": {
         "name": "القوات البحرية الملكية السعودية"
-      }
+      },
+      "logo_client": "rsnf"
     },
     {
       "id": "swcc",
@@ -23,7 +24,8 @@
       },
       "ar": {
         "name": "المؤسسة العامة لتحلية المياه المالحة"
-      }
+      },
+      "logo_client": "swcc"
     },
     {
       "id": "naval-group",
@@ -35,7 +37,8 @@
       },
       "ar": {
         "name": "مجموعة نافال (DCNS سابقًا)"
-      }
+      },
+      "logo_client": "dcns"
     },
     {
       "id": "aramco",
@@ -47,7 +50,8 @@
       },
       "ar": {
         "name": "أرامكو السعودية"
-      }
+      },
+      "logo_client": "aramco"
     },
     {
       "id": "maaden",
@@ -59,7 +63,8 @@
       },
       "ar": {
         "name": "شركة معادن للبوكسايت والألومينا"
-      }
+      },
+      "logo_client": "maaden"
     },
     {
       "id": "khomasia",
@@ -71,7 +76,8 @@
       },
       "ar": {
         "name": "شركة الخماسية للملاحة والصيانة (مجموعة شركات البكري)"
-      }
+      },
+      "logo_client": "al-bakri"
     },
     {
       "id": "samref",
@@ -83,7 +89,8 @@
       },
       "ar": {
         "name": "شركة مصفاة أرامكو السعودية موبيل المحدودة (سامرف)"
-      }
+      },
+      "logo_client": "samref"
     },
     {
       "id": "masdar-bahri",
@@ -107,7 +114,8 @@
       },
       "ar": {
         "name": "جامعة الملك عبدالله للعلوم والتقنية (كاوست)"
-      }
+      },
+      "logo_client": "kaust"
     },
     {
       "id": "swa",
@@ -141,12 +149,15 @@
       "source": "mpms files/Sole Agency Certificate - HM (3).pdf (No. 0921-MPMS-HONGRUNTONG, 21 Sep 2026, 1 year)",
       "en": {
         "name": "Hongruntong Marine Co., Ltd.",
-        "description": "Exclusive agent in Saudi Arabia for marine and port equipment: dock rubber fenders and airbags, marine oil and dredge hoses, mooring equipment (China)"
+        "description": "Port fenders, airbags, marine hoses and mooring gear",
+        "country": "China"
       },
       "ar": {
         "name": "Hongruntong Marine Co., Ltd.",
-        "description": "الوكيل الحصري في المملكة لمعدات الموانئ والمعدات البحرية: المصدّات المطاطية للأرصفة والوسائد الهوائية، وخراطيم الزيت والتجريف البحرية، ومعدات الإرساء (الصين)"
-      }
+        "description": "مصدّات الموانئ والوسائد الهوائية والخراطيم ومعدات الإرساء",
+        "country": "الصين"
+      },
+      "logo": "hongruntong"
     },
     {
       "id": "taihong",
@@ -155,13 +166,16 @@
       "source": "Internal agency list (M. Mohamed, 27 Sep 2026); profile 2023",
       "en": {
         "name": "Yantai TaiHong Rubber Co., Ltd.",
-        "description": "Marine fenders (China)"
+        "description": "Marine rubber fenders for berths and vessels",
+        "country": "China"
       },
       "ar": {
         "name": "Yantai TaiHong Rubber Co., Ltd.",
-        "description": "المصدّات البحرية (الصين)"
+        "description": "المصدّات المطاطية البحرية للأرصفة والسفن",
+        "country": "الصين"
       },
-      "exclusive": false
+      "exclusive": false,
+      "logo": "taihong"
     },
     {
       "id": "sunhelm",
@@ -170,13 +184,14 @@
       "source": "Internal agency list (M. Mohamed, 27 Sep 2026)",
       "en": {
         "name": "Sunhelm",
-        "description": "Marine fenders"
+        "description": "Marine rubber fenders for berths and vessels"
       },
       "ar": {
         "name": "Sunhelm",
-        "description": "المصدّات البحرية"
+        "description": "المصدّات المطاطية البحرية للأرصفة والسفن"
       },
-      "exclusive": false
+      "exclusive": false,
+      "logo": "sunhelm"
     },
     {
       "id": "schottel",
@@ -185,13 +200,16 @@
       "source": "Internal agency list (27 Sep 2026); brief profile 2026; profile 2023",
       "en": {
         "name": "SCHOTTEL GmbH",
-        "description": "Propellers and marine propulsion systems (Germany)"
+        "description": "Propellers and marine propulsion systems",
+        "country": "Germany"
       },
       "ar": {
         "name": "SCHOTTEL GmbH",
-        "description": "الرفاصات وأنظمة الدفع البحري (ألمانيا)"
+        "description": "الرفاصات وأنظمة الدفع البحري",
+        "country": "ألمانيا"
       },
-      "exclusive": false
+      "exclusive": false,
+      "logo": "schottel"
     },
     {
       "id": "hi-fog",
@@ -200,13 +218,16 @@
       "source": "Internal agency list (27 Sep 2026); brief profile 2026; profile 2023",
       "en": {
         "name": "HI-FOG",
-        "description": "High-pressure water-mist firefighting systems for ships and buildings (Finland)"
+        "description": "High-pressure water-mist fire protection",
+        "country": "Finland"
       },
       "ar": {
         "name": "HI-FOG",
-        "description": "أنظمة مكافحة الحرائق بالرذاذ المائي عالي الضغط للسفن والمباني (فنلندا)"
+        "description": "أنظمة الإطفاء بالرذاذ المائي عالي الضغط",
+        "country": "فنلندا"
       },
-      "exclusive": false
+      "exclusive": false,
+      "logo": "hi-fog"
     }
   ]
 }

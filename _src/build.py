@@ -72,7 +72,7 @@ SITE = company["site_url"].rstrip("/")
 def visible(rec):
     """Production shows 'published' only. Preview also shows 'draft' (never restricted/withdrawn/expired/unsupported)."""
     st = rec.get("status")
-    return st == "published" or (PREVIEW and st == "draft")
+    return st == "published"
 
 
 def is_draft(rec):
@@ -183,8 +183,6 @@ def other(lang):
 
 
 def draft_mark(rec, lang):
-    if PREVIEW and rec is not None and is_draft(rec):
-        return f' <span class="draft">{e(T[lang]["draft_badge"])}</span>'
     return ""
 
 
@@ -275,7 +273,7 @@ def head(lang, path, title, desc, extra_ld=None, noindex=False):
     if extra_ld:
         ld.append(extra_ld)
     ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
-    fonts = ["plex-arabic-400", "plex-arabic-700"] if lang == "ar" else ["plex-latin-400", "plex-latin-600"]
+    fonts = ["readex-arabic-400", "readex-arabic-600"] if lang == "ar" else ["readex-latin-400", "readex-latin-600"]
     preload = "".join(f'<link rel="preload" href="/assets/fonts/{f}.woff2" as="font" type="font/woff2" crossorigin>' for f in fonts)
     return f"""<!doctype html>
 <html lang="{lang}" dir="{'rtl' if lang == 'ar' else 'ltr'}" class="no-js">
@@ -309,7 +307,7 @@ def head(lang, path, title, desc, extra_ld=None, noindex=False):
 </head>"""
 
 
-def header(lang, path):
+def header(lang, path, overlay=False):
     t = T[lang]
     o = other(lang)
     items = []
@@ -317,15 +315,15 @@ def header(lang, path):
         current = path == p or (p and path.startswith(p))
         aria = ' aria-current="page"' if current else ""
         items.append(f'<li><a href="{url(lang, p)}"{aria}>{e(t["nav"][key])}</a></li>')
-    preview_bar = (f'<div class="preview-bar" role="note">Internal preview — includes draft records marked '
-                   f'“{e(T["en"]["draft_badge"])}”. Not for publication.</div>') if PREVIEW else ""
+    preview_bar = ""
     return f"""<body>
 {preview_bar}<a class="skip" href="#main">{e(t['skip'])}</a>
-<header class="site-header">
+<header class="site-header{' is-overlay' if overlay else ''}">
   <div class="wrap bar">
     <a class="brand" href="{url(lang)}" aria-label="{e(company['name'][lang])} — {e(t['nav']['home'])}">
-      <img src="/assets/img/logo.png" width="220" height="80" alt="">
-      <span class="brand-ar" lang="ar">{e(company['name']['ar'])}</span>
+      <img class="logo-dark" src="/assets/img/logo.png" width="220" height="80" alt="">
+      <img class="logo-light" src="/assets/img/logo-white.png" width="220" height="80" alt="">
+      <span class="brand-name">{e(t['company']['brand_name'])}</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="nav-toggle-bars" aria-hidden="true"></span><span class="nav-toggle-label">{e(t['menu'])}</span>
@@ -334,7 +332,7 @@ def header(lang, path):
       <ul>{''.join(items)}</ul>
       <div class="nav-tools">
         <a class="lang-switch" href="{url(o, path)}" hreflang="{o}" lang="{o}" data-lang="{o}" aria-label="{e(t['switch_aria'])}">{e(t['switch_label'])}</a>
-        <a class="btn btn-small" href="{url(lang, 'contact/')}?type=quote#request">{e(t['cta_quote'])}</a>
+        <a class="btn btn-small btn-red" href="{url(lang, 'contact/')}?type=quote#request">{e(t['cta_quote'])}</a>
       </div>
     </nav>
   </div>
@@ -389,20 +387,30 @@ def crumbs(lang, trail):
     return html_, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
 
 
-def page_hero(lang, h1, lede, crumb_html, kicker=""):
-    k = f'<p class="kicker">{e(kicker)}</p>' if kicker else ""
-    return f"""<section class="page-hero"><div class="wrap">{crumb_html}{k}<h1>{e(h1)}</h1><p class="lede">{e(lede)}</p></div></section>"""
+WAVES = ('<svg class="ph-waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">'
+         '<path class="w1" d="M0 70 C 180 40 360 100 540 70 S 900 40 1080 70 S 1440 100 1620 70 S 1980 40 2160 70 S 2520 100 2880 70 V120 H0Z"/>'
+         '<path class="w2" d="M0 86 C 200 60 400 110 600 86 S 1000 60 1200 86 S 1600 110 1800 86 S 2200 60 2400 86 S 2800 110 2880 86 V120 H0Z"/>'
+         '<path class="w3" d="M0 100 C 240 84 480 116 720 100 S 1200 84 1440 100 S 1920 116 2160 100 S 2640 84 2880 100 V120 H0Z"/></svg>')
 
+
+def page_hero(lang, h1, lede, crumb_html, kicker="", photo="deck-work", extra=""):
+    k = f'<p class="kicker">{e(kicker)}</p>' if kicker else ""
+    img = (f'<img class="ph-img" src="/assets/img/photo/{photo}.jpg" srcset="/assets/img/photo/{photo}-800.jpg 800w, /assets/img/photo/{photo}.jpg 1600w" '
+           f'sizes="100vw" alt="" decoding="async" fetchpriority="high">') if photo else ""
+    return (f'<section class="page-hero{" has-photo" if photo else ""}">{img}<div class="wrap ph-in">{crumb_html}{k}'
+            f'<h1>{e(h1)}</h1><p class="lede">{e(lede)}</p>{extra}</div>{WAVES}<div class="waterline" aria-hidden="true"></div></section>')
 
 def cta_band(lang, service_slug=None):
     t = T[lang]
     q = f"?type=quote&service={service_slug}" if service_slug else "?type=quote"
     tel = phones(lang, "band-tel")
-    return f"""<section class="band"><div class="wrap band-in">
+    return f"""<section class="band">
+  <video class="band-video" muted loop playsinline preload="none" poster="/assets/video/sea-poster.jpg" data-autoplay aria-hidden="true" tabindex="-1">
+    <source src="/assets/video/sea-1280.mp4" type="video/mp4"></video>
+  <div class="wrap band-in">
   <div><h2>{e(t['home']['band_h'])}</h2><p>{e(t['home']['band_p'])}</p></div>
-  <div class="band-actions"><a class="btn btn-light" href="{url(lang, 'contact/')}{q}#request">{e(t['cta_quote'])}</a>{tel[0] if tel else ''}</div>
+  <div class="band-actions"><a class="btn btn-red" href="{url(lang, 'contact/')}{q}#request">{e(t['cta_quote'])}</a>{tel[0] if tel else ''}</div>
 </div></section>"""
-
 
 # ---------------------------------------------------------------- pages
 written = []
@@ -418,11 +426,11 @@ def write(rel, content):
 
 def service_card(lang, s, hl=3):
     d = s[lang]
+    b = s.get("banner", "deck-work")
     return (f'<li class="svc"><a href="{url(lang, "services/" + s["slug"] + "/")}">'
-            f'<span class="svc-n" aria-hidden="true">{s["order"]:02d}</span>{icon(s["icon"])}'
-            f'<h{hl} class="svc-h">{e(d["title"])}{draft_mark(s, lang)}</h{hl}><p>{e(d["short"])}</p>'
-            f'<span class="more" aria-hidden="true">{e(T[lang]["services"]["more"])}</span></a></li>')
-
+            f'<span class="svc-media"><img src="/assets/img/photo/{b}-800.jpg" alt="" loading="lazy" decoding="async" width="800" height="533"></span>'
+            f'<span class="svc-body">{icon(s["icon"])}<h{hl} class="svc-h">{e(d["title"])}{draft_mark(s, lang)}</h{hl}>'
+            f'<span class="svc-p">{e(d["short"])}</span></span></a></li>')
 
 def project_rows(lang, items, show_service=True):
     t = T[lang]
@@ -433,7 +441,9 @@ def project_rows(lang, items, show_service=True):
         svc_tags = "".join(f'<li><a href="{url(lang, "services/" + s + "/")}">{e(service_by_slug[s][lang]["title"])}</a></li>'
                            for s in p["services"] if s in service_by_slug)
         svc = f'<td class="tags"><ul>{svc_tags}</ul></td>' if show_service else ""
-        rows.append(f'<tr data-services="{" ".join(p["services"])}"><th scope="row">{e(org)}{draft_mark(orgs[p["client"]], lang)}</th>'
+        lg = orgs[p["client"]].get("logo_client")
+        logo = f'<span class="org-logo"><img src="/assets/img/clients/{lg}.png" alt="" loading="lazy"></span>' if lg else '<span class="org-logo is-empty" aria-hidden="true"></span>'
+        rows.append(f'<tr data-services="{" ".join(p["services"])}"><th scope="row"><span class="org">{logo}<span>{e(org)}{draft_mark(orgs[p["client"]], lang)}</span></span></th>'
                     f'<td>{e(p[lang]["title"])}{draft_mark(p, lang)} {ref}</td>{svc}</tr>')
     return "".join(rows)
 
@@ -441,14 +451,17 @@ def project_rows(lang, items, show_service=True):
 def agency_list(lang, cls="agencies"):
     if not agencies:
         return ""
-    t = T[lang]
-    lis = "".join(
-        f'<li class="agency"><p class="agency-name" lang="en" dir="ltr">{e(a[lang]["name"])}</p>'
-        + (f'<p class="badge">{e(t["company"]["exclusive"])}</p>' if a.get("exclusive") else "")
-        + f'<p>{e(a[lang].get("description", ""))}{draft_mark(a, lang)}</p></li>'
-        for a in sorted(agencies, key=lambda a: not a.get("exclusive")))
-    return f'<ul class="{cls}">{lis}</ul>'
-
+    lis = []
+    for a in agencies:
+        name = a[lang]["name"]
+        mark = (f'<img src="/assets/img/logos/{e(a["logo"])}.png" alt="{e(name)}" loading="lazy">' if a.get("logo")
+                else f'<span class="wordmark" lang="en" dir="ltr">{e(name.split(" (")[0].replace(" Co., Ltd.", ""))}</span>')
+        country = a[lang].get("country", "")
+        meta = f'<span class="agency-country">{e(country)}</span>' if country else ""
+        lis.append(f'<li class="agency"><div class="agency-mark">{mark}</div><div class="agency-body">'
+                   f'<p class="agency-name" lang="en" dir="ltr">{e(name)}</p><p class="agency-desc">{e(a[lang].get("description", ""))}</p>'
+                   f'<p class="agency-meta"><span class="agency-tag">{e(T[lang]["company"]["agent_tag"])}</span>{meta}</p></div></li>')
+    return f'<ul class="{cls}">{"".join(lis)}</ul>'
 
 def social_links(lang):
     out = []
@@ -469,76 +482,153 @@ SOCIAL_ICONS = {
 }
 
 
+WORK_IMAGES = ["drydock-1", "slipway-1", "hull-1", "blasting-1", "engine-2", "engine-3", "engine-1", "electrical-1",
+               "fenders-1", "fenders-2", "berth-1", "survey-1", "safety-1"]
+
+
 def gallery(lang, s):
     if not s.get("images"):
         return ""
     alt = T[lang]["services"]["photo_alt"].format(title=s[lang]["title"])
-    figs = "".join(f'<figure><img src="/assets/img/work/{e(i)}.jpg" alt="{e(alt)}" width="960" height="720" loading="lazy" decoding="async"></figure>'
+    figs = "".join(f'<figure><a href="/assets/img/work/{e(i)}.jpg" data-lightbox><img src="/assets/img/work/{e(i)}.jpg" alt="{e(alt)}" width="960" height="720" loading="lazy" decoding="async"></a></figure>'
                    for i in s["images"])
     return f'<div class="gallery g{min(len(s["images"]), 4)}">{figs}</div>'
 
 
+def work_strip(lang):
+    t = T[lang]
+    alt = t["home"]["work_h"]
+    figs = "".join(f'<li><a href="/assets/img/work/{i}.jpg" data-lightbox><img src="/assets/img/work/{i}.jpg" alt="{e(alt)}" loading="lazy" decoding="async" width="960" height="720"></a></li>'
+                   for i in WORK_IMAGES)
+    return f'<ul class="work-strip" tabindex="0" aria-label="{e(alt)}">{figs}</ul>'
+
+
+def clients_marquee(lang):
+    items = company.get("clients_logos", [])
+    if not items:
+        return ""
+    lis = "".join(f'<li><img src="/assets/img/clients/{k}.png" alt="{e(ar if lang == "ar" else en)}" loading="lazy" decoding="async"></li>' for k, en, ar in items)
+    # Second copy is decorative (hidden from assistive tech) so the strip can loop seamlessly.
+    dup = "".join(f'<li aria-hidden="true"><img src="/assets/img/clients/{k}.png" alt="" loading="lazy" decoding="async"></li>' for k, en, ar in items)
+    return f'<div class="marquee"><ul class="marquee-track">{lis}{dup}</ul></div>'
+
+
+def stats_band(lang):
+    t = T[lang]
+    cells = []
+    for s in company.get("stats", []):
+        v = len(projects) if s["value"] == "projects" else s["value"]
+        cells.append(f'<li><span class="stat-n" data-count="{v}"{" data-plain" if s.get("plain") else ""}><span dir="ltr">{v}</span></span>'
+                     f'<span class="stat-l">{e(s[lang])}</span></li>')
+    return f'<section class="stats" aria-label="{e(t["home"]["stats_label"])}"><ul class="wrap stats-in">{"".join(cells)}</ul></section>'
+
+
+def cert_seals(lang):
+    out = []
+    for c in certs:
+        if not c["standard"].startswith("ISO"):
+            continue
+        num = c["standard"].replace("ISO/IEC ", "").replace("ISO ", "").split(":")[0]
+        out.append(f'<li class="seal"><svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="47" class="in"/></svg>'
+                   f'<span class="seal-txt"><span class="seal-iso">ISO</span><span class="seal-num" dir="ltr">{e(num)}</span></span>'
+                   f'<span class="seal-name">{e(c[lang]["name"])}</span></li>')
+    return f'<ul class="seals">{"".join(out)}</ul>' if out else ""
+
+
+def draft_marks():
+    marks = "".join(f'<li><span dir="ltr">{n}M</span></li>' for n in (12, 10, 8, 6, 4, 2))
+    return f'<ol class="draft-marks" aria-hidden="true">{marks}</ol>'
+
 def build_home(lang):
     t = T[lang]
     h = t["home"]
-    picks = [p for p in projects if p["id"] in ("swcc-unloading-arm", "rsnf-dive-boat-survey", "maaden-generators",
+    picks = [p for p in projects if p["id"] in ("swcc-unloading-arm", "patrol-boat-w6", "maaden-generators",
                                                 "samref-fenders", "kaust-research-vessel", "rsnf-crane-docking")]
-    client_list = "".join(f'<li>{e(o[lang]["name"])}{draft_mark(o, lang)}</li>' for o in clients)
     body = f"""{head(lang, '', h['title'], h['description'])}
-{header(lang, '')}
+{header(lang, '', overlay=True)}
 <main id="main">
-<section class="hero"><div class="wrap hero-in">
-  <div class="hero-text">
-    <p class="kicker">{e(h['eyebrow'])}</p>
-    <h1>{e(h['h1'])}</h1>
-    <p class="lede">{e(h['lede'])}</p>
-    <p class="actions"><a class="btn" href="{url(lang, 'contact/')}?type=quote#request">{e(t['cta_quote'])}</a>
-    <a class="btn btn-ghost" href="{url(lang, 'services/')}">{e(h['cta_services'])}</a></p>
+<section class="hero">
+  <video class="hero-video" muted loop playsinline autoplay preload="metadata" poster="/assets/video/hero-poster.jpg" aria-label="{e(h['video_label'])}" data-autoplay>
+    <source src="/assets/video/hero-640.mp4" type="video/mp4" media="(max-width: 700px)">
+    <source src="/assets/video/hero-1280.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade" aria-hidden="true"></div>
+  {draft_marks()}
+  <div class="wrap hero-in">
+    <p class="hero-place">{e(h['eyebrow'])}</p>
+    <h1>{e(h['hero_h1'])}</h1>
+    <p class="lede">{e(h['hero_lede'])}</p>
+    <p class="actions"><a class="btn btn-red" href="{url(lang, 'contact/')}?type=quote#request">{e(t['cta_quote'])}</a>
+    <a class="btn btn-glass" href="{url(lang, 'services/')}">{e(h['cta_services'])}</a></p>
   </div>
-  <div class="hero-art">{hull_lines()}<p class="coord">{(ltr('21.5°') + ' شمالًا · ' + ltr('39.2°') + ' شرقًا — جدة') if lang == 'ar' else '21.5° N · 39.2° E — Jeddah'}</p></div>
+  <button class="video-toggle" type="button" aria-pressed="false" data-label-pause="{e(h['pause'])}" data-label-play="{e(h['play'])}" aria-label="{e(h['pause'])}"><span aria-hidden="true"></span></button>
+</section>
+{stats_band(lang)}
+
+<section class="section agencies-sec"><div class="wrap">
+  <div class="sec-head row"><h2>{e(h['agencies_h'])}</h2><p>{e(t['company']['agencies_p'])}</p></div>
+  {agency_list(lang)}
 </div></section>
 
-<section class="facts" aria-label="{e(h['facts_title'])}"><div class="wrap"><dl class="facts-grid">
-  <div><dt>{ltr('2000')}</dt><dd>{e(h['fact_2000'])}</dd></div>
-  <div><dt>{ltr(str(len(agencies)))}</dt><dd>{e(h['fact_agencies'])}</dd></div>
-  <div><dt>{e(h['fact_cov_k'])}</dt><dd>{e(company['coverage'][lang])}</dd></div>
-  <div><dt>{e(h['fact_hq_k'])}</dt><dd>{e(h['fact_hq'])}</dd></div>
-</dl></div></section>
-
-<section class="section"><div class="wrap">
-  <div class="sec-head"><p class="kicker">{e(h['services_k'])}</p><h2>{e(h['services_h'])}</h2><p>{e(h['services_p'])}</p></div>
+<section class="section svc-sec"><div class="wrap">
+  <div class="sec-head row"><h2>{e(h['services_h'])}</h2><p>{e(h['services_p'])}</p></div>
   <ul class="svc-grid">{''.join(service_card(lang, s) for s in services)}</ul>
 </div></section>
 
-<section class="section alt"><div class="wrap">
-  <div class="sec-head"><p class="kicker">{e(h['projects_k'])}</p><h2>{e(h['projects_h'])}</h2><p>{e(h['projects_p'])}</p></div>
+<section class="section work-sec dark"><div class="wrap">
+  <div class="sec-head row"><h2>{e(h['work_h'])}</h2><p>{e(h['work_p'])}</p></div>
+</div>{work_strip(lang)}</section>
+
+<section class="section"><div class="wrap split-refs">
+  <div class="sec-head"><h2>{e(h['projects_h'])}</h2><p>{e(h['projects_p'])}</p>
+    <p><a class="link-strong" href="{url(lang, 'projects/')}">{e(h['projects_all'])}</a></p>
+    <figure class="refs-photo"><img src="/assets/img/work/drydock-1.jpg" alt="{e(h['work_h'])}" loading="lazy" width="960" height="720"></figure></div>
   <div class="table-wrap"><table class="ledger"><caption class="sr-only">{e(h['projects_h'])}</caption>
-    <thead><tr><th scope="col">{e(t['projects']['col_client'])}</th><th scope="col">{e(t['projects']['col_scope'])}</th><th scope="col">{e(t['projects']['col_service'])}</th></tr></thead>
-    <tbody>{project_rows(lang, picks)}</tbody></table></div>
-  <p class="after"><a class="arrow" href="{url(lang, 'projects/')}">{e(h['projects_all'])}</a></p>
+    <thead><tr><th scope="col">{e(t['projects']['col_client'])}</th><th scope="col">{e(t['projects']['col_scope'])}</th></tr></thead>
+    <tbody>{project_rows(lang, picks, show_service=False)}</tbody></table></div>
 </div></section>
 
-<section class="section"><div class="wrap">
-  <div class="sec-head"><h2>{e(h['clients_h'])}</h2><p>{e(h['clients_p'])}</p></div>
-  <ul class="clients">{client_list}</ul>
+<section class="section clients-sec alt"><div class="wrap">
+  <div class="sec-head row"><h2>{e(h['clients_h'])}</h2><p>{e(h['clients_p'])}</p></div>
+</div>{clients_marquee(lang)}</section>
+
+<section class="section certs-sec"><div class="wrap certs-in">
+  <div class="sec-head"><h2>{e(h['certs_h'])}</h2><p>{e(h['certs_p'])}</p><p><a class="link-strong" href="{url(lang, 'quality/')}">{e(h['certs_more'])}</a></p></div>
+  {cert_seals(lang)}
 </div></section>
-<section class="section alt"><div class="wrap">
-  <div class="sec-head"><p class="kicker">{e(t['company']['agencies_h'])}</p><h2>{e(h['agencies_h'])}</h2><p>{e(t['company']['agencies_p'])}</p></div>
-  {agency_list(lang)}
+
+<section class="section updates-sec alt" data-updates="{url(lang, 'blog/')}"><div class="wrap">
+  <div class="sec-head row"><h2>{e(h['updates_h'])}</h2><p>{e(h['updates_p'])}</p></div>
+  <div class="updates-grid" data-updates-target></div>
+  <p><a class="btn btn-ghost" href="{url(lang, 'blog/')}">{e(h['updates_all'])}</a></p>
 </div></section>
 {cta_band(lang)}
 </main>
 {footer(lang)}"""
     write(f"{lang}/index.html", body)
 
+def leader_card(lang, p):
+    c = T[lang]["company"]
+    d = p[lang]
+    href = url(lang, "company/" + p["slug"] + "/")
+    steps = "".join(f'<li>{e(x)}</li>' for x in d["career"][:3])
+    watch = (f'<a class="btn btn-ghost btn-small" href="{href}#interview">{PLAY_ICON}{e(c["watch"])}</a>' if p.get("video") else "")
+    return (f'<li class="profile"><figure class="profile-photo"><img src="/assets/img/team/{p["photo"]}.jpg" alt="{e(d["name"])}" width="280" height="280" loading="lazy">'
+            f'<figcaption><span class="person">{e(d["name"])}</span><span class="role">{e(d["role"])}</span></figcaption></figure>'
+            f'<div class="profile-body"><p class="profile-sum">{e(d["summary"])}</p>'
+            f'<h3 class="profile-h">{e(c["career_h"])}</h3><ol class="profile-steps">{steps}</ol>'
+            f'<p class="profile-actions"><a class="btn btn-small" href="{href}">{e(c["bio"])}</a>{watch}</p></div></li>')
+
+PLAY_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>'
 
 def build_company(lang):
     t = T[lang]
     c = t["company"]
     cr, ld = crumbs(lang, [(t["nav"]["home"], ""), (t["nav"]["company"], None)])
     st = company["statements"]
-    lead = "".join(f'<li><p class="person">{e(p[lang]["name"])}{draft_mark(p, lang)}</p><p class="role">{e(p[lang]["role"])}</p></li>'
-                   for p in company["leadership"] if visible(p))
+    lead = "".join(leader_card(lang, p) for p in company["leadership"] if visible(p))
+    ov = company["overview"][lang]
+    facts = "".join(f'<div><dt>{e(k)}</dt><dd>{ltr(v) if v[:1].isdigit() else e(v)}</dd></div>' for k, v in company["facts"][lang])
     ag = ""
     if agencies:
         ag = (f'<section class="section alt"><div class="wrap"><div class="sec-head"><h2>{e(c["agencies_h"])}</h2><p>{e(c["agencies_p"])}</p></div>'
@@ -546,8 +636,12 @@ def build_company(lang):
     body = f"""{head(lang, 'company/', c['title'], c['description'], ld)}
 {header(lang, 'company/')}
 <main id="main">
-{page_hero(lang, c['h1'], c['lede'], cr)}
-<section class="section"><div class="wrap split">
+{page_hero(lang, c['h1'], c['lede'], cr, photo='hull-scaffold')}
+<section class="section"><div class="wrap split overview">
+  <div><h2>{e(c['overview_h'])}</h2>{''.join(f'<p>{e(x)}</p>' for x in ov)}</div>
+  <aside class="panel facts-panel"><h2 class="h-small">{e(c['facts_h'])}</h2><dl class="kv">{facts}</dl></aside>
+</div></section>
+<section class="section alt"><div class="wrap split">
   <div><h2>{e(c['history_h'])}</h2>
     <ol class="timeline">
       <li><span class="yr">{ltr('2000')}</span><p>{e(c['history_2000'])}</p></li>
@@ -556,7 +650,7 @@ def build_company(lang):
   <div><h2>{e(c['office_h'])}</h2><address class="addr">{address_html(lang)}</address>
     <p><a class="arrow" href="{e(maps_url())}" rel="noopener" target="_blank">{e(t['contact']['map'])}</a></p></div>
 </div></section>
-<section class="section alt"><div class="wrap">
+<section class="section"><div class="wrap">
   <div class="sec-head"><h2>{e(c['statements_h'])}</h2></div>
   <dl class="statements">
     <div><dt>{e(c['vision'])}</dt><dd>{e(st['vision'][lang])}</dd></div>
@@ -565,14 +659,46 @@ def build_company(lang):
   </dl>
 </div></section>
 <section class="section"><div class="wrap">
-  <div class="sec-head"><h2>{e(c['leadership_h'])}</h2></div>
-  <ul class="people">{lead}</ul>
+  <div class="sec-head"><h2>{e(c['leadership_h'])}</h2><p>{e(c['leadership_p'])}</p></div>
+  <ul class="profiles">{lead}</ul>
 </div></section>
 {ag}
 {cta_band(lang)}
 </main>
 {footer(lang)}"""
     write(f"{lang}/company/index.html", body)
+
+    for p in company["leadership"]:
+        if not visible(p):
+            continue
+        d = p[lang]
+        path = f"company/{p['slug']}/"
+        cr2, ld2 = crumbs(lang, [(t["nav"]["home"], ""), (t["nav"]["company"], "company/"), (d["name"], None)])
+        video = ""
+        if p.get("video"):
+            video = (f'<section class="section alt" id="interview"><div class="wrap"><h2>{e(d["video_h"])}</h2>'
+                     f'<div class="video-frame"><video controls preload="none" poster="/assets/video/{p["video"]}-poster.jpg" playsinline>'
+                     f'<source src="/assets/video/{p["video"]}.mp4" type="video/mp4"></video></div></div></section>')
+        body = f"""{head(lang, path, d['name'] + ' | ' + company['name'][lang], d['summary'], ld2)}
+{header(lang, path)}
+<main id="main">
+{page_hero(lang, d['name'], d['role'], cr2, photo='hull-scaffold')}
+<section class="section"><div class="wrap bio">
+  <figure class="bio-photo"><img src="/assets/img/team/{p['photo']}.jpg" alt="{e(d['name'])}" width="280" height="280"></figure>
+  <div class="bio-body">
+    <p class="bio-lead">{e(d['summary'])}</p>
+    <h2>{e(c['career_h'])}</h2>
+    <ol class="timeline">{''.join(f'<li><p>{e(x)}</p></li>' for x in d['career'])}</ol>
+    <h2>{e(c['achievements_h'])}</h2>
+    <ul class="ticks">{''.join(f'<li>{e(x)}</li>' for x in d['achievements'])}</ul>
+    <p><a class="link-strong" href="{url(lang, 'company/')}">{e(c['back_company'])}</a></p>
+  </div>
+</div></section>
+{video}
+{cta_band(lang)}
+</main>
+{footer(lang)}"""
+        write(f"{lang}/{path}index.html", body)
 
 
 def build_services(lang):
@@ -582,7 +708,7 @@ def build_services(lang):
     body = f"""{head(lang, 'services/', s_['title'], s_['description'], ld)}
 {header(lang, 'services/')}
 <main id="main">
-{page_hero(lang, s_['h1'], s_['lede'], cr)}
+{page_hero(lang, s_['h1'], s_['lede'], cr, photo='hull-welding-2')}
 <section class="section"><div class="wrap"><ul class="svc-grid">{''.join(service_card(lang, s, 2) for s in services)}</ul></div></section>
 {cta_band(lang)}
 </main>
@@ -607,8 +733,7 @@ def build_services(lang):
         body = f"""{head(lang, path, d['title'] + ' | ' + company['name'][lang], desc, ld)}
 {header(lang, path)}
 <main id="main">
-<section class="page-hero"><div class="wrap">{cr}<p class="kicker">{s['order']:02d} · {e(t['nav']['services'])}</p>
-  <h1>{e(d['title'])}{draft_mark(s, lang)}</h1><p class="lede">{e(d['intro'])}</p></div></section>
+{page_hero(lang, d['title'], d['intro'], cr, kicker=t['nav']['services'], photo=s.get('banner', 'deck-work'))}
 <section class="section"><div class="wrap">{gallery(lang, s)}</div><div class="wrap detail">
   <div class="detail-main">
     <h2>{e(s_['scope_h'])}</h2>
@@ -638,7 +763,7 @@ def build_projects(lang):
     body = f"""{head(lang, 'projects/', p_['title'], p_['description'], ld)}
 {header(lang, 'projects/')}
 <main id="main">
-{page_hero(lang, p_['h1'], p_['lede'], cr)}
+{page_hero(lang, p_['h1'], p_['lede'], cr, photo='propeller')}
 <section class="section"><div class="wrap">
   <div class="filter" hidden>
     <label for="svc-filter">{e(p_['filter_label'])}</label>
@@ -649,6 +774,7 @@ def build_projects(lang):
     <thead><tr><th scope="col">{e(p_['col_client'])}</th><th scope="col">{e(p_['col_scope'])}</th><th scope="col">{e(p_['col_service'])}</th></tr></thead>
     <tbody>{project_rows(lang, projects)}</tbody></table></div>
 </div></section>
+<section class="section clients-sec alt"><div class="wrap"><div class="sec-head"><h2>{e(p_['logos_h'])}</h2></div></div>{clients_marquee(lang)}</section>
 {cta_band(lang)}
 </main>
 {footer(lang)}"""
@@ -662,6 +788,25 @@ def fmt_date(iso, lang):
     return ltr(d.strftime("%d-%m-%Y"))
 
 
+def mini_seal(c, lang="en"):
+    if c["standard"].startswith("ISO"):
+        top, num = "ISO", c["standard"].replace("ISO/IEC ", "").replace("ISO ", "").split(":")[0]
+    else:
+        top, num = ("الدرجة" if lang == "ar" else "Grade"), "2"
+    return (f'<span class="mseal" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="47" class="in"/></svg>'
+            f'<span class="mseal-t"><span>{top}</span><b dir="ltr">{num}</b></span></span>')
+
+
+def seals_marquee(lang):
+    items = []
+    for c in certs:
+        label = c["standard"].split(":")[0] if c["standard"] else c[lang]["name"].split("—")[0].strip()
+        items.append(f'{mini_seal(c, lang)}<span class="ms-label" dir="{"ltr" if c["standard"] else "auto"}">{e(label)}</span>')
+    lis = "".join(f'<li class="seal-item">{x}</li>' for x in items)
+    dup = "".join(f'<li class="seal-item" aria-hidden="true">{x}</li>' for x in items)
+    return f'<div class="marquee"><ul class="marquee-track seals-track">{lis}{dup}</ul></div>'
+
+
 def build_quality(lang):
     t = T[lang]
     q = t["quality"]
@@ -669,9 +814,10 @@ def build_quality(lang):
     table = ""
     if certs:
         def first_cell(c):
+            seal = mini_seal(c, lang)
             if c["standard"]:
-                return f'<tr><th scope="row">{ltr(c["standard"])}{draft_mark(c, lang)}<span class="sub">{e(c[lang]["name"])}</span></th>'
-            return f'<tr><th scope="row">{e(c[lang]["name"])}{draft_mark(c, lang)}</th>'
+                return f'<tr><th scope="row"><span class="org">{seal}<span>{ltr(c["standard"])}{draft_mark(c, lang)}<span class="sub">{e(c[lang]["name"])}</span></span></span></th>'
+            return f'<tr><th scope="row"><span class="org">{seal}<span>{e(c[lang]["name"])}{draft_mark(c, lang)}</span></span></th>'
         sn, sd = CERT_DISPLAY["show_numbers"], CERT_DISPLAY["show_dates"]
 
         def other_cells(c):
@@ -689,12 +835,14 @@ def build_quality(lang):
     body = f"""{head(lang, 'quality/', q['title'], q['description'], ld)}
 {header(lang, 'quality/')}
 <main id="main">
-{page_hero(lang, q['h1'], q['lede'], cr)}
+{page_hero(lang, q['h1'], q['lede'], cr, photo='deck-chemicals')}
 <section class="section"><div class="wrap">
   {table}
   <div class="panel panel-wide"><h2>{e(q['docs_h'])}</h2><p>{e(q['docs_p'])}</p>
     <p><a class="btn" href="{url(lang, 'contact/')}?type=docs#request">{e(q['docs_btn'])}</a></p></div>
 </div></section>
+<section class="section clients-sec alt"><div class="wrap"><div class="sec-head"><h2>{e(q['seals_h'])}</h2></div></div>{seals_marquee(lang)}</section>
+{cta_band(lang)}
 </main>
 {footer(lang)}"""
     write(f"{lang}/quality/index.html", body)
@@ -729,14 +877,14 @@ def build_contact(lang):
     mail_list = "".join(f'<li><span class="sub">{e(m["label_" + lang])}</span>{x}</li>' for m, x in emails(lang))
     hours = ""
     if visible(company["hours"]):
-        hours = f'<div><dt>{e(c["hours"])}</dt><dd>{e(company["hours"][lang])}{draft_mark(company["hours"], lang)}</dd></div>'
+        hours = f'<div><dt>{e(c["hours"])}</dt><dd>{"<br>".join(e(x) for x in company["hours"][lang].split(" · "))}</dd></div>'
     svc_opts = "".join(f'<option value="{s["slug"]}">{e(s[lang]["title"])}</option>' for s in services)
     msgs = {k: c[k] for k in ("err_required", "err_email", "err_phone", "err_consent", "err_long", "err_summary",
                               "f_sending", "f_submit", "f_consent_short", "ok_h", "ok_p", "fail_h", "fail_p")}
     body = f"""{head(lang, 'contact/', c['title'], c['description'], ld)}
 {header(lang, 'contact/')}
 <main id="main">
-{page_hero(lang, c['h1'], c['lede'], cr)}
+{page_hero(lang, c['h1'], c['lede'], cr, photo='berth-aerial')}
 <section class="section"><div class="wrap contact">
   <div class="contact-details">
     <h2>{e(c['details_h'])}</h2>
@@ -802,7 +950,7 @@ def build_privacy(lang):
     body = f"""{head(lang, 'privacy/', p['title'], p['description'], ld)}
 {header(lang, 'privacy/')}
 <main id="main">
-{page_hero(lang, p['h1'], p['description'], cr)}
+{page_hero(lang, p['h1'], p['description'], cr, photo=None)}
 <section class="section"><div class="wrap prose">{secs}
 <p class="hint">{e(p['updated'])}: {ltr(company['reviewed'])}</p></div></section>
 </main>
@@ -813,30 +961,20 @@ def build_privacy(lang):
 def build_root():
     en, ar = T["en"], T["ar"]
     body = f"""<!doctype html>
-<html lang="ar" dir="rtl" class="no-js">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(company['name']['ar'])} | {e(company['name']['en'])}</title>
-<meta name="description" content="{e(ar['home']['description'])} {e(en['home']['description'])}">
-{'<meta name="robots" content="noindex, nofollow">' if PREVIEW else ''}
-<link rel="canonical" href="{SITE}/">
+<meta name="description" content="{e(ar['home']['description'])}">
+<meta name="robots" content="noindex, follow">
 <link rel="alternate" hreflang="ar" href="{SITE}/ar/"><link rel="alternate" hreflang="en" href="{SITE}/en/"><link rel="alternate" hreflang="x-default" href="{SITE}/">
-<meta property="og:title" content="{e(company['name']['en'])}"><meta property="og:image" content="{SITE}/assets/img/og-image.jpg">
 <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="stylesheet" href="/assets/css/site.css?v={ASSET_VERSION}">
-<script>try{{var l=localStorage.getItem('mpms-lang');if(l==='ar'||l==='en'){{location.replace('/'+l+'/');}}}}catch(e){{}}</script>
+<script>(function(){{var l='';try{{l=localStorage.getItem('mpms-lang')||'';}}catch(e){{}}
+if(l!=='ar'&&l!=='en'){{var n=(navigator.languages&&navigator.languages[0])||navigator.language||'en';l=/^ar/i.test(n)?'ar':'en';}}
+location.replace('/'+l+'/');}})();</script>
+<noscript><meta http-equiv="refresh" content="0; url=/ar/"></noscript>
 </head>
-<body class="chooser">
-<main id="main" class="chooser-in">
-  <img src="/assets/img/logo.png" width="330" height="121" alt="{e(company['name']['en'])}">
-  <h1><span lang="ar">{e(company['name']['ar'])}</span><span lang="en" dir="ltr">{e(company['name']['en'])}</span></h1>
-  <p class="choose">
-    <a class="btn" href="/ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a>
-    <a class="btn btn-ghost" href="/en/" hreflang="en" lang="en" dir="ltr" data-lang="en">English</a>
-  </p>
-</main>
-<script src="/assets/js/site.js?v={ASSET_VERSION}" defer></script>
-</body></html>
+<body><p><a href="/ar/" lang="ar">العربية</a> · <a href="/en/" lang="en">English</a></p></body></html>
 """
     write("index.html", body)
 
@@ -857,7 +995,8 @@ def build_root():
 
 def build_seo():
     paths = ["", "company/", "services/", "projects/", "quality/", "contact/", "privacy/"] + \
-            [f"services/{s['slug']}/" for s in services]
+            [f"services/{s['slug']}/" for s in services] + \
+            [f"company/{p['slug']}/" for p in company["leadership"] if p["status"] == "published"]
     urls = []
     for p in paths:
         for lang in LANGS:
@@ -875,10 +1014,10 @@ def build_seo():
 def main():
     if PREVIEW:
         if os.path.isdir(OUT):
-            shutil.rmtree(OUT)
-        os.makedirs(OUT)
+            shutil.rmtree(OUT, ignore_errors=True)
+        os.makedirs(OUT, exist_ok=True)
         for d in ("assets", "forms"):
-            shutil.copytree(os.path.join(ROOT, d), os.path.join(OUT, d))
+            shutil.copytree(os.path.join(ROOT, d), os.path.join(OUT, d), dirs_exist_ok=True)
     else:
         for d in GENERATED_DIRS:
             if os.path.isdir(os.path.join(OUT, d)):

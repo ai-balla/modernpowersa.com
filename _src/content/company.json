@@ -17,7 +17,7 @@
   },
   "address": {
     "status": "published",
-    "source": "ISO certificates Oct 2025 (registered address); company profile 2023",
+    "source": "Owner correction, 10 Nov 2026; ISO certificates 2025",
     "en": {
       "line1": "Captain Barrak Tower, 4th Floor, Unit 403",
       "line2": "Ahmed Ibn Ar Ruqi Street, Al Baghdadiyah Al Gharbiyah",
@@ -25,7 +25,7 @@
       "country": "Kingdom of Saudi Arabia"
     },
     "ar": {
-      "line1": "برج النقيب براك، الدور الرابع، وحدة 403",
+      "line1": "برج الكابتن براك، الدور الرابع، وحدة 403",
       "line2": "شارع أحمد بن الرقي، حي البغدادية الغربية",
       "city": "جدة 22231",
       "country": "المملكة العربية السعودية"
@@ -40,28 +40,20 @@
   },
   "phones": [
     {
-      "label_en": "Main office",
-      "label_ar": "المكتب الرئيسي",
-      "display": "+966 12 603 8042",
-      "tel": "+966126038042",
-      "status": "published",
-      "source": "Brief profile 2026; staff email signatures; profile 2023"
-    },
-    {
       "label_en": "Office",
       "label_ar": "المكتب",
       "display": "+966 12 603 8049",
       "tel": "+966126038049",
       "status": "published",
-      "source": "Brief profile 2026"
+      "source": "Owner, 10 Nov 2026"
     },
     {
-      "label_en": "Office (previous website)",
-      "label_ar": "المكتب",
-      "display": "+966 12 603 8043",
-      "tel": "+966126038043",
-      "status": "draft",
-      "source": "Old and previous new site; not in brief profile 2026 — confirm"
+      "label_en": "Fax",
+      "label_ar": "فاكس",
+      "display": "+966 12 603 8048",
+      "tel": "",
+      "status": "published",
+      "source": "Owner, 10 Nov 2026"
     },
     {
       "label_en": "Fax",
@@ -69,7 +61,7 @@
       "display": "+966 12 603 8044",
       "tel": "",
       "status": "published",
-      "source": "Brief profile 2026 (8044 / 8048)"
+      "source": "Owner, 10 Nov 2026"
     }
   ],
   "emails": [
@@ -78,38 +70,14 @@
       "label_ar": "الاستفسارات وطلبات عروض الأسعار",
       "address": "info@modernpowersa.com",
       "status": "published",
-      "source": "Owner instruction, 9 Nov 2026"
-    },
-    {
-      "label_en": "General enquiries",
-      "label_ar": "الاستفسارات العامة",
-      "address": "info@modernpowermarine.com",
-      "status": "draft",
-      "source": "Old site, new site, profile (profile has a typo 'modernpowerarine')",
-      "note": "Replaced on the website by info@modernpowersa.com (owner, 9 Nov 2026)"
-    },
-    {
-      "label_en": "Sales and quotations",
-      "label_ar": "المبيعات وعروض الأسعار",
-      "address": "sales@modernpowermarine.com",
-      "status": "draft",
-      "source": "Old site, new site, profile 2023",
-      "note": "Replaced on the website by info@modernpowersa.com (owner, 9 Nov 2026)"
-    },
-    {
-      "label_en": "Contracts",
-      "label_ar": "العقود",
-      "address": "contracts@modernpowermarine.com",
-      "status": "draft",
-      "source": "Brief profile 2026; profile 2023",
-      "note": "Replaced on the website by info@modernpowersa.com (owner, 9 Nov 2026)"
+      "source": "Owner: the only company email (9-10 Nov 2026)"
     }
   ],
   "hours": {
-    "status": "draft",
-    "source": "CONFLICT: new site says Sunday-Thursday 8:00-17:00, old site says Saturday-Thursday",
-    "en": "Sunday to Thursday, 8:00 am to 5:00 pm",
-    "ar": "الأحد إلى الخميس، من 8:00 صباحًا إلى 5:00 مساءً"
+    "status": "published",
+    "source": "Confirmed by MPMS (Mustafa), 2026-11-10",
+    "en": "Sunday to Wednesday, 9:00 am to 5:00 pm · Thursday, 9:00 am to 3:00 pm",
+    "ar": "الأحد إلى الأربعاء، من 9:00 صباحًا إلى 5:00 مساءً · الخميس، من 9:00 صباحًا إلى 3:00 مساءً"
   },
   "whatsapp": {
     "status": "draft",
@@ -118,27 +86,80 @@
   },
   "leadership": [
     {
+      "slug": "mohamed-jazzar",
+      "photo": "mohamed-jazzar",
       "status": "published",
-      "source": "Old site home + bio page, new site, profile org chart",
+      "source": "Old website bio page (modernpowermarine.com/mohamed-jazzar/)",
       "en": {
         "name": "Eng. Mohamed Jazzar",
-        "role": "Chairman and Founder"
+        "role": "Chairman and Founder",
+        "summary": "A marine engineer with more than 40 years in the maritime industry, covering ship maintenance and marine operations: mechanical, electrical, refrigeration and air conditioning, painting, carpentry, marine fittings, and the supply and installation of water desalination stations.",
+        "career": [
+          "Graduated in 1978 and began his career with the Saudi Ports Authority as Director of Maritime Administration at Jeddah Islamic Port",
+          "Moved to the private sector in 1992 as General Manager of Yanbu Commercial Port",
+          "Chairman of the Board and General Manager of King Fahd Shipyard in Dammam for four years",
+          "General Manager of King Fahd Shipyard at Jeddah Islamic Port for eleven years"
+        ],
+        "achievements": [
+          "Oversaw the repair of the ship Makkah after a major incident",
+          "Led the lifting and transport of the capsized boat Zorak 54 from Tair Island to King Faisal Naval Base in Jeddah",
+          "Direct contracts with the Royal Saudi Naval Forces for the maintenance, operation, supply and installation of marine equipment, including repair of fast-boat control rooms and upgrades of vessel water systems"
+        ]
       },
       "ar": {
         "name": "المهندس محمد جزار",
-        "role": "رئيس مجلس الإدارة والمؤسس"
+        "role": "رئيس مجلس الإدارة والمؤسس",
+        "summary": "مهندس بحري بخبرة تتجاوز 40 عامًا في القطاع البحري، تشمل صيانة السفن والعمليات البحرية في مجالات الميكانيكا والكهرباء والتبريد والتكييف والطلاء والنجارة والتجهيزات البحرية، وتوريد وتركيب محطات تحلية المياه.",
+        "career": [
+          "تخرّج عام 1978 وبدأ مسيرته في المؤسسة العامة للموانئ مديرًا للإدارة البحرية في ميناء جدة الإسلامي",
+          "انتقل إلى القطاع الخاص عام 1992 مديرًا عامًا لميناء ينبع التجاري",
+          "رئيس مجلس الإدارة والمدير العام لحوض الملك فهد لإصلاح السفن بالدمام لمدة أربع سنوات",
+          "المدير العام لحوض الملك فهد لإصلاح السفن بميناء جدة الإسلامي لمدة إحدى عشرة سنة"
+        ],
+        "achievements": [
+          "أشرف على إصلاح السفينة «مكة» بعد حادث كبير",
+          "قاد عملية رفع ونقل الزورق المنقلب «زورق 54» من جزيرة الطير إلى قاعدة الملك فيصل البحرية بجدة",
+          "عقود مباشرة مع القوات البحرية الملكية السعودية لصيانة وتشغيل وتوريد وتركيب المعدات البحرية، ومنها إصلاح غرف التحكم في الزوارق السريعة وتحديث أنظمة المياه في عدد من السفن"
+        ]
       }
     },
     {
+      "slug": "abdulaziz-jazzar",
+      "photo": "abdulaziz-jazzar",
+      "video": "gm-interview",
       "status": "published",
-      "source": "Old site home + bio page, new site",
+      "source": "Old website bio page (modernpowermarine.com/abdulaziz-abdulqader-jazzar/); GM interview video",
       "en": {
-        "name": "Abdulaziz Jazzar",
-        "role": "General Manager"
+        "name": "Eng. Abdulaziz Abdulqader Jazzar",
+        "role": "General Manager",
+        "summary": "Specialist in port and maritime management, combining academic study with practical leadership in Saudi Arabia's ports and shipping sector.",
+        "career": [
+          "Graduated in 1983, with postgraduate studies in Port and Maritime Management",
+          "Assistant General Manager, International Maritime Services Company, Jeddah Islamic Port",
+          "Shipping Operations Manager, National Shipping Company, Jeddah Islamic Port",
+          "Director of Maritime Administration, Ministry of Transportation"
+        ],
+        "achievements": [
+          "Leads MPMS as General Manager and authorised signatory for its offers",
+          "Brings port, shipping-operations and maritime-administration experience to the company's government and industrial work"
+        ],
+        "video_h": "Interview with the General Manager"
       },
       "ar": {
-        "name": "عبدالعزيز جزار",
-        "role": "المدير العام"
+        "name": "المهندس عبدالعزيز عبدالقادر جزار",
+        "role": "المدير العام",
+        "summary": "متخصص في إدارة الموانئ والشؤون البحرية، يجمع بين الدراسة الأكاديمية والقيادة العملية في قطاع الموانئ والنقل البحري في المملكة.",
+        "career": [
+          "تخرّج عام 1983، مع دراسات عليا في إدارة الموانئ والشؤون البحرية",
+          "مساعد المدير العام لشركة الخدمات البحرية الدولية بميناء جدة الإسلامي",
+          "مدير العمليات الملاحية في الشركة الوطنية للنقل البحري بميناء جدة الإسلامي",
+          "مدير الإدارة البحرية في وزارة المواصلات"
+        ],
+        "achievements": [
+          "يقود الشركة بصفته المدير العام والمفوّض بالتوقيع على عروضها",
+          "يوظّف خبرته في الموانئ والعمليات الملاحية والإدارة البحرية في أعمال الشركة مع الجهات الحكومية والصناعية"
+        ],
+        "video_h": "لقاء مع المدير العام"
       }
     }
   ],
@@ -198,5 +219,215 @@
       "label_ar": "فيسبوك",
       "source": "Old website footer; page category shows NGO — confirm it is maintained"
     }
-  ]
+  ],
+  "stats": [
+    {
+      "value": 2000,
+      "plain": true,
+      "en": "Established in Jeddah",
+      "ar": "سنة التأسيس في جدة"
+    },
+    {
+      "value": 9,
+      "en": "Service lines",
+      "ar": "مجالات خدمة"
+    },
+    {
+      "value": 5,
+      "en": "Manufacturer agencies",
+      "ar": "وكالات لشركات مصنّعة"
+    },
+    {
+      "value": "projects",
+      "en": "Project references",
+      "ar": "مرجع مشروع"
+    },
+    {
+      "value": 6,
+      "en": "ISO certificates",
+      "ar": "شهادات ISO"
+    }
+  ],
+  "clients_logos": [
+    [
+      "rsnf",
+      "Royal Saudi Naval Forces",
+      "القوات البحرية الملكية السعودية"
+    ],
+    [
+      "border-guard",
+      "General Directorate of Border Guard",
+      "المديرية العامة لحرس الحدود"
+    ],
+    [
+      "swcc",
+      "Saline Water Conversion Corporation",
+      "المؤسسة العامة لتحلية المياه المالحة"
+    ],
+    [
+      "aramco",
+      "Saudi Aramco",
+      "أرامكو السعودية"
+    ],
+    [
+      "maaden",
+      "Ma'aden",
+      "معادن"
+    ],
+    [
+      "sec",
+      "Saudi Electricity Company",
+      "الشركة السعودية للكهرباء"
+    ],
+    [
+      "petro-rabigh",
+      "Petro Rabigh",
+      "بترورابغ"
+    ],
+    [
+      "dcns",
+      "DCNS / Naval Group",
+      "DCNS / نافال"
+    ],
+    [
+      "al-bakri",
+      "A.K. Al Bakri & Sons Holding",
+      "شركة عبدالقادر البكري وأبنائه"
+    ],
+    [
+      "zamil",
+      "Zamil Offshore",
+      "الزامل للخدمات البحرية"
+    ],
+    [
+      "vallianz",
+      "Vallianz",
+      "Vallianz"
+    ],
+    [
+      "naghi",
+      "Naghi Marine",
+      "ناغي مارين"
+    ],
+    [
+      "macna",
+      "MACNA — The Maritime Company for Navigation",
+      "الشركة الملاحية للأعمال البحرية"
+    ],
+    [
+      "makamin",
+      "Makamin",
+      "مكامن"
+    ],
+    [
+      "gulf-power",
+      "Gulf Power & Marine",
+      "قوى الخليج البحرية"
+    ],
+    [
+      "hadi-hamad",
+      "Hadi Hamad Al-Hammam Group",
+      "مجموعة هادي حمد آل همام"
+    ],
+    [
+      "al-hoty",
+      "Al Hoty Group",
+      "مجموعة الحوطي"
+    ],
+    [
+      "algosaibi",
+      "Khalifa A. Algosaibi Trading",
+      "خليفة القصيبي للتجارة"
+    ],
+    [
+      "defense-env",
+      "Défense Environnement Services",
+      "Défense Environnement Services"
+    ],
+    [
+      "sud-moteurs",
+      "Sud Moteurs",
+      "Sud Moteurs"
+    ],
+    [
+      "atco",
+      "ATCO",
+      "ATCO"
+    ],
+    [
+      "rawabi",
+      "Rawabi",
+      "روابي"
+    ]
+  ],
+  "clients_logos_source": "Client page of the MPMS company profile (collage supplied by MPMS)",
+  "overview": {
+    "status": "published",
+    "source": "MPMS company data sheet (profiles 2023/2026, CR, technical offer template)",
+    "en": [
+      "Modern Power Marine Services Co. (MPMS) is a Saudi limited liability company headquartered in Jeddah. It began in 2000 as an establishment supplying ship spare parts and providing ship maintenance and operation services, and in 2012 expanded into a marine services company.",
+      "Today MPMS maintains and repairs vessels of all sizes — drydocking, mechanical, electrical and hull work, engines and generators from 10 kW to 3,000 kW — and builds, maintains and equips marine facilities, berths and fenders. It also supplies firefighting, desalination and air-conditioning systems, marine equipment and spare parts, and skilled technical manpower.",
+      "The company serves government and private-sector clients on the Red Sea and Arabian Gulf coasts, including the Royal Saudi Naval Forces, the Border Guard, the Saline Water Conversion Corporation, Saudi Aramco, SAMREF, Ma'aden and KAUST, and represents manufacturers such as SCHOTTEL, HI-FOG, Yantai TaiHong, Sunhelm and Hongruntong in the Kingdom."
+    ],
+    "ar": [
+      "شركة الطاقة الحديثة للخدمات البحرية شركة سعودية ذات مسؤولية محدودة، مقرها الرئيسي في جدة. بدأ نشاطها عام 2000 مؤسسةً لتوريد قطع غيار السفن وصيانتها وتشغيلها، ثم توسّع عام 2012 ليصبح شركة متخصصة في الخدمات البحرية.",
+      "تتولى الشركة اليوم صيانة وإصلاح الوسائط البحرية بجميع أحجامها، من التحويض والأعمال الميكانيكية والكهربائية وأعمال البدن، إلى عَمرة المحركات والمولدات بقدرات من 10 إلى 3,000 كيلوواط، كما تنشئ المرافق والأرصفة البحرية وتصونها وتجهّزها بالمصدّات. وتورّد أنظمة مكافحة الحرائق وتحلية المياه والتكييف، والمعدات وقطع الغيار البحرية، وتوفّر العمالة الفنية الماهرة.",
+      "تخدم الشركة عملاء القطاعين الحكومي والخاص على ساحلي البحر الأحمر والخليج العربي، ومنهم القوات البحرية الملكية السعودية، والمديرية العامة لحرس الحدود، والمؤسسة العامة لتحلية المياه المالحة، وأرامكو السعودية، وسامرف، ومعادن، وجامعة الملك عبدالله للعلوم والتقنية، وتمثّل في المملكة شركات مصنّعة منها SCHOTTEL وHI-FOG وYantai TaiHong وSunhelm وHongruntong."
+    ]
+  },
+  "facts": {
+    "status": "published",
+    "en": [
+      [
+        "Legal form",
+        "Limited liability company"
+      ],
+      [
+        "Commercial Registration",
+        "4030129967 (since 2000)"
+      ],
+      [
+        "Unified No.",
+        "7001720791"
+      ],
+      [
+        "VAT No.",
+        "300593364900003"
+      ],
+      [
+        "Classification",
+        "City Service Providers, Grade 2 (Construction)"
+      ],
+      [
+        "Chamber of Commerce",
+        "Jeddah Chamber member, Grade 2"
+      ]
+    ],
+    "ar": [
+      [
+        "الكيان القانوني",
+        "شركة ذات مسؤولية محدودة"
+      ],
+      [
+        "السجل التجاري",
+        "4030129967 (منذ عام 2000)"
+      ],
+      [
+        "الرقم الموحد",
+        "7001720791"
+      ],
+      [
+        "الرقم الضريبي",
+        "300593364900003"
+      ],
+      [
+        "التصنيف",
+        "تصنيف مقدمي خدمات المدن، الدرجة الثانية (التشييد والبناء)"
+      ],
+      [
+        "الغرفة التجارية",
+        "عضو الغرفة التجارية بجدة، الدرجة الثانية"
+      ]
+    ]
+  }
 }

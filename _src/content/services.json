@@ -51,7 +51,8 @@
         "drydock-1",
         "slipway-1",
         "electrical-1"
-      ]
+      ],
+      "banner": "hull-painting"
     },
     {
       "slug": "hull-steel-coatings",
@@ -98,7 +99,8 @@
       "images": [
         "hull-1",
         "blasting-1"
-      ]
+      ],
+      "banner": "hull-welding"
     },
     {
       "slug": "engines-generators-propulsion",
@@ -148,9 +150,11 @@
       },
       "images": [
         "engine-2",
+        "engine-v2-1",
         "engine-3",
         "engine-1"
-      ]
+      ],
+      "banner": "engines-quay"
     },
     {
       "slug": "berths-fenders-marine-facilities",
@@ -203,7 +207,8 @@
         "fenders-2",
         "berth-1",
         "survey-1"
-      ]
+      ],
+      "banner": "berth-aerial"
     },
     {
       "slug": "firefighting-systems",
@@ -247,7 +252,8 @@
       },
       "images": [
         "safety-1"
-      ]
+      ],
+      "banner": "deck-work"
     },
     {
       "slug": "water-desalination-systems",
@@ -287,7 +293,10 @@
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
       },
-      "images": []
+      "images": [
+        "desalination-1"
+      ],
+      "banner": "desalination"
     },
     {
       "slug": "air-conditioning-ventilation",
@@ -329,7 +338,11 @@
           "إنجاز الأعمال وتسليمها وفق أسس الاستلام المحددة في العقد"
         ]
       },
-      "images": []
+      "images": [
+        "hvac-1",
+        "hvac-2"
+      ],
+      "banner": "hvac-ship"
     },
     {
       "slug": "equipment-spare-parts",
@@ -379,7 +392,11 @@
           "التركيب والتشغيل عند تضمينهما في نطاق العمل"
         ]
       },
-      "images": []
+      "images": [
+        "spare-parts-2",
+        "spare-parts-1"
+      ],
+      "banner": "spare-parts"
     },
     {
       "slug": "technical-manpower",
@@ -421,7 +438,8 @@
           "مباشرة العمل للمدة المتفق عليها"
         ]
       },
-      "images": []
+      "images": [],
+      "banner": "welders-team"
     }
   ]
 }

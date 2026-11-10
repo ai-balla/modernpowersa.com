@@ -54,3 +54,6 @@ mpms files/
 # Runtime CMS uploads stay outside source control.
 assets/uploads/*
 !assets/uploads/.htaccess
+
+# --- Videos: deployed by FTP from disk (deploy-site.py), not stored in Git/LFS ---
+assets/video/*.mp4

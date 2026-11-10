@@ -26,7 +26,7 @@
     "home": {
       "title": "Modern Power Marine Services Co. | Marine maintenance, repair and supply in Saudi Arabia",
       "description": "Jeddah-based marine services company: vessel maintenance and repair, hull and steelwork, engines and generators, berths and fenders, HVAC, firefighting, desalination systems, equipment supply and technical manpower.",
-      "eyebrow": "Jeddah · Kingdom of Saudi Arabia",
+      "eyebrow": "Jeddah, Kingdom of Saudi Arabia",
       "h1": "Marine maintenance, repair and supply for government and industry in Saudi Arabia",
       "lede": "Modern Power Marine Services Co. (MPMS) maintains and repairs vessels and marine facilities, and supplies marine equipment and spare parts, for government and private-sector clients across the Kingdom.",
       "cta_services": "View services",
@@ -36,18 +36,32 @@
       "fact_hq": "Head office, Captain Barrak Tower, Al Baghdadiyah Al Gharbiyah",
       "services_k": "Services",
       "services_h": "What we do",
-      "services_p": "Nine service lines, grouped by the kind of work. Each page sets out the typical scope, what you receive and how to request a quotation.",
+      "services_p": "Nine service lines, from a single repair to a full docking period. Each page lists the typical scope and what you receive.",
       "projects_k": "Project experience",
       "projects_h": "Selected references",
-      "projects_p": "A selection from the project list in our 2023 company profile.",
+      "projects_p": "From the project list in our company profile.",
       "projects_all": "See all project references",
-      "clients_h": "Organizations we have worked for",
-      "clients_p": "As listed in the project references of our 2023 company profile.",
+      "clients_h": "Organizations we have worked with",
+      "clients_p": "Government, naval and industrial clients across the Kingdom.",
       "band_h": "Have a vessel, facility or supply requirement?",
-      "band_p": "Send us the specification or a short description. We will reply with questions or a quotation.",
+      "band_p": "Send us the specification or a short description. We reply with questions or a quotation.",
       "fact_agencies": "Manufacturers represented in Saudi Arabia, including an exclusive agency for marine fenders and port equipment",
       "fact_cov_k": "Coverage",
-      "agencies_h": "Manufacturers we represent"
+      "agencies_h": "Manufacturers we represent",
+      "hero_h1": "Complete marine solutions, from dry dock to open sea",
+      "hero_lede": "Vessel maintenance and repair, marine works, equipment supply and skilled manpower for government and industry on the Red Sea and Arabian Gulf coasts. Based in Jeddah since 2000.",
+      "stats_label": "MPMS in figures",
+      "video_label": "Background video of an offshore support vessel at sea",
+      "work_h": "From our work",
+      "work_p": "Drydocking, hull, mechanical and electrical works, fenders and marine survey, from our project files.",
+      "certs_h": "Certified management systems",
+      "certs_p": "Quality, environment, health and safety, information security, business continuity and risk management.",
+      "certs_more": "Certificates and classification",
+      "updates_h": "Updates",
+      "updates_p": "Company news, agencies and project milestones.",
+      "updates_all": "All updates",
+      "pause": "Pause background video",
+      "play": "Play background video"
     },
     "company": {
       "title": "Company and history | Modern Power Marine Services Co.",
@@ -63,9 +77,19 @@
       "objective": "Objective",
       "leadership_h": "Management",
       "agencies_h": "Agencies",
-      "agencies_p": "Manufacturers MPMS represents as agent in Saudi Arabia.",
+      "agencies_p": "Authorised agencies in the Kingdom for marine fenders, port equipment, propulsion and firefighting systems.",
       "office_h": "Head office",
-      "exclusive": "Exclusive agent"
+      "exclusive": "Exclusive agent",
+      "overview_h": "About MPMS",
+      "facts_h": "Company facts",
+      "leadership_p": "Decades of experience in Saudi ports, shipping and marine operations.",
+      "bio": "Full profile",
+      "career_h": "Career",
+      "achievements_h": "Experience and achievements",
+      "back_company": "Back to the company page",
+      "brand_name": "Modern Power Marine Services Company",
+      "agent_tag": "Authorised agent",
+      "watch": "Watch the interview"
     },
     "services": {
       "title": "Services | Modern Power Marine Services Co.",
@@ -87,7 +111,8 @@
       "next_p": "Send the specification, drawings or a description of the work, with the vessel or site location. If you are preparing a tender, include the reference number and closing date.",
       "next_btn": "Request a quotation for this service",
       "other_h": "Other services",
-      "photo_alt": "MPMS work: {title}"
+      "photo_alt": "MPMS work: {title}",
+      "banner_alt": "Marine work illustrating {title}"
     },
     "projects": {
       "title": "Project references | Modern Power Marine Services Co.",
@@ -100,7 +125,8 @@
       "col_scope": "Scope",
       "col_service": "Service",
       "reference": "Ref.",
-      "count": "references shown"
+      "count": "references shown",
+      "logos_h": "Organizations in our project references"
     },
     "quality": {
       "title": "Quality and certification | Modern Power Marine Services Co.",
@@ -115,7 +141,8 @@
       "view": "View certificate",
       "docs_h": "Prequalification documents",
       "docs_p": "Clients and procurement teams can request copies of current certificates, the Commercial Registration and other prequalification documents through the contact form.",
-      "docs_btn": "Request documents"
+      "docs_btn": "Request documents",
+      "seals_h": "Our certificates"
     },
     "contact": {
       "title": "Contact and quotation requests | Modern Power Marine Services Co.",
@@ -196,7 +223,9 @@
       "h1": "Page not found",
       "p": "The page you requested does not exist or has moved.",
       "home": "Go to the home page"
-    }
+    },
+    "lightbox_close": "Close",
+    "blog": "Updates"
   },
   "ar": {
     "lang_name": "العربية",
@@ -224,7 +253,7 @@
     "home": {
       "title": "شركة الطاقة الحديثة للخدمات البحرية | صيانة وإصلاح وتوريد بحري في المملكة",
       "description": "شركة خدمات بحرية مقرها جدة: صيانة وإصلاح الوسائط البحرية، وأعمال البدن والحديد، والمحركات والمولدات، والأرصفة والمصدّات، والتكييف، ومكافحة الحرائق، وأنظمة التحلية، وتوريد المعدات، والعمالة الفنية.",
-      "eyebrow": "جدة · المملكة العربية السعودية",
+      "eyebrow": "جدة، المملكة العربية السعودية",
       "h1": "صيانة وإصلاح وتوريد بحري للقطاعين الحكومي والخاص في المملكة",
       "lede": "تقدّم شركة الطاقة الحديثة للخدمات البحرية أعمال صيانة وإصلاح الوسائط والمرافق البحرية، وتوريد المعدات وقطع الغيار البحرية، لعملاء القطاعين الحكومي والخاص في مختلف مناطق المملكة.",
       "cta_services": "استعرض الخدمات",
@@ -234,18 +263,32 @@
       "fact_hq": "المقر الرئيسي، برج النقيب براك، حي البغدادية الغربية",
       "services_k": "الخدمات",
       "services_h": "مجالات عملنا",
-      "services_p": "تسعة مجالات خدمة مصنّفة حسب طبيعة العمل. توضّح كل صفحة النطاق المعتاد، وما تتسلّمه، وطريقة طلب عرض السعر.",
+      "services_p": "تسعة مجالات خدمة، من إصلاح واحد إلى فترة تحويض كاملة. توضّح كل صفحة النطاق المعتاد وما تتسلّمه.",
       "projects_k": "الخبرات السابقة",
       "projects_h": "مراجع مختارة",
-      "projects_p": "مختارات من قائمة المشاريع الواردة في الملف التعريفي للشركة (2023).",
+      "projects_p": "من قائمة المشاريع في الملف التعريفي للشركة.",
       "projects_all": "جميع مراجع المشاريع",
       "clients_h": "جهات عملنا معها",
-      "clients_p": "وفق مراجع المشاريع الواردة في الملف التعريفي للشركة (2023).",
+      "clients_p": "عملاء من القطاعات الحكومية والعسكرية والصناعية في مختلف مناطق المملكة.",
       "band_h": "لديكم وسيطة بحرية أو مرفق أو احتياج توريد؟",
       "band_p": "أرسلوا المواصفات أو وصفًا مختصرًا، وسنعود إليكم باستفسارات أو بعرض سعر.",
       "fact_agencies": "شركات مصنّعة نمثّلها في المملكة، منها وكالة حصرية للمصدّات البحرية ومعدات الموانئ",
       "fact_cov_k": "نطاق العمل",
-      "agencies_h": "الشركات التي نمثّلها"
+      "agencies_h": "الشركات التي نمثّلها",
+      "hero_h1": "حلول بحرية متكاملة، من الحوض الجاف إلى عرض البحر",
+      "hero_lede": "صيانة وإصلاح الوسائط البحرية، والأعمال البحرية، وتوريد المعدات، والعمالة الفنية الماهرة، للقطاعين الحكومي والخاص على ساحلي البحر الأحمر والخليج العربي. من جدة منذ عام 2000.",
+      "stats_label": "الشركة بالأرقام",
+      "video_label": "فيديو خلفية لسفينة إسناد بحري في عرض البحر",
+      "work_h": "من أعمالنا",
+      "work_p": "التحويض وأعمال البدن والأعمال الميكانيكية والكهربائية والمصدّات والمسح البحري، من ملفات مشاريعنا.",
+      "certs_h": "أنظمة إدارة معتمدة",
+      "certs_p": "الجودة، والبيئة، والصحة والسلامة المهنية، وأمن المعلومات، واستمرارية الأعمال، وإدارة المخاطر.",
+      "certs_more": "الشهادات والتصنيف",
+      "updates_h": "المستجدات",
+      "updates_p": "أخبار الشركة والوكالات ومراحل المشاريع.",
+      "updates_all": "جميع المستجدات",
+      "pause": "إيقاف فيديو الخلفية",
+      "play": "تشغيل فيديو الخلفية"
     },
     "company": {
       "title": "الشركة ونبذة تاريخية | شركة الطاقة الحديثة للخدمات البحرية",
@@ -261,9 +304,19 @@
       "objective": "الهدف",
       "leadership_h": "الإدارة",
       "agencies_h": "الوكالات",
-      "agencies_p": "الشركات المصنّعة التي تمثّلها الشركة وكيلًا في المملكة.",
+      "agencies_p": "وكالات معتمدة في المملكة للمصدّات البحرية ومعدات الموانئ وأنظمة الدفع ومكافحة الحرائق.",
       "office_h": "المقر الرئيسي",
-      "exclusive": "وكيل حصري"
+      "exclusive": "وكيل حصري",
+      "overview_h": "نبذة عن الشركة",
+      "facts_h": "بيانات الشركة",
+      "leadership_p": "خبرة تمتد لعقود في الموانئ السعودية والنقل البحري والعمليات البحرية.",
+      "bio": "السيرة الكاملة",
+      "career_h": "المسيرة المهنية",
+      "achievements_h": "الخبرات والإنجازات",
+      "back_company": "العودة إلى صفحة الشركة",
+      "brand_name": "شركة الطاقة الحديثة للخدمات البحرية",
+      "agent_tag": "وكيل معتمد",
+      "watch": "شاهد المقابلة"
     },
     "services": {
       "title": "الخدمات | شركة الطاقة الحديثة للخدمات البحرية",
@@ -285,7 +338,8 @@
       "next_p": "أرسلوا المواصفات أو المخططات أو وصفًا للعمل، مع موقع الوسيطة أو الموقع. وإذا كنتم تُعدّون منافسة، فأضيفوا رقمها وتاريخ إقفالها.",
       "next_btn": "اطلب عرض سعر لهذه الخدمة",
       "other_h": "خدمات أخرى",
-      "photo_alt": "من أعمال الشركة: {title}"
+      "photo_alt": "من أعمال الشركة: {title}",
+      "banner_alt": "صورة توضيحية لأعمال {title}"
     },
     "projects": {
       "title": "مراجع المشاريع | شركة الطاقة الحديثة للخدمات البحرية",
@@ -298,7 +352,8 @@
       "col_scope": "نطاق العمل",
       "col_service": "الخدمة",
       "reference": "المرجع",
-      "count": "مرجعًا معروضًا"
+      "count": "مرجعًا معروضًا",
+      "logos_h": "الجهات في مراجع مشاريعنا"
     },
     "quality": {
       "title": "الجودة والشهادات | شركة الطاقة الحديثة للخدمات البحرية",
@@ -313,7 +368,8 @@
       "view": "عرض الشهادة",
       "docs_h": "مستندات التأهيل",
       "docs_p": "يمكن للعملاء وفرق المشتريات طلب نسخ من الشهادات السارية والسجل التجاري ومستندات التأهيل الأخرى عبر نموذج التواصل.",
-      "docs_btn": "طلب المستندات"
+      "docs_btn": "طلب المستندات",
+      "seals_h": "شهاداتنا"
     },
     "contact": {
       "title": "التواصل وطلبات عروض الأسعار | شركة الطاقة الحديثة للخدمات البحرية",
@@ -394,6 +450,8 @@
       "h1": "الصفحة غير موجودة",
       "p": "الصفحة المطلوبة غير موجودة أو نُقلت إلى عنوان آخر.",
       "home": "الانتقال إلى الصفحة الرئيسية"
-    }
+    },
+    "lightbox_close": "إغلاق",
+    "blog": "المستجدات"
   }
 }
