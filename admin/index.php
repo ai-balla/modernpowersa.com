@@ -65,8 +65,9 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             $status=post_value('status')==='published'?'published':'draft';
             if ($status==='published' && (!$values['title_en']||!$values['title_ar']||!$values['body_en']||!$values['body_ar'])) { throw new RuntimeException('Both Arabic and English titles and articles are required before publishing.'); }
             $params=array_merge([$slug],array_values($values),[$image,$status]);
-            if ($id) { $params[]=$id; mpms_query('UPDATE '.MPMS_PREFIX.'posts SET slug=?,title_en=?,title_ar=?,excerpt_en=?,excerpt_ar=?,body_en=?,body_ar=?,image=?,status=?,published_at=IF(?=\'published\',COALESCE(published_at,NOW()),published_at) WHERE id=?',array_merge(array_slice($params,0,-1),[$status,$id])); }
-            else { mpms_query('INSERT INTO '.MPMS_PREFIX.'posts (slug,title_en,title_ar,excerpt_en,excerpt_ar,body_en,body_ar,image,status,published_at) VALUES (?,?,?,?,?,?,?,?,?,IF(?=\'published\',NOW(),NULL))',array_merge($params,[$status])); }
+            $publishedAt=$status==='published'?gmdate('Y-m-d H:i:s'):null;
+            if ($id) { mpms_query('UPDATE '.MPMS_PREFIX.'posts SET slug=?,title_en=?,title_ar=?,excerpt_en=?,excerpt_ar=?,body_en=?,body_ar=?,image=?,status=?,published_at=COALESCE(published_at,?) WHERE id=?',array_merge($params,[$publishedAt,$id])); }
+            else { mpms_query('INSERT INTO '.MPMS_PREFIX.'posts (slug,title_en,title_ar,excerpt_en,excerpt_ar,body_en,body_ar,image,status,published_at) VALUES (?,?,?,?,?,?,?,?,?,?)',array_merge($params,[$publishedAt])); }
             mpms_log('blog_'.$status,$slug);$message='Article saved.';$view='blog';
         }
         if ($action==='inquiry') {
@@ -101,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             mpms_query('UPDATE '.MPMS_PREFIX.'users SET password_hash=? WHERE id=?',[password_hash($new,PASSWORD_DEFAULT),$_SESSION['user_id']]);
             session_regenerate_id(true);mpms_log('password_changed');$message='Admin password updated.';
         }
-    } catch (PDOException $e) { error_log('MPMS admin operation failed: '.$e->getCode()); $error='This change could not be saved. The URL slug may already be in use.'; }
+    } catch (PDOException $e) { error_log('MPMS admin operation failed: '.$e->getCode()); @file_put_contents(mpms_private('admin-errors.log'),gmdate('c').' '.$e->getMessage()."\n",FILE_APPEND|LOCK_EX); $error='This change could not be saved. The URL slug may already be in use.'; }
     catch (RuntimeException $e) { $error=$e->getMessage(); }
 }
 ?><!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MPMS · Website management</title><link rel="icon" href="/assets/img/favicon-32.png"><link rel="stylesheet" href="/admin/admin.css"></head><body>
