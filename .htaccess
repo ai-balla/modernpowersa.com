@@ -56,3 +56,14 @@ RedirectMatch 410 ^/contact/send\.php$
 # RewriteEngine On
 # RewriteCond %{HTTPS} !=on
 # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# MPMS database-backed content and private admin interface.
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://modernpowersa.com%{REQUEST_URI} [R=301,L]
+RewriteRule ^admin$ /admin/ [R=301,L]
+RewriteRule ^sitemap\.xml$ cms/sitemap.php [L]
+# Keep direct index.html URLs available for deployment-integrity comparisons.
+RewriteCond %{REQUEST_URI} !/index\.html$ [NC]
+RewriteRule ^(ar|en)(/.*)?$ cms/render.php [L]

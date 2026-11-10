@@ -47,3 +47,6 @@ __pycache__/
 
 # Company source documents (private: CR, VAT, bank, certificates)
 mpms files/
+
+# Also exclude the spelling used in the owner-supplied credential filename.
+*credintials*

@@ -1,6 +1,6 @@
 # Updating the MPMS website — staff guide
 
-The website is generated from a few content files. You edit the content files; a small script builds the Arabic and English pages. Nothing appears on the public site until the change is merged into the `main` branch, because Hostinger deploys `main` automatically.
+The website is generated from a few content files. You edit the content files; a small script builds the Arabic and English pages. The live admin panel at `/admin/` can edit and publish page text, blog posts and public contact settings directly. These edits live in MySQL and survive FTP deployments. The files below remain the baseline templates; publish template changes through `deploy.cmd`. Hostinger automatic Git publishing is not enabled. See `ADMIN-GUIDE.md`.
 
 ## 1. Where things are
 

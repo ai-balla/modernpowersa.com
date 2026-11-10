@@ -117,6 +117,13 @@ if ($errors) {
     respond(false, $lang, $wantsJson, $errors, 422);
 }
 
+/* Persist requests for the private admin inbox; delivery remains independently checked. */
+$mpmsInquiryId = 0;
+try {
+    require_once dirname(__DIR__) . '/cms/core.php';
+    $mpmsInquiryId = mpms_inquiry($d, $lang);
+} catch (Throwable $e) { error_log('MPMS inbox persistence unavailable: ' . $e->getCode()); }
+
 /* ---------- compose (plain text; no HTML injection possible) ---------- */
 $oneLine = fn(string $s): string => str_replace(["\r", "\n"], ' ', $s);
 $subject = ($config['subject_prefix'] ?? '[modernpowersa.com]') . ' ' . $types[$d['type']] . ' — ' . $oneLine($d['name'])
@@ -157,6 +164,11 @@ if ($transport === 'log') {
     $sent = (bool)file_put_contents($config['log_file'], "To: $to\nSubject: $subject\n" . print_r($headers, true) . "\n$body\n\n=====\n", FILE_APPEND);
 } else {
     $sent = mail($to, $encodedSubject, $body, $headers, '-f' . $from);
+}
+
+if ($mpmsInquiryId > 0) {
+    try { mpms_query('UPDATE ' . MPMS_PREFIX . 'inquiries SET delivery=? WHERE id=?', [$sent ? 'accepted_by_mail' : 'mail_failed', $mpmsInquiryId]); }
+    catch (Throwable $e) { error_log('MPMS inbox delivery status unavailable.'); }
 }
 
 if ($sent) {

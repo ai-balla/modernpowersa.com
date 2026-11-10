@@ -1,26 +1,15 @@
 @echo off
-REM ============================================================
-REM  Deploy the new modernpowersa.com
-REM  1) publishes the reviewed branch to GitHub "main"  -> Hostinger auto-deploys the website
-REM  2) uploads the private bundle (form settings) by FTP to ~/_mpms_private (outside the web root)
-REM  Rollback: see _docs\DEPLOYMENT.md  (previous version = commit 2c880aa)
-REM ============================================================
+setlocal
 cd /d "%~dp0"
-echo.
-echo [1/3] Checking content...
-python _src\build.py --check || goto :fail
-echo.
-echo [2/3] Publishing to GitHub (main) - Hostinger deploys automatically...
-git push origin dev/bilingual-rebuild || goto :fail
-git push origin main || goto :fail
-echo.
-echo [3/3] Uploading private form settings (FTP, outside the web root)...
-powershell -ExecutionPolicy Bypass -File "_private\ftp-upload.ps1" -Phase 2 || goto :fail
-echo.
-echo DONE. Wait 2-3 minutes, then open https://modernpowersa.com/ and tell Claude "deployed".
+echo Publishing MPMS through the saved FTP pipeline...
+python "_private\refresh-secrets.py"
+if errorlevel 1 goto fail
+python "_private\deploy-site.py" --publish
+if errorlevel 1 goto fail
+echo Deployment and file verification completed.
 pause
-goto :eof
+exit /b 0
 :fail
-echo.
-echo *** Something failed. Nothing further was done. Copy the messages above to Claude. ***
+echo Deployment stopped. Read the message above. No Git push was performed.
 pause
+exit /b 1
