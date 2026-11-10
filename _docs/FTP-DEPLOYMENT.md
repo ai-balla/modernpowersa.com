@@ -2,7 +2,8 @@
 
 The reusable deployment pipeline is saved in this website folder. It does not push to GitHub and does not depend on Hostinger's Git integration.
 
-- Double-click `deploy.cmd` to validate, back up, publish, and verify the website.
+- Double-click `deploy.cmd` to fetch GitHub main, prepare an isolated release, validate, back up, publish through FTP, and verify the website. Local uncommitted edits are preserved. Referenced MP4 files excluded from Git are copied from the local assets/video folder.
+- Run `python _private/publish-github.py --check-only` to prepare and validate the latest GitHub release without uploading.
 - Run `python _private/deploy-site.py` for a check without connecting or uploading.
 - Run `python _private/deploy-site.py --test-connection` to test the FTP login.
 - Run `python _private/deploy-site.py --verify-live` to compare live public files against this release.

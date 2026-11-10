@@ -4,7 +4,7 @@ cd /d "%~dp0"
 echo Publishing MPMS through the saved FTP pipeline...
 python "_private\refresh-secrets.py"
 if errorlevel 1 goto fail
-python "_private\deploy-site.py" --publish
+python "_private\publish-github.py"
 if errorlevel 1 goto fail
 echo Deployment and file verification completed.
 pause
