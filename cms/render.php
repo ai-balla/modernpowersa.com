@@ -19,8 +19,9 @@ try {
         if($record){$edits=json_decode((string)($preview?$record['draft_json']:$record['live_json']),true)?:[];mpms_apply($dom,$edits);}
     }
     // Blog is always discoverable through the main menu in both languages.
+    if($isBlog){foreach($xpath->query('//nav[@id="site-nav"]//a[@aria-current]') as $link){$link->removeAttribute('aria-current');}}
     $menu=$xpath->query('//nav[@id="site-nav"]/ul')->item(0);
-    if($menu){$li=$dom->createElement('li');$a=$dom->createElement('a');$a->setAttribute('href','/'.$lang.'/blog/');$a->appendChild($dom->createTextNode($lang==='ar'?'المدونة':'Blog'));$li->appendChild($a);$menu->appendChild($li);}
+    if($menu){$li=$dom->createElement('li');$a=$dom->createElement('a');$a->setAttribute('href','/'.$lang.'/blog/');if($isBlog){$a->setAttribute('aria-current','page');}$a->appendChild($dom->createTextNode($lang==='ar'?'المدونة':'Blog'));$li->appendChild($a);$menu->appendChild($li);}
     // Blog styling is supplied by the shared redesigned site stylesheet.
     // Settings are shared, so contact links stay synchronized across all pages.
     $email=mpms_setting('contact_email');$phone=mpms_setting('contact_phone');$address=mpms_setting('address_'.$lang);
