@@ -22,11 +22,11 @@ RedirectMatch 404 ^/forms/config\.sample\.php$
 RedirectMatch 410 ^/(resources|videos|images|css|js)/
 
 # --- Old page URLs (previous version of this site, English only) -> new English pages ---
-RedirectMatch 301 ^/about/?$          /en/company/
-RedirectMatch 301 ^/services/?$       /en/services/
-RedirectMatch 301 ^/projects/?$       /en/projects/
-RedirectMatch 301 ^/certifications/?$ /en/quality/
-RedirectMatch 301 ^/contact/?$        /en/contact/
+RedirectMatch 301 ^/about(?:/index\.html)?/?$          /en/company/
+RedirectMatch 301 ^/services(?:/index\.html)?/?$       /en/services/
+RedirectMatch 301 ^/projects(?:/index\.html)?/?$       /en/projects/
+RedirectMatch 301 ^/certifications(?:/index\.html)?/?$ /en/quality/
+RedirectMatch 301 ^/contact(?:/index\.html)?/?$        /en/contact/
 RedirectMatch 410 ^/contact/send\.php$
 
 # --- Security headers ---
