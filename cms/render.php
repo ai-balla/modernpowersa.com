@@ -21,7 +21,7 @@ try {
     // Blog is always discoverable through the main menu in both languages.
     $menu=$xpath->query('//nav[@id="site-nav"]/ul')->item(0);
     if($menu){$li=$dom->createElement('li');$a=$dom->createElement('a');$a->setAttribute('href','/'.$lang.'/blog/');$a->appendChild($dom->createTextNode($lang==='ar'?'المدونة':'Blog'));$li->appendChild($a);$menu->appendChild($li);}
-    $css=$dom->createElement('link');$css->setAttribute('rel','stylesheet');$css->setAttribute('href','/cms/public.css?v=1');$dom->getElementsByTagName('head')->item(0)->appendChild($css);
+    // Blog styling is supplied by the shared redesigned site stylesheet.
     // Settings are shared, so contact links stay synchronized across all pages.
     $email=mpms_setting('contact_email');$phone=mpms_setting('contact_phone');$address=mpms_setting('address_'.$lang);
     if($email!==''){
@@ -51,7 +51,7 @@ try {
             if(!$posts){$body='<div class="cms-empty"><h2>'.($lang==='ar'?'مستجدات الشركة':'Company updates').'</h2><p>'.($lang==='ar'?'ستُنشر أخبار الشركة ومقالاتها هنا عند توفرها.':'Company news and articles will appear here when published.').'</p></div>';}
             else{$body='<div class="cms-blog-grid">';foreach($posts as $post){$url='/'.$lang.'/blog/'.$post['slug'].'/';$body.='<article class="cms-blog-card">';if($post['image']){$body.='<a href="'.mpms_h($url).'"><img src="'.mpms_h($post['image']).'" alt="" loading="lazy"></a>';}$body.='<div><small>'.mpms_h(substr($post['published_at']??'',0,10)).'</small><h2><a href="'.mpms_h($url).'">'.mpms_h($post['title_'.$lang]).'</a></h2><p>'.mpms_h($post['excerpt_'.$lang]).'</p><a class="arrow" href="'.mpms_h($url).'">'.($lang==='ar'?'قراءة المقال':'Read article').'</a></div></article>';}$body.='</div>';}
         }
-        $main='<main id="main"><section class="page-hero"><div class="wrap"><p><a href="/'.$lang.'/">'.($lang==='ar'?'الرئيسية':'Home').'</a> / <a href="/'.$lang.'/blog/">'.($lang==='ar'?'المدونة':'Blog').'</a></p><h1>'.mpms_h($title).'</h1><p class="lede">'.mpms_h($description).'</p></div></section><section class="section"><div class="wrap">'.$body.'</div></section></main>';
+        $main='<main id="main"><section class="page-hero"><div class="wrap ph-in"><p><a href="/'.$lang.'/">'.($lang==='ar'?'الرئيسية':'Home').'</a> / <a href="/'.$lang.'/blog/">'.($lang==='ar'?'المدونة':'Blog').'</a></p><h1>'.mpms_h($title).'</h1><p class="lede">'.mpms_h($description).'</p></div></section><section class="section"><div class="wrap">'.$body.'</div></section></main>';
         $fragment=mpms_dom($main);$newMain=$dom->importNode($fragment->getElementsByTagName('main')->item(0),true);$oldMain=$dom->getElementsByTagName('main')->item(0);$oldMain->parentNode->replaceChild($newMain,$oldMain);
         $dom->getElementsByTagName('title')->item(0)->nodeValue=$title.' | MPMS';
         foreach($xpath->query('//meta[@name="description" or @property="og:description"]') as $meta){$meta->setAttribute('content',$description);}
