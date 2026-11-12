@@ -530,3 +530,15 @@ input:focus,select:focus,textarea:focus{border-color:var(--navy);outline:3px sol
 @media (max-width:560px){.profile{grid-template-columns:1fr}.profile-photo{flex-direction:row;align-items:stretch}.profile-photo img{width:120px;flex:none}.profile-photo figcaption{border-top:0;border-inline-start:4px solid var(--accent);justify-content:center}}
 
 .ledger .org{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
+
+/* Owner-supplied department managers: HTML text in the attached RTL order. */
+.management-team{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:2.5rem;text-align:center;background:#fff}
+.management-team caption{text-align:start;font-weight:600;font-size:1.15rem;color:var(--deep);padding-bottom:1rem}
+.management-team td{padding:0;border:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.management-name{padding:1.1rem .7rem;display:grid;gap:.35rem}
+.management-ar{font-weight:600;color:var(--deep);font-size:1.1rem}
+.management-en{font-size:1rem;color:var(--ink)}
+.management-role{padding:.8rem .6rem;border-top:1px solid var(--line);background:var(--haze);font-weight:500}
+.management-role span{display:block}
+.management-role-en{font-size:.85rem;color:var(--steel);font-weight:400;margin-top:.2rem}
+@media(max-width:640px){.management-team,.management-team tbody,.management-team tr,.management-team td{display:block;width:100%}.management-team{border:0}.management-team caption{display:block;text-align:center}.management-team tr{display:grid;gap:1rem}.management-team td{border-radius:var(--r);overflow:hidden}}

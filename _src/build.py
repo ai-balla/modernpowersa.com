@@ -621,6 +621,22 @@ def leader_card(lang, p):
 
 PLAY_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>'
 
+def department_management_table(lang):
+    """Keep the owner-supplied right-to-left column order; stack full cells on phones."""
+    members = [p for p in company.get("department_managers", []) if visible(p)]
+    if not members:
+        return ""
+    caption = "مديرو الإدارات" if lang == "ar" else "Department managers"
+    cells = "".join(
+        f'<td><div class="management-name"><span class="management-ar" lang="ar" dir="rtl">{e(p["name_ar"])}</span>'
+        f'<span class="management-en" lang="en" dir="ltr">{e(p["name_en"])}</span></div>'
+        f'<div class="management-role"><span lang="ar" dir="rtl">{e(p["role_ar"])}</span>'
+        f'<span class="management-role-en" lang="en" dir="ltr">{e(p["role_en"])}</span></div></td>'
+        for p in members
+    )
+    return f'<table class="management-team" dir="rtl"><caption>{e(caption)}</caption><tbody><tr>{cells}</tr></tbody></table>'
+
+
 def build_company(lang):
     t = T[lang]
     c = t["company"]
@@ -661,6 +677,7 @@ def build_company(lang):
 <section class="section"><div class="wrap">
   <div class="sec-head"><h2>{e(c['leadership_h'])}</h2><p>{e(c['leadership_p'])}</p></div>
   <ul class="profiles">{lead}</ul>
+  {department_management_table(lang)}
 </div></section>
 {ag}
 {cta_band(lang)}

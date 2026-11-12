@@ -429,5 +429,31 @@
         "عضو الغرفة التجارية بجدة، الدرجة الثانية"
       ]
     ]
-  }
+  },
+  "department_managers": [
+    {
+      "status": "published",
+      "name_ar": "م. حسن معتوق",
+      "name_en": "Eng. Hassan Matooq",
+      "role_ar": "مدير العمليات",
+      "role_en": "Operations Manager",
+      "source": "Owner-provided management table, 12 November 2026"
+    },
+    {
+      "status": "published",
+      "name_ar": "م. مصطفى محمد",
+      "name_en": "Eng. Mustafa Mohamed",
+      "role_ar": "مدير العقود والمناقصات",
+      "role_en": "Contracts and Tenders Manager",
+      "source": "Owner-provided management table, 12 November 2026"
+    },
+    {
+      "status": "published",
+      "name_ar": "م. روميل باديناس",
+      "name_en": "Eng. Rommel C. Badinas",
+      "role_ar": "المدير الفني",
+      "role_en": "Technical Manager",
+      "source": "Owner-provided management table, 12 November 2026"
+    }
+  ]
 }
