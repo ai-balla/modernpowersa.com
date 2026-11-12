@@ -12,6 +12,7 @@ Read _docs/CONTENT-GUIDE.md before editing.
 """
 import datetime as dt
 import html
+import hashlib
 import json
 import os
 import re
@@ -24,7 +25,7 @@ CONTENT = os.path.join(SRC, "content")
 LANGS = ("ar", "en")
 TODAY = dt.date.today()
 BUILD_DATE = TODAY.isoformat()
-ASSET_VERSION = TODAY.strftime("%Y%m%d")
+ASSET_VERSION = TODAY.strftime("%Y%m%d") + "-" + hashlib.sha256(b"".join(open(os.path.join(ROOT, "assets", sub), "rb").read() for sub in ("css/site.css", "js/site.js"))).hexdigest()[:8]
 
 ARGS = set(sys.argv[1:])
 PREVIEW = "--preview" in ARGS
@@ -622,19 +623,18 @@ def leader_card(lang, p):
 PLAY_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>'
 
 def department_management_table(lang):
-    """Keep the owner-supplied right-to-left column order; stack full cells on phones."""
+    """Show one language per page, following its natural reading direction."""
     members = [p for p in company.get("department_managers", []) if visible(p)]
     if not members:
         return ""
     caption = "مديرو الإدارات" if lang == "ar" else "Department managers"
+    direction = "rtl" if lang == "ar" else "ltr"
     cells = "".join(
-        f'<td><div class="management-name"><span class="management-ar" lang="ar" dir="rtl">{e(p["name_ar"])}</span>'
-        f'<span class="management-en" lang="en" dir="ltr">{e(p["name_en"])}</span></div>'
-        f'<div class="management-role"><span lang="ar" dir="rtl">{e(p["role_ar"])}</span>'
-        f'<span class="management-role-en" lang="en" dir="ltr">{e(p["role_en"])}</span></div></td>'
+        f'<td><div class="management-name">{e(p["name_" + lang])}</div>'
+        f'<div class="management-role">{e(p["role_" + lang])}</div></td>'
         for p in members
     )
-    return f'<table class="management-team" dir="rtl"><caption>{e(caption)}</caption><tbody><tr>{cells}</tr></tbody></table>'
+    return f'<table class="management-team" lang="{lang}" dir="{direction}"><caption>{e(caption)}</caption><tbody><tr>{cells}</tr></tbody></table>'
 
 
 def build_company(lang):

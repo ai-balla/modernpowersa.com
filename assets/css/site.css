@@ -531,14 +531,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--navy);outline:3px sol
 
 .ledger .org{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
 
-/* Owner-supplied department managers: HTML text in the attached RTL order. */
-.management-team{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:2.5rem;text-align:center;background:#fff}
-.management-team caption{text-align:start;font-weight:600;font-size:1.15rem;color:var(--deep);padding-bottom:1rem}
-.management-team td{padding:0;border:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
-.management-name{padding:1.1rem .7rem;display:grid;gap:.35rem}
-.management-ar{font-weight:600;color:var(--deep);font-size:1.1rem}
-.management-en{font-size:1rem;color:var(--ink)}
-.management-role{padding:.8rem .6rem;border-top:1px solid var(--line);background:var(--haze);font-weight:500}
-.management-role span{display:block}
-.management-role-en{font-size:.85rem;color:var(--steel);font-weight:400;margin-top:.2rem}
-@media(max-width:640px){.management-team,.management-team tbody,.management-team tr,.management-team td{display:block;width:100%}.management-team{border:0}.management-team caption{display:block;text-align:center}.management-team tr{display:grid;gap:1rem}.management-team td{border-radius:var(--r);overflow:hidden}}
+/* Department managers follow the page language and leadership-card design. */
+.management-team{width:calc(100% + 2rem);margin:2.5rem -1rem 0;border-collapse:separate;border-spacing:1rem 0;table-layout:fixed;text-align:start}
+.management-team caption{text-align:start;padding:0 1rem 1rem;font-size:1.1rem;font-weight:600;color:var(--deep)}
+.management-team td{padding:0;background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:8px;vertical-align:top;overflow-wrap:anywhere;box-shadow:0 1px 0 var(--line)}
+.management-name{padding:1.25rem 1.25rem .65rem;font-size:1.06rem;line-height:1.5;font-weight:600;color:var(--deep)}
+.management-role{padding:0 1.25rem 1.25rem;color:var(--steel);font-size:.94rem;line-height:1.6;font-weight:400}
+@media(max-width:640px){.management-team,.management-team tbody,.management-team tr,.management-team td{display:block;width:100%}.management-team{margin:2rem 0 0;border-spacing:0}.management-team caption{display:block;padding:0 0 1rem;text-align:start}.management-team tr{display:grid;gap:1rem}.management-name{padding-top:1.1rem}.management-role{padding-bottom:1.1rem}}
